@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-family: Montserrat;
+    color:black;
+}
+
+h1 {
+    font-family: Montserrat;    
+}
+
+h2 {
+    font-family: Montserrat;
+}
+  
+h3 {
+    font-family: Montserrat;
+}
+p {
+    font-family: Montserrat;
+}
+
+.Home, html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.Home, body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.page-content{
+    margin:5vw;
+}

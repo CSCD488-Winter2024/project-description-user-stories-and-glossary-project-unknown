@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ErrorPage, html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.ErrorPage {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+    justify-content: center;
+    text-align: center;
+}

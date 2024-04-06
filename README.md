@@ -19,14 +19,14 @@ Installation:
   - npm run dev [view live changes]
 
 Functionality:
-TODO: Write usage instructions. Structuring it as a walkthrough can help structure this section,
-and showcase your features.
+  We can't think of many functionalities that we have to explain at this point. However, we will revisit them.
 
 Known Problems:
-TODO: Describe any known issues, bugs, odd behaviors or code smells.
-Provide steps to reproduce the problem and/or name a file or a function where the problem lives.
-Contributing
+  Databases
+  - We are currently having issues with finding a good Database that is able to store all inventory needed. Some of the Databases we have looked at that are free are very limited, so we are just looking at all our possibilities.
+
+  Merge Conflicts
+  - We haven't had any merge conflicts yet but they can occur. We are following some rules to avoid conflicts such as branching out and working in small parts, and always having pull requests so that every team member can review it.
 
 Additional Documentation:
-  Repo containing website - https://github.com/MannyPoptart/DonutParade
-  
+  Tehe 💀

@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Home.css'
 
+
 function Home() {
   return (
     <div className="Home">
@@ -16,6 +17,8 @@ function Home() {
         </section>
 
         <Footer />
+
+        <script src='../Scripts/idk.js'> </script>
 
 
     </div>

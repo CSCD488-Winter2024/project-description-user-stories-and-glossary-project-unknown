@@ -17,7 +17,7 @@ function Home() {
           <p>Things will go here</p>
 
         </section>
-        <script src='../Scripts/setup.js'></script>
+        {/* <script src='../Scripts/setup.js'></script> */}
 
         <script src='idk.js'> </script>
 

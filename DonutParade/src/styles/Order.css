@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Order, html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.Order, body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}

@@ -12,6 +12,8 @@ function Home() {
         <section class="page-content">
 
           <p>Things will go here</p>
+  
+          <p id='donut'>🍩</p>
 
         </section>
 

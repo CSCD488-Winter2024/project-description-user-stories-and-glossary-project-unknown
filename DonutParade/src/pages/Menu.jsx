@@ -1,19 +1,14 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Menu.css'
-import DonutParadeLogo from '../assets/DonutParadeLogoblack.png'
-import DonutParadeLogoWhite from '../assets/DonutParadeLogoWhite.png'
 
 function Menu() {
   return (
-    <div class="menu">
-      <header id="homeHeader">
+  <div class="menu">
 
-        <img src={DonutParadeLogo} alt="Donut Parade Logo" />
-        <Navbar />
-
-      </header>
+    <Header />
+      
 
       <section class="page-content">
 

@@ -19,9 +19,14 @@ function Footer() {
     <div class="middle-footer">
         <img src={DonutParadeLogoWhite} alt="DonutParade" />
         <div class="social-media">
-            <img src={FacebookLogo} alt="Facebook" />
-            <img src={InstagramLogo} alt="Instagram" />
+            <a href="https://www.facebook.com/donutparadespokane/">
+                <img src={FacebookLogo} alt="Facebook" />
+            </a>
+            <a href="https://www.instagram.com/donutparade.spokane/">
+                <img src={InstagramLogo} alt="Instagram" />
+            </a>
         </div>
+
     </div>
 
     <div class="right-footer">

@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Home.css'
-import '../Scripts/idk.js'
-import '../Scripts/setup.js'
+import '../scripts/Uhhh.js'
+
 
 
 function Home() {
@@ -19,9 +19,8 @@ function Home() {
           <p id='donut'>🍩</p>
 
         </section>
-        {/* <script src='../Scripts/setup.js'></script> */}
 
-        <script src='idk.js'> </script>
+        <script src='Uhhh.js'> </script>
 
         <Footer />
 

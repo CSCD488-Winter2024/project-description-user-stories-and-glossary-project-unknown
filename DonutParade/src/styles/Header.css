@@ -38,7 +38,6 @@
 
 .Header .Navbar a:hover {
     color: #BDD7BC;
-    background-color: violet;
     white-space: nowrap;
 }
 
@@ -47,8 +46,18 @@
     max-height: auto;
 }
 
-.Header img {
+#DonutParadeLogo {
     width: 130px;
     height: 110px;
     padding-left: 4rem;
+}
+
+#Cart {
+    width: 40px;
+    height: 30px;
+    background-color: none;
+}
+
+#Cart a:hover {
+    background-color: none;
 }

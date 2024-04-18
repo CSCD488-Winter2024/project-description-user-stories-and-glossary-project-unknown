@@ -43,7 +43,7 @@ const newData = {
       name: "Apple Fritter",
       price: 2.99,
       quantity: 10,
-      description : "you know what it is",
+      description : "yeah",
     }
   }
 };

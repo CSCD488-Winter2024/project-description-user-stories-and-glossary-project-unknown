@@ -1,5 +1,6 @@
 import React from 'react'
 import Cart from '../assets/Cart.png'
+import User from '../assets/User.png'
 
 function Navbar() {
   return (
@@ -10,6 +11,7 @@ function Navbar() {
             <li><a href="/contact"><p>Contact</p></a></li>
             <li><a href="/about"><p>About</p></a></li>
             <li><a href="/cart"><img src={Cart} alt="Cart" id='Cart' /></a></li>
+            <li><a href="/user"><img src={User} alt='User' id='User'></img></a></li>
         </ul>
 
     </div>

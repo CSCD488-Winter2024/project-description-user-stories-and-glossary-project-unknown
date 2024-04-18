@@ -5,6 +5,7 @@ import Menu from './pages/Menu'
 import Cart from './pages/Cart'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import User from './pages/User'
 import ErrorPage from './pages/ErrorPage'
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <About />,
+  },
+  {
+    path: '/user',
+    element: <User />,
   },
   {
     path: '*',

@@ -7,11 +7,8 @@ function Header() {
   return (
     <div className='Header'>
       
-      <header>
         <a href='/'><img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' /></a>
         <Navbar />
-
-      </header>
       
     </div>
   )

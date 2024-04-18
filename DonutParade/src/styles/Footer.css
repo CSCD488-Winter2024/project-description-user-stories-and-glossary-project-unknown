@@ -1,37 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .Footer {
     background-color: #F2ADB7;
     color: white;
     padding: 3em;
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .Footer a {
-    color: white;
+    color : white;
 }
 
 .left-footer,
 .middle-footer,
 .right-footer {
-    margin: 2em;
-    flex: 1; 
-    text-align: center; 
+    flex: 1;
+    text-align: center;
+    margin: 5px;
 }
 
 .middle-footer img {
-    width: 100%; 
+    width: 100%;
     max-width: 300px;
-    height: auto; 
-    margin-top: -20px; 
-
+    height: auto;
+    margin-top: -20px;
 }
 
 .social-media {
@@ -42,57 +36,33 @@
 }
 
 .social-media img {
-    width: 45px; 
-    height: 45px; 
-    margin: 0 20px; 
+    width: 45px;
+    height: 45px;
+    margin: 0 20px;
 }
 
-.left-footer h1 {
-    margin-top: 15px; 
-    margin-bottom: 15px; 
-    font-family: Montserrat;
-    font-size: 43px;
-    font-weight: 900; 
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-    text-align: left; 
-}
-
+.left-footer h1,
 .right-footer h1 {
-    margin-top: 15px;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 43px;
-    font-weight: 900; 
+    font-weight: 900;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
-    text-align: right; 
 }
 
-
-.left-footer p {
-    width: 100%; 
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 28px; 
-    font-style: light;
-    font-weight: 100;
-    text-align: left; 
-    margin-top: 10px; 
-}
-
+.left-footer p,
 .right-footer p {
-    width: 100%; 
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 28px; 
+    font-family: Montserrat, sans-serif;
+    font-size: 28px;
     font-style: light;
     font-weight: 100;
-    text-align: right;
+    color: #fdfdfd;
+    text-align: center;
     margin-top: 15px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
     .Footer {
-        padding: 3em 10%; 
+        flex-direction: column;
     }
 }

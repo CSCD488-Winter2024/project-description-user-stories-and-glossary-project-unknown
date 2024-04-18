@@ -5,18 +5,18 @@
 
 
 
-.Header, header {
+.Header {
     height: 100%;
     width: 100%;
     background-color: white;
     display: flex;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.5rem;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-.Header, header, .Navbar {
+.Header, .Navbar {
     display: flex;
     justify-content: space-between;
 }
@@ -58,6 +58,7 @@
     background-color: none;
 }
 
-#Cart a:hover {
-    background-color: none;
+#User {
+    width: 30px;
+    height: 30px;
 }

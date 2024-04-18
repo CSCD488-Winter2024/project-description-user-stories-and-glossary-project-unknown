@@ -17,7 +17,10 @@ function Footer() {
     </div>
 
     <div class="middle-footer">
-        <img src={DonutParadeLogoWhite} alt="DonutParade" />
+        <a href="/">
+            <img src={DonutParadeLogoWhite} alt="DonutParade" />
+        </a>
+
         <div class="social-media">
             <a href="https://www.facebook.com/donutparadespokane/">
                 <img src={FacebookLogo} alt="Facebook" />
@@ -31,10 +34,10 @@ function Footer() {
 
     <div class="right-footer">
         <h1>Navigate</h1>
-        <p><a href="#">Menu</a></p>
-        <p><a href="#">Contact</a></p>
-        <p><a href="#">Cart</a></p>
-        <p><a href="#">Profile</a></p>
+        <p><a href="/menu">Menu</a></p>
+        <p><a href="/contact">Contact</a></p>
+        <p><a href="/cart">Cart</a></p>
+        <p><a href="/profile">Profile</a></p>
     </div>
 
 </div>

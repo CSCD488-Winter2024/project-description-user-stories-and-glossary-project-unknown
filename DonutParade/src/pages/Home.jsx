@@ -1,35 +1,23 @@
-import React from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import '../styles/Home.css'
-import '../scripts/Uhhh.js'
-
-
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../styles/Home.css';
+import Background from '../assets/BackgroundHome.png';
 
 function Home() {
   return (
     <div className="Home">
+      <Header />
 
-        <Header />
-
-        <section class="page-content">
-
-          <p>Things will go here</p>
-  
-          <p id='donut'>🍩</p>
-
-        </section>
-
-        <script src='Uhhh.js'> </script>
-
-        <Footer />
-
-        
-
-
-
+      <div className="Home-content">
+        <img src={Background} alt="Home Image"/>
+        <h1>Donut Parade</h1>
+        <p>Serving Spokane Since 1968</p>
+      </div>
+      
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

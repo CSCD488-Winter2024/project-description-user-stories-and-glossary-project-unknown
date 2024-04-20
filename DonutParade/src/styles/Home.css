@@ -1,11 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-
-* {
-    margin: 0;
-    padding: 0;
+.Home-content {
+    position: relative;
+}
+    
+.Home-content h1 {
+    position: absolute;
+    top: 250px; 
+    left: 50%;    
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    font-size: 4em;
+    font-weight: bolder;
 }
 
+.Home-content p {
+    position: absolute;
+    top: 350px; 
+    left: 50%;    
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+/* ASK MANNY WHY I CANT REMOVE THIS BOTTOM SECTION */
 a {
     text-decoration: none;
     font-family: Montserrat;
@@ -34,20 +55,4 @@ p {
     
 }
 
-.Home, body {
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-}
 
-.page-content{
-    margin:5vw;
-}
-
-#donut {
-    font-size: 350pt;
-    text-align: center;
-}

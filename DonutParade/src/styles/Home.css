@@ -2,33 +2,37 @@
 
 .Home {
     position: relative;
-  }
+}
   
-  .home-content  {
+.home-content {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .home-content img {
-    width: 100%;
-    height: 100%;
+    background-image: url('path/to/your/image.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content img {
+    width: 100%; /* Ensure the image covers the entire container */
+    height: 100%; /* Ensure the image covers the entire container */
     object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
-  }
+}
+
   
-  .home-content h1, .home-content p {
+.home-content h1, .home-content p {
     font-family: Montserrat;
     text-align: center;
     z-index: 1; /* Ensure the text is above the image */
     color: white;
-  }
+}
 
 a {
     text-decoration: none;

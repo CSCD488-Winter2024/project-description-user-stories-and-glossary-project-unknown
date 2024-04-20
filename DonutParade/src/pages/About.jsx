@@ -8,7 +8,7 @@ import '../styles/About.css';
 
 function About() {
   return (
-    <div className="Aboout">
+    <div className="About">
       <Header />
 
       <div className="About-content">

@@ -43,9 +43,9 @@ function Cart() {
 
       </section>
 
-      <footer>
-        <Footer />
-      </footer>
+      
+      <Footer />
+      
 
 
     </div>

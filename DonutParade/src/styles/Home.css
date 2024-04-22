@@ -2,12 +2,14 @@
 
 .Home-content {
     position: relative;
+    height: 100%;
 }
     
 .Home-content h1 {
+    /* put the text inside the image above the p */
     position: absolute;
-    top: 250px; 
-    left: 50%;    
+    top: 200px;
+    left: 50%;
     transform: translateX(-50%);
     z-index: 1;
     color: white;
@@ -26,33 +28,26 @@
     font-weight: bolder;
 }
 
-/* ASK MANNY WHY I CANT REMOVE THIS BOTTOM SECTION */
-a {
-    text-decoration: none;
-    font-family: Montserrat;
-    color:black;
-}
+.Home-content img {
+    filter: brightness(65%);
+    width: 100%;
+    height: 100%;
 
-h1 {
-    font-family: Montserrat;    
-}
-
-h2 {
-    font-family: Montserrat;
-}
-  
-h3 {
-    font-family: Montserrat;
-}
-
-p {
-    font-family: Montserrat;
 }
 
 .Home, html, body {
     height: 100%;
     width: 100%;
     
+}
+
+.Home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background-color: #F8F8FF;
 }
 
 

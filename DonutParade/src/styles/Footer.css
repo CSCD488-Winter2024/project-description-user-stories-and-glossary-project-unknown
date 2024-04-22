@@ -5,63 +5,60 @@
     color: white;
     padding: 3em;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .Footer a {
-    color : white;
-}
-
-.left-footer,
-.middle-footer,
-.right-footer {
-    flex: 1;
-    text-align: center;
-    margin: 5px;
-}
-
-.middle-footer img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.social-media img {
-    width: 45px;
-    height: 45px;
-    margin: 0 20px;
+    color: white;
 }
 
 .left-footer h1,
 .right-footer h1 {
     font-family: Montserrat, sans-serif;
-    font-size: 43px;
+    font-size: 30px;
     font-weight: 900;
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+    margin-top: 25px;
 }
 
-.left-footer p,
+.left-footer p {
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    color: #fdfdfd;
+    text-align: left;
+    margin-top: 5px;
+}
+
 .right-footer p {
     font-family: Montserrat, sans-serif;
-    font-size: 28px;
-    font-style: light;
+    font-size: 20px;
     font-weight: 100;
-    color: #fdfdfd;
-    text-align: center;
+    text-align: right;
     margin-top: 15px;
 }
 
-@media screen and (max-width: 768px) {
+.middle-footer img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* make the middle-footer img be centered for the website*/
+.middle-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media img {
+    width: 35px;
+    height: 35px;
+    margin: 0 20px;  
+}
+
+/* @media screen and (max-width: 768px) {
     .Footer {
         flex-direction: column;
     }
-}
+} */

@@ -10,12 +10,14 @@ function Home() {
       <Header />
 
       <div className="Home-content">
-        <img src={Background} alt="Home Image"/>
+        
         <h1>Donut Parade</h1>
         <p>Serving Spokane Since 1968</p>
+        <img src={Background} alt="Home Image"/>
       </div>
       
       <Footer />
+      
     </div>
   );
 }

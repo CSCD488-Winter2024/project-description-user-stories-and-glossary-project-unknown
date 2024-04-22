@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+    font-family: Montserrat;
+    color:black;
+}
+
+h1 {
+    font-family: Montserrat;    
+}
+
+h2 {
+    font-family: Montserrat;
+}
+  
+h3 {
+    font-family: Montserrat;
+}
+
+p {
+    font-family: Montserrat;
+}
+
+.Footer {
+    margin-top: auto;
+}
+
+.Header {
+    height: 150px;
+}

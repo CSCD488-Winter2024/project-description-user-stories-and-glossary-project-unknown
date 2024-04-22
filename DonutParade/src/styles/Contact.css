@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Contact, html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.Contact {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    background-color: #F8F8FF;
+}
+

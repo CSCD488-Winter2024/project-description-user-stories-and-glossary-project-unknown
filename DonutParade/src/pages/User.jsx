@@ -3,7 +3,18 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/User.css'
 
-function User() {
+
+function User({ uid }) {
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      // Sign-out successful.
+      console.log('User signed out');
+    } catch (error) {
+      // An error happened.
+      console.error('Error signing out:', error.message);
+    }
+
   return (
     <div className='User'>
         
@@ -13,10 +24,13 @@ function User() {
         <div id='profileContainer'>
           <img id='profilePic' src='' alt="Profile Picture" />
           <ul id="profile">
+              <p>User UID: {uid}</p>
+              
               <li>Username: <span id="username">donutLover</span></li>
               <li>Email: <span id="email">something@yo.com</span></li>
               <li>Phone Number: <span id='phoneNum'>(555) 555-5555</span></li>
               <li>Car Info: <span id='vehicle'>Prius BMW Bright Green</span></li>
+              <button onClick={handleSignOut}>Sign Out</button>
           </ul>
         </div>
 
@@ -39,5 +53,8 @@ function User() {
     </div>
   )
 }
+}
+
+
 
 export default User

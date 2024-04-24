@@ -11,7 +11,7 @@ function About() {
     <div className="About">
       <Header />
 
-      <div className="About-content">
+      <div id="About-content">
 
         <h2>About Us</h2>
         <img src={AboutBack} alt="About Image"/>

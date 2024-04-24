@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-.About-content {
+#About-content {
   position: relative;
 }
   
-.About-content h2 {
+#About-content h2 {
   position: absolute;
   top: 50px; 
   left: 15%;    
@@ -15,7 +15,7 @@
   font-weight: bolder;
 }
   
-.About-content img {
+#About-content img {
   max-width: 100%;
   max-height: 80vh; /* Adjust the value to shrink vertically */
   height: auto;
@@ -23,8 +23,8 @@
   margin: 0 auto;
 }
   
-.About-content h1,
-.About-content p {
+#About-content h1,
+#About-content p {
   margin-top: 15px; 
   margin-left: 5%; /* Adjust left margin */
   margin-right: 5%; /* Adjust right margin */

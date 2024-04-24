@@ -13,8 +13,8 @@
     color: white;
 }
 
-.left-footer h1,
-.right-footer h1 {
+#left-footer h1,
+#right-footer h1 {
     font-family: Montserrat, sans-serif;
     font-size: 30px;
     font-weight: 900;
@@ -22,7 +22,7 @@
     margin-top: 25px;
 }
 
-.left-footer p {
+#left-footer p {
     font-family: Montserrat, sans-serif;
     font-size: 20px;
     color: #fdfdfd;
@@ -30,7 +30,7 @@
     margin-top: 5px;
 }
 
-.right-footer p {
+#right-footer p {
     font-family: Montserrat, sans-serif;
     font-size: 20px;
     font-weight: 100;
@@ -38,20 +38,20 @@
     margin-top: 15px;
 }
 
-.middle-footer img {
+#middle-footer img {
     width: 100%;
     max-width: 250px;
     height: auto;
 }
 
 /* make the middle-footer img be centered for the website*/
-.middle-footer {
+#middle-footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.social-media img {
+#social-media img {
     width: 35px;
     height: 35px;
     margin: 0 20px;  

@@ -9,19 +9,19 @@ function Footer() {
   return (
     <div class="Footer">
 
-    <div class="left-footer">
+    <div id="left-footer">
         <h1>Location</h1>
         <p>2152 N Hamilton St, <br />Spokane, WA 99207</p>
         <h1>Contact</h1>
         <p>(509) 473-9870, <br />donutparadespokane@gmail.com</p>
     </div>
 
-    <div class="middle-footer">
+    <div id="middle-footer">
         <a href="/">
             <img src={DonutParadeLogoWhite} alt="DonutParade" />
         </a>
 
-        <div class="social-media">
+        <div id="social-media">
             <a href="https://www.facebook.com/donutparadespokane/">
                 <img src={FacebookLogo} alt="Facebook" />
             </a>
@@ -32,7 +32,7 @@ function Footer() {
 
     </div>
 
-    <div class="right-footer">
+    <div id="right-footer">
         <h1>Navigate</h1>
         <p><a href="/menu">Menu</a></p>
         <p><a href="/contact">Contact</a></p>

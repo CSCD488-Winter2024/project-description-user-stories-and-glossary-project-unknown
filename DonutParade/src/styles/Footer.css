@@ -102,9 +102,6 @@
         height: 25px;
     }
 }
-
-/* Modify to add a white line in between left, middle, right footer */
-
 @media (max-width: 768px) {
     .Footer {
         flex-direction: column;

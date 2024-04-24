@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Menu.css'
+import '../scripts/Menu.js'
 
 function Menu() {
   return (
@@ -17,7 +18,7 @@ function Menu() {
 
         <div class="menu-grid">
 
-          <div class="menu-row">
+          {/* <div class="menu-row">
 
             <div class="menu-box">
               <div class="img-container">
@@ -99,7 +100,7 @@ function Menu() {
               <p>We can retrieve desc and image from database?</p>
               <button class="add-to-cart-button">Add to Cart</button>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>

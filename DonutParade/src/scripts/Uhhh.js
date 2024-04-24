@@ -37,24 +37,24 @@ const dbRef = ref(getDatabase(app));
 //   });
 // }
 
-const newData = {
-  Donuts: {
-    Apple_fritter: {
-      name: "Apple Fritter",
-      price: 2.99,
-      quantity: 10,
-      description : "yeah",
-    }
-  }
-};
+// const newData = {
+//   Donuts: {
+//     Apple_fritter: {
+//       name: "Apple Fritter",
+//       price: 2.99,
+//       quantity: 10,
+//       description : "yeah",
+//     }
+//   }
+// };
 
-update(ref(getDatabase(app)), newData)
-  .then(() => {
-    console.log("Data written to the database successfully");
-  })
-  .catch((error) => {
-    console.error("Error writing data to the database:", error);
-  });
+// update(ref(getDatabase(app)), newData)
+//   .then(() => {
+//     console.log("Data written to the database successfully");
+//   })
+//   .catch((error) => {
+//     console.error("Error writing data to the database:", error);
+//   });
 
   
   

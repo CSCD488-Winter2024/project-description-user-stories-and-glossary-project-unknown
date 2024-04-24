@@ -3,8 +3,6 @@
     padding: 0;
 }
 
-
-
 .Header {
     height: 100%;
     width: 100%;
@@ -18,7 +16,6 @@
     z-index: 1000;
 
 }
-
 
 .Header, .Navbar {
     display: flex;

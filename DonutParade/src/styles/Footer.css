@@ -6,7 +6,7 @@
     padding: 3em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .Footer a {
@@ -16,7 +16,6 @@
 .left-footer,
 .middle-footer,
 .right-footer {
-    flex: 1;
     text-align: center;
     margin: 5px;
 }
@@ -24,7 +23,7 @@
 .middle-footer img {
     width: 100%;
     max-width: 300px;
-    height: auto;
+    /* height: auto; */
 }
 
 .social-media {
@@ -32,6 +31,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .social-media img {

@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.User, html, body {
+.User, html {
     height: 100%;
     width: 100%;
 }
@@ -12,7 +12,55 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-color: #f5f5f5;
+}
+
+#profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+#profile li {
+    list-style: none;
+    margin: 20px;
+}
+
+#profilePic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 200px;
+    margin-right: 2rem;
+}
+
+#prevOrder {
+    margin-left: 2rem;
+    margin-top: 2rem;
+
+}
+
+#orderContainer {
+    display: flex;
+    width: fit-content;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
+    border: solid black 3px;
+    border-radius: 10px;
+}
+
+#orderContainer li {
+    list-style: none;
+    margin: 20px;
+}
+
+#orderDate {
+    text-align: center;
 }

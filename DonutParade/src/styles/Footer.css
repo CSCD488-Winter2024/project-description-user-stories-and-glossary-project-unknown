@@ -5,6 +5,7 @@
     color: white;
     padding: 3em;
     display: flex;
+
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -22,12 +23,14 @@
     margin-top: 25px;
 }
 
+
 #left-footer p {
     font-family: Montserrat, sans-serif;
     font-size: 16pt;
     color: #fdfdfd;
     text-align: left;
     margin-top: 5px;
+
 }
 
 #right-footer p {
@@ -42,6 +45,7 @@
     width: 100%;
     max-width: 250px;
     height: auto;
+
 }
 
 /* make the middle-footer img be centered for the website*/

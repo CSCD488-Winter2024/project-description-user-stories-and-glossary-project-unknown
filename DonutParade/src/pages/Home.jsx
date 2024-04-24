@@ -9,7 +9,7 @@ function Home() {
     <div className="Home">
       <Header />
 
-      <div className="Home-content">
+      <div id="Home-content">
         
         <h1>Donut Parade</h1>
         <p>Serving Spokane Since 1968</p>

@@ -58,14 +58,14 @@
 /* Media Screen CSS for Different Screen Sizes and Devices */
 @media screen and (max-width: 1700px) {
   #About-content img {
-    height: 65vh;
+    height: 68vh;
   }
   #About-content h2 {
     font-size: 6em;
   }
   #About-content h3 {
     font-size: 2em;
-    top: 35%;
+    top: 38%;
     right: -10%;
   }
   #About-content h1 {
@@ -77,14 +77,14 @@
 }
 @media screen and (max-width: 1440px) {
   #About-content img {
-    height: 55vh;
+    height: 65vh;
   }
   #About-content h2 {
     font-size: 5em;
   }
   #About-content h3 {
     font-size: 1.8em;
-    top: 30%;
+    top: 35%;
     right: -10%;
   }
   #About-content h1 {
@@ -96,14 +96,14 @@
 }
 @media screen and (max-width: 1280px) {
   #About-content img {
-    height: 45vh;
+    height: 55vh;
   }
   #About-content h2 {
     font-size: 4em;
   }
   #About-content h3 {
     font-size: 1.6em;
-    top: 25%;
+    top: 32%;
     right: -15%;
   }
   #About-content h1 {
@@ -115,14 +115,14 @@
 }
 @media screen and (max-width: 1024px) {
   #About-content img {
-    height: 35vh;
+    height: 45vh;
   }
   #About-content h2 {
     font-size: 3em;
   }
   #About-content h3 {
     font-size: 1.6em;
-    top: 20%;
+    top: 28%;
     right: -20%;
   }
   #About-content h1 {
@@ -134,14 +134,14 @@
 }
 @media screen and (max-width: 768px) {
   #About-content img {
-    height: 25vh;
+    height: 35vh;
   }
   #About-content h2 {
     font-size: 2em;
   }
   #About-content h3 {
     font-size: 1.2em;
-    top: 16%;
+    top: 22%;
     right: -20%;
   }
   #About-content h1 {
@@ -153,14 +153,14 @@
 }
 @media screen and (max-width: 500px) {
   #About-content img {
-    height: 15vh;
+    height: 25vh;
   }
   #About-content h2 {
     font-size: 1.5em;
   }
   #About-content h3 {
     font-size: 1em;
-    top: 13%; 
+    top: 22%; 
     right: -20%;
   }
   #About-content h1 {

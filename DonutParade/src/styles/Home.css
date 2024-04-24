@@ -1,20 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+/* for big letters in the middle */
+@import url("https://api.fontshare.com/v2/css?f[]=plein@900,901&display=swap");
+
 #Home-content {
     position: relative;
     height: 100%;
 }
     
 #Home-content h1 {
-    /* put the text inside the image above the p */
+    /* modify so that the h1 is in the center of the page */
+    
     position: absolute;
-    top: 200px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 1;
     color: white;
     font-size: 4em;
-    font-weight: bolder;
+    font-family: 'Plein', sans-serif;
+    
 }
 
 #Home-content p {
@@ -25,7 +27,9 @@
     z-index: 1;
     color: white;
     font-size: 1.5em;
-    font-weight: bolder;
+    font-family: 'Bevellier', sans-serif;
+    font-style: italic;
+    
 }
 
 #Home-content img {

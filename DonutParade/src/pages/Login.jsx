@@ -2,6 +2,7 @@ import React, { useState  } from 'react';
 import '../styles/Login.css'
 import { auth } from '../scripts/FBconfig.js';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import User from './User';
 
 
 const Login = () => {
@@ -9,6 +10,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
 
   const errorMessages = {
     'auth/user-not-found': 'User not found. Please check your email.',
@@ -22,6 +25,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       // Login successful
       console.log("Login successful");
+      setIsLoggedIn(true);;
     } catch (error) {
       // Handle login errors
       console.error(error.message);
@@ -29,6 +33,9 @@ const Login = () => {
       setError(errorMessage);
     }
   };
+  if (isLoggedIn) {
+    return <User />;
+  }
 
   return (
     <div>

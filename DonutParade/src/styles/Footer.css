@@ -111,15 +111,17 @@
     #left-footer h1,
     #right-footer h1 {
         font-size: 20px;
+        text-align: center;
     }
 
     #left-footer p,
     #right-footer p {
         font-size: 15px;
+        text-align: center;
     }
 
     #middle-footer img {
-        max-width: 200px;
+        max-width: 150px;
     }
 
     #social-media img {
@@ -127,10 +129,17 @@
         height: 25px;
     }
 
-     #left-footer,
-     #middle-footer,
-     #right-footer {
-         margin-bottom: 45px; 
-     }
+    #left-footer,
+    #middle-footer,
+    #right-footer {
+        margin-bottom: 45px; 
+    }
+    
+    #left-footer,
+    #middle-footer,
+    #right-footer {
+        border-bottom: 1px solid white;
+        padding-bottom: 20px;
+    }
 }
 

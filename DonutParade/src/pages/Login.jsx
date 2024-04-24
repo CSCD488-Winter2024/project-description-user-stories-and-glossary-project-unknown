@@ -52,7 +52,7 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button id='yo' onClick={handleLogin}>Login</button>
+      <button id='yo' onClick={handleLogin}>L🍩gin</button>
       {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message if error exists */}
 
       <p></p>

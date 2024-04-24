@@ -13,17 +13,23 @@ const app = initializeApp(firebaseConfig);
 const dbRef = ref(getDatabase(app));
 
 
+
+
   onValue(dbRef, (snapshot) => {
     if (snapshot.exists()) {
-      var data = snapshot.child("Donuts/Apple_fritter").val();
-      console.log(data);
-      //console.log(snapshot.val(1).length);
+      var uName = snapshot.child("users/User2/uname").val();
+      var pWord = snapshot.child("users/User2/pass").val();
+      
+      // console.log(uName);
+      // console.log(pWord);
       
     } else {
       console.log("No data available");
     }
   });
+ 
 
+  
 
 
 // fetchDataFromDatabase("path/to/database");

@@ -57,7 +57,7 @@ const Login = () => {
     }
   };
   if (isLoggedIn) {
-    return <User uid={uid} setUid={setUid}/>;
+    return <User />;
   }
 
   return (

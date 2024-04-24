@@ -55,7 +55,7 @@ const writeToPage = (data) => {
 };
 const template = `
               <div class="img-container">
-                <img class="menu-box-img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpixy.org%2Fimages%2Fplaceholder.png&f=1&nofb=1&ipt=3f2a740c71687c68c0e39ffb3812eed2dcfeea593db6af9736b4b621827f903b&ipo=images" alt="Donut Image" />
+                <img class="menu-box-img" src="https://placehold.co/100x100?text=Yo" alt="Donut Image" />
               </div>
               <h3></h3>
               <p></p>

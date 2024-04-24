@@ -1,35 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 /* for big letters in the middle */
-@import url("https://api.fontshare.com/v2/css?f[]=plein@900,901&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
 
 #Home-content {
     position: relative;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
 }
     
 #Home-content h1 {
-    /* modify so that the h1 is in the center of the page */
-    
     position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     color: white;
-    font-size: 4em;
+    font-size: 8em;
     font-family: 'Plein', sans-serif;
-    
 }
 
 #Home-content p {
     position: absolute;
-    top: 350px; 
+    top: 48%; 
     left: 50%;    
     transform: translateX(-50%);
     z-index: 1;
     color: white;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: 'Bevellier', sans-serif;
     font-style: italic;
-    
 }
 
 #Home-content img {
@@ -53,5 +53,111 @@
     overflow: auto;
     background-color: #F8F8FF;
 }
+
+/* Apply different font sizes based on screen width */
+@media screen and (max-width: 1920px) {
+    #Home-content h1 {
+        font-size: 7em;
+        top: 40%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    #Home-content p {
+        font-size: 2.5em;
+        top: 50%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    #Home-content h1 {
+        font-size: 5em;
+        top: 42%; 
+        left: 50%;
+    }
+}
+@media screen and (max-width: 1440px) {
+    #Home-content p {
+        font-size: 1.5em;
+        top: 52%; 
+        left: 50%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #Home-content h1 {
+        font-size: 4em;
+        top: 44%; 
+        left: 50%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #Home-content p {
+        font-size: 1.3em;
+        top: 54%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #Home-content h1 {
+        font-size: 3em;
+        top: 45%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #Home-content p {
+        font-size: 1em;
+        top: 55%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Home-content h1 {
+        font-size: 2em;
+        top: 48%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #Home-content p {
+        font-size: 1em;
+        top: 58%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #Home-content h1 {
+        font-size: 2em;
+        top: 50%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #Home-content p {
+        font-size: 1em;
+        top: 60%; 
+        left: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 

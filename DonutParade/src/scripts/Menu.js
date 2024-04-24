@@ -1,14 +1,15 @@
 import { getDatabase, ref, onValue, get, update,child } from "firebase/database";
 import { initializeApp } from "firebase/app";
+import {auth, firebaseApp} from "./FBconfig.js";
 
 
-const firebaseConfig = {
-    databaseURL: "https://donutparade-420a9-default-rtdb.firebaseio.com/",
-  };
+// const firebaseConfig = {
+//     databaseURL: "https://donutparade-420a9-default-rtdb.firebaseio.com/",
+//   };
 
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
-const dbRef = ref(getDatabase(app));
+const dbRef = ref(getDatabase(firebaseApp));
 
 
 const writeToPage = (data) => {

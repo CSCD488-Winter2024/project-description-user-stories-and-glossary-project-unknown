@@ -16,6 +16,10 @@
     background-color: #f5f5f5;
 }
 
+#userContainer {
+    height: 100%;
+}
+
 #profileContainer {
     display: flex;
     align-items: center;

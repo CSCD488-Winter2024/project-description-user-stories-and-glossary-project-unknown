@@ -8,6 +8,7 @@ import About from './pages/About'
 import User from './pages/User'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import ForgotPassword from './pages/ForgotPassword'
 import ErrorPage from './pages/ErrorPage'
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />,
+  },
+  {
+    path: '/forgot',
+    element: <ForgotPassword />,
   },
   {
     path: '*',

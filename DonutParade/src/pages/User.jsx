@@ -9,6 +9,7 @@ function User() {
         
         <Header />
 
+        
         <div id='profileContainer'>
           <img id='profilePic' src='' alt="Profile Picture" />
           <ul id="profile">

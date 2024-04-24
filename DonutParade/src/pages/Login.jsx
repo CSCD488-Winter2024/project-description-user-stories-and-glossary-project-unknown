@@ -38,7 +38,7 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div id='loginContainer'>
       <h2>Login</h2>
       <input
         type="email"
@@ -52,8 +52,11 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button id='yo' onClick={handleLogin}>Login</button>
       {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message if error exists */}
+
+      <p></p>
+      <p>Don't have an account? <a href='/signup'>Sign up here</a></p>
     </div>
   );
 };

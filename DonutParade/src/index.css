@@ -27,3 +27,36 @@ p {
 .Header {
     height: 150px;
 }
+
+#DonutParadeLogo {
+    width: 130px;
+    height: 110px;
+    margin-left: 4rem;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    overflow: auto;
+}
+
+.Navbar ul {
+    display: flex;
+    list-style-type: none;
+    /* padding: 1rem; */
+    align-items: center;
+}
+
+.Navbar ul li {
+    padding: 1rem;
+    text-align: center;
+    font-size: 18pt;
+    text-decoration: none;
+    color: purple;
+}
+
+.Navbar a:hover {
+    color: #BDD7BC;
+    white-space: nowrap;
+}

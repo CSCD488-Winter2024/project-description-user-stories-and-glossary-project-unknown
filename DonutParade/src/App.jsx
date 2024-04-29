@@ -10,6 +10,10 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import ForgotPassword from './pages/ForgotPassword'
 import ErrorPage from './pages/ErrorPage'
+import AdminOrders from './pages/AdminOrders'
+import AdminEdit from './pages/AdminEdit'
+import AdminHome from './pages/AdminHome'
+
 
 
 
@@ -49,6 +53,19 @@ const router = createBrowserRouter([
   {
     path: '/forgot',
     element: <ForgotPassword />,
+  },
+  
+  {
+    path: '/admin/home',
+    element: <AdminHome />,
+  },
+  {
+    path: '/admin/orders',
+    element: <AdminOrders />,
+  },
+  {
+    path: '/admin/edit',
+    element: <AdminEdit />,
   },
   {
     path: '*',

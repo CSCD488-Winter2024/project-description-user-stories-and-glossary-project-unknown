@@ -14,6 +14,33 @@
     position: sticky;
     top: 0;
     z-index: 3;
+
+}
+
+.Header, #Navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Header #Navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.Header #Navbar ul li {
+    padding: 1rem;
+    text-align: center;
+    font-size: 18pt;
+    text-decoration: none;
+    color: purple;
+}
+
+.Header #Navbar a:hover {
+    color: #BDD7BC;
+    white-space: nowrap;
+    z-index: 3;
 }
 
 .icon {

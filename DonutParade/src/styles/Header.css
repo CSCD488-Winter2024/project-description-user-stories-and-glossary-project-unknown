@@ -17,19 +17,19 @@
 
 }
 
-.Header, .Navbar {
+.Header, #Navbar {
     display: flex;
     justify-content: space-between;
 }
 
-.Header .Navbar ul {
+.Header #Navbar ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     padding: 1rem;
 }
 
-.Header .Navbar ul li {
+.Header #Navbar ul li {
     padding: 1rem;
     text-align: center;
     font-size: 18pt;
@@ -37,7 +37,7 @@
     color: purple;
 }
 
-.Header .Navbar a:hover {
+.Header #Navbar a:hover {
     color: #BDD7BC;
     white-space: nowrap;
 }

@@ -1,0 +1,24 @@
+#AdminEdit {
+    display: flex;
+    height: 100vh; 
+    width: 100vw; 
+    align-items:center;
+    justify-content: center;
+}
+table{
+    background-color: black;
+    width:80%;
+}
+td{
+    font-family: Montserrat;
+    padding:1rem;
+    border: .25rem black solid;
+    border-radius: 5px;
+    background-color: white;
+}
+.edit-button{
+    height: fit-content;
+    border-style: none;
+    padding-left:50%;
+    padding-right:50%;
+}

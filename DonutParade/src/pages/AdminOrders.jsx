@@ -2,6 +2,9 @@ import React from 'react';
 import '../styles/AdminOrders.css';
 import '../index.css';
 import AdminNav from '../components/AdminHeader';
+import ApproveArrow from '../assets/Approve.png'
+import RejectX from '../assets/Reject.png'
+import Arrow from '../assets/Arrow.png'
 
 function AdminOrders() {
   return (
@@ -18,12 +21,17 @@ function AdminOrders() {
         </div>
         <div class="admin-list">
           <div class="order">
-            <h2 class="order-number">#Order number</h2>
+            <div class="order-box-row">
+              <h1 class="order-number">#Order number</h1>
+              <h2 class="order-time">EST. 12:00 PM</h2>
+            </div>
+
             <div class="order-box-row">
               <div class="order-section">
 
                 <h3 class="order-name">First Last</h3>
                 <h4 class="order-contact">Contact</h4>
+
               </div>
               <div class="order-section">
                 <h3>Dozen Donuts</h3>
@@ -35,9 +43,10 @@ function AdminOrders() {
               </div>
               <div class="order-section">
                 <div class="button-col">
-                  <button class="order-buttons">Approve</button>
-                  <button class="order-buttons">Reject</button>
-                  <button class="order-buttons">Edit</button>
+
+                  <button class="order-buttons"><img src={ApproveArrow} alt="Approve" /></button>
+                  <button class="order-buttons"><img src={RejectX} alt="Reject" /></button>
+                  <button class="order-buttons"><img src={Arrow} alt="Edit" /></button>
                 </div>
 
               </div>

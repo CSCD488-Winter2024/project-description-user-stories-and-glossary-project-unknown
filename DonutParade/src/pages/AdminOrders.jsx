@@ -30,7 +30,7 @@ function AdminOrders() {
               <div class="order-section">
 
                 <h3 class="order-name">First Last</h3>
-                <h4 class="order-contact">Contact</h4>
+                <h3 class="order-contact">Contact</h3>
 
               </div>
               <div class="order-section">

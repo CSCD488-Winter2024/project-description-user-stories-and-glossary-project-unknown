@@ -1,9 +1,9 @@
-import React, { useState  } from 'react';
+import React, { useState, useEffect  } from 'react';
 import '../styles/Login.css'
 import { auth } from '../scripts/FBconfig.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import User from './User';
-
+import listenToAuthState from '../scripts/AuthListener.js';
 
 const Login = () => {
   
@@ -11,6 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [uid, setUid] = useState(null);
   
 
   const errorMessages = {
@@ -20,12 +21,34 @@ const Login = () => {
     // Add more custom error messages for other error codes as needed
   };
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in.
+        const uid = user.uid;
+        console.log('User UID:', uid);
+        setUid(uid); // Set the UID state
+        setIsLoggedIn(true); // Set the isLoggedIn state
+      } else {
+        // No user is signed in.
+        console.log('No user signed in.');
+        setIsLoggedIn(false); // Set the isLoggedIn state
+        setUid(null); // Reset the UID state
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup function
+  }, []); 
+
+  
+
   const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Login successful
       console.log("Login successful");
-      setIsLoggedIn(true);;
+      setIsLoggedIn(true);
+      
     } catch (error) {
       // Handle login errors
       console.error(error.message);
@@ -60,6 +83,8 @@ const Login = () => {
     </div>
   );
 };
+
+
 
 export default Login;
 

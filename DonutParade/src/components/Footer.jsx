@@ -11,9 +11,9 @@ function Footer() {
 
     <div id="left-footer">
         <h1>Location</h1>
-        <p>2152 N Hamilton St, <br />Spokane, WA 99207</p>
+        <p id="location-info"> 2152 N Hamilton St, <br />Spokane, WA 99207</p>
         <h1>Contact</h1>
-        <p>(509) 473-9870, <br />donutparadespokane@gmail.com</p>
+        <p>donutparadespokane@gmail.com <br />(509) 473-9870</p>
     </div>
 
     <div id="middle-footer">

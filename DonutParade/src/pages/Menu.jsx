@@ -1,10 +1,68 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Menu.css'
-import '../scripts/Menu.js'
+//import '../scripts/Menu.js'
+import { getDatabase, ref, onValue, get, update,child } from "firebase/database";
+import {auth, firebaseApp} from "../scripts/FBconfig.js";
+import { CartContext } from "../components/CartContext.jsx";
+
+
+
 
 function Menu() {
+
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
+  const dbRef = ref(getDatabase(firebaseApp));
+
+
+  const writeToPage = (data) => {
+    const menuContainer = document.querySelector(".menu-grid");
+    //add in menu-rows, but every three menu-boxes, add a new row
+      let counter = 0;
+      let menuRow;
+      for (const key in data) {
+        if (counter % 3 === 0) {
+          menuRow = document.createElement("div");
+          menuRow.className = "menu-row";
+          menuContainer.appendChild(menuRow);
+        }
+        const menuBox = document.createElement("div");
+        menuBox.className = "menu-box";
+        menuRow.appendChild(menuBox);
+        menuBox.innerHTML = template;
+        menuBox.querySelector("h3").textContent = data[key].name;
+        menuBox.querySelector("p").textContent = data[key].desc;
+        //menuBox.querySelector("img").src = data[key].image;
+        // what about the price and stock, Lois?
+        menuBox.querySelector(".add-to-cart-button").addEventListener("click", () => {
+          console.log("Add to cart button clicked");
+          addToCart(data[key]);
+        });
+        counter++;
+      }
+  };
+
+  const template = `
+              <div class="img-container">
+                <img class="menu-box-img" src="https://placehold.co/100x100?text=Yo" alt="Donut Image" />
+              </div>
+              <h3></h3>
+              <p></p>
+              <button class="add-to-cart-button">Add to Cart</button>`;
+
+
+onValue(dbRef, (snapshot) => {
+    if (snapshot.exists()) {
+      var data = snapshot.child("Donuts").val();
+      //console.log(data);
+      writeToPage(data);
+      
+    } else {
+      console.log("No data available");
+    }
+  });
+
   return (
   <div class="menu">
 

@@ -6,6 +6,9 @@ import '../styles/Cart.css'
 let num = 0;
 let price = 0.00;
 
+const option1 = document.querySelector('#cartContent');
+
+
 function Cart() {
   return (
     <div className='Cart'>
@@ -15,15 +18,16 @@ function Cart() {
 
       <section id='cartContent'>
 
-        <h1>Cart</h1>
+        <h2>Cart</h2>
 
         <br />
         
-        <div id='option1'>
+        <div id='donutTempelate'>
 
-          <h3>Donut 1</h3>
+          <h3 id=''>Donut 1</h3>
           <p>Price: ${price}</p>
           <p>Quantity: {num}</p>
+          <p>Total: ${price * num}</p>
           <button id='addDonut'>Add</button>
           <button id='removeDonut'>Remove</button>
 
@@ -31,15 +35,7 @@ function Cart() {
 
         <br />
 
-        <div id='option2'>
-
-          <h3>Donut 2</h3>
-          <p>Price: ${price}</p>
-          <p>Quantity: {num}</p>
-          <button id='addDonut'>Add</button>
-          <button id='removeDonut'>Remove</button>
-
-        </div>
+        <h4 id='totalPrice'>Total Price: {}</h4>
 
       </section>
 

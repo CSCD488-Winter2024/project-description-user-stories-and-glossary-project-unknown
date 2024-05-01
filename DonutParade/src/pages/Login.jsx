@@ -4,6 +4,8 @@ import { auth } from '../scripts/FBconfig.js';
 import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 import User from './User';
 import listenToAuthState from '../scripts/AuthListener.js';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Login = () => {
   
@@ -57,11 +59,12 @@ const Login = () => {
     }
   };
   if (isLoggedIn) {
-    return <User />;
+    return <User uid={uid}/>;
   }
 
   return (
     <div id='loginContainer'>
+      <Header />
       <h2>Login</h2>
       <input
         type="email"
@@ -80,6 +83,7 @@ const Login = () => {
 
       <p></p>
       <p>Don't have an account? <a href='/signup'>Sign up here</a></p>
+      <Footer />
     </div>
   );
 };

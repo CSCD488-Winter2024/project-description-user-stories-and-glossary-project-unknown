@@ -29,7 +29,7 @@ const writeToPage = (data) => {
       menuBox.innerHTML = template;
       menuBox.querySelector("h3").textContent = data[key].name;
       menuBox.querySelector("p").textContent = data[key].desc;
-      //menuBox.querySelector("img").src = data[key].image;
+      menuBox.querySelector("img").src = data[key].image;
       // what about the price and stock, Lois?
       menuBox.querySelector(".add-to-cart-button").addEventListener("click", () => {
         console.log("Add to cart button clicked");

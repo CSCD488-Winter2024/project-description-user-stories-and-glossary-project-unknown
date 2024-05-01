@@ -33,6 +33,7 @@
 
 }
 
+
 #right-footer p {
     font-family: Montserrat, sans-serif;
     font-size: 16pt;
@@ -112,34 +113,45 @@
     #right-footer h1 {
         font-size: 20px;
         text-align: center;
+        margin-bottom: 5px; /* Reduce margin below headers */
     }
 
     #left-footer p,
     #right-footer p {
         font-size: 15px;
         text-align: center;
+        margin-bottom: 10px; /* Reduce margin below paragraphs */
     }
 
     #middle-footer img {
-        max-width: 150px;
+        max-width: 140px;
     }
 
     #social-media img {
-        width: 25px;
-        height: 25px;
+        width: 35px;
+        height: 35px;
     }
 
     #left-footer,
     #middle-footer,
     #right-footer {
-        margin-bottom: 45px; 
+        margin-bottom: 0px; /* Reduce overall margin between sections */
     }
-    
-    #left-footer,
-    #middle-footer,
-    #right-footer {
-        border-bottom: 1px solid white;
-        padding-bottom: 20px;
+
+    #middle-footer {
+        order: -1; /* Move logo and social media icons to the top */
+        margin-bottom: 20px; /* Add some space below logo and social media icons */
+    }
+
+    #location-info {
+        order: 2; /* Move phone number and email below logo and social media icons */
+        margin-top: 20px; /* Add some space between logo and phone number/email */
+    }
+
+    #right-footer h1,
+    #right-footer p,
+    #left-footer h1,
+    #location-info  {
+        display: none;
     }
 }
-

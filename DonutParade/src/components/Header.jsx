@@ -2,6 +2,7 @@ import React from 'react'
 import DonutParadeLogo from '../assets/DonutParadeLogoblack.png'
 import Cart from '../assets/Cart.png'
 import User from '../assets/User.png'
+import Bitten from '../assets/bitten.png'
 import '../styles/Header.css'
 
 function Header() {
@@ -9,6 +10,11 @@ function Header() {
 
     <div className='Header'>
       <a href='/'><img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' /></a>
+
+      <div id='helloUser' state='false'>
+        <img src={Bitten} alt="Donut" id='bitten' />
+        <h1>Welcome User</h1>
+      </div>
 
       <div id ='Navbar'>
         <ul>

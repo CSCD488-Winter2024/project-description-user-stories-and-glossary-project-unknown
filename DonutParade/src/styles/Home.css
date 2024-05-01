@@ -132,6 +132,8 @@ html, body {
     }
 }
 
+
+
 @media screen and (max-width: 500px) {
     #Home-content h1 {
         font-size: 2em;
@@ -147,6 +149,39 @@ html, body {
         left: 50%;
     }
 }
+
+@media screen and (max-width: 400px) {
+    #Home-content h1 {
+        font-size: 1.8em;
+        top: 50%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #Home-content p {
+        font-size: 0.8em;
+        top: 60%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #Home-content h1 {
+        font-size: 1.6em;
+        top: 50%; 
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #Home-content p {
+        font-size: 0.7em;
+        top: 60%; 
+        left: 50%;
+    }
+}
+
 
 
 

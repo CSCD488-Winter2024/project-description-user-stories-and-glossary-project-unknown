@@ -2,6 +2,13 @@
 /* for big letters in the middle */
 @import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
 
+.About {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
 #About-content {
   position: relative;
 }
@@ -32,7 +39,7 @@
   
 #About-content img {
   width: 100%;
-  height: 75vh; /* Adjust the value to shrink vertically */
+  height: 100%; /* Adjust the value to shrink vertically */
   filter: brightness(55%);
  
 }
@@ -170,9 +177,3 @@
     font-size: 0.8em;
   }
 }
-
-
-
-
-
-  

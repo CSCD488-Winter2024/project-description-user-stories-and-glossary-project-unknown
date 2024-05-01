@@ -6,7 +6,7 @@ import '../scripts/Menu.js'
 
 function Menu() {
   return (
-  <div class="menu">
+  <div class="Menu">
 
     <Header />
       

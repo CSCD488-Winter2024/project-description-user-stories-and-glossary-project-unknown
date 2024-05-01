@@ -103,3 +103,10 @@
   background: #1abc9c;
   color: white !important
 }
+
+#contactContainer img {
+    width: 35vw;
+    height: 55vh;
+    border: solid 10px;
+  
+}

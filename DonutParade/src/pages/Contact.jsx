@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import DonutShop from '../assets/DonutShop.png'
 import '../styles/Contact.css'
 
 function Contact() {
@@ -40,11 +41,11 @@ function Contact() {
         <li><span class="active">10</span></li>
         <li>11</li>
       </ul>
-
       <section id='contactContainer'>
-        <h1>Contact</h1>
+        <h1>Contact Us</h1>
+        <img src={DonutShop} alt="Shop" />
+        <p>(509) 473-9870</p>
         <p>For all inquiries, please email us at <a href='mailto:donutparadespokane@gmail.com'>donutparadespokane@gmail.com</a></p>
-        <p id='donut'>🍩</p>
       </section>
 
       <Footer />

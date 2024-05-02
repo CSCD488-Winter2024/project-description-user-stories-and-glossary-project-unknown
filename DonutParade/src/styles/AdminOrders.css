@@ -28,6 +28,7 @@
     margin-bottom:25px;
 }
 .order{
+    
     display: flex;
     flex-direction: column;
     margin:5px;
@@ -52,11 +53,11 @@
     flex-direction: column;
 }
 .order-buttons{
-    padding: 20px;
+    padding: 10px;
     font-family: Montserrat;
     font-weight: bold;
-    margin: 1rem;
+    margin: .5rem;
     border-radius: 5px;
     border-style: none;
-    background-color:#9BBD7A;
+    background-color:white;
 }

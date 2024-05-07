@@ -12,7 +12,7 @@
 
 #contactContainer p {
   font-family: 'Plein', sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   text-align: center; 
@@ -46,10 +46,135 @@
   padding: 10px 20px;
   background-color: #F2ADB7; 
   color: white;
-  text-decoration: none; 
   border-radius: 5px;
 }
 
 #phone-number-button:hover {
   background-color: #ADB7F2; 
 }
+
+/* Media Queries */
+@media screen and (min-width: 360px) {
+  #contactContainer img {
+    width: 80vw; 
+    height: auto;
+  }
+
+  #contactContainer p {
+    font-size: 1.5em; 
+  }
+
+  #contact {
+    font-size: 3.5em; 
+  }
+
+  #phone-number-button {
+    font-size: 1.2em; 
+  }
+}
+
+@media screen and (min-width: 400px) {
+  #contactContainer img {
+    width: 70vw; 
+  }
+
+  #contactContainer p {
+    font-size: 1.6em; 
+  }
+
+  #contact {
+    font-size: 4em; 
+  }
+
+  #phone-number-button {
+    font-size: 1.3em; 
+  }
+}
+
+@media screen and (min-width: 500px) {
+  #contactContainer img {
+    width: 60vw; 
+  }
+
+  #contactContainer p {
+    font-size: 1.7em; 
+  }
+
+  #contact {
+    font-size: 4.5em; 
+  }
+
+  #phone-number-button {
+    font-size: 1.4em; 
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #contactContainer {
+    padding: 20px; 
+  }
+
+  #contact {
+    font-size: 4em;
+  }
+
+  #phone-number-button {
+    padding: 15px 25px; 
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #contactContainer img {
+    width: 40vw; 
+  }
+
+  #contactContainer p {
+    font-size: 1.8em; 
+  }
+
+  #contact {
+    font-size: 5em; 
+  }
+
+  #phone-number-button {
+    font-size: 1.5em; 
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #contactContainer img {
+    width: 35vw; 
+  }
+
+  #contactContainer p {
+    font-size: 2em; 
+  }
+
+  #contact {
+    font-size: 5.5em; 
+  }
+
+  #phone-number-button {
+    font-size: 1.6em; 
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #contactContainer img {
+    width: 30vw; 
+  }
+
+  #contactContainer p {
+    font-size: 2.2em; 
+  }
+
+  #contact {
+    font-size: 6em;
+  }
+
+  #phone-number-button {
+    font-size: 1.7em; 
+  }
+}
+
+

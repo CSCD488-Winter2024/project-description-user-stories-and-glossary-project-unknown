@@ -3,117 +3,19 @@
   padding: 0;
 }
 
-.Contact, html {
-  height: 100%;
-  width: 100%;
-}
-
-.Contact {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #F8F8FF;
-}
-
-#contactContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.Contact ul {
-  list-style-type: none;
-}
-
-/* Month header */
-.month {
-  padding: 70px 25px;
-  background: #ADB7F2;
-  text-align: center;
-}
-
-/* Month list */
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white;
-  font-size: 40px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
-/* Previous button inside month header */
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-/* Next button */
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-
-/* Weekdays (Mon-Sun) */
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color:#ddd;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
-}
-
-/* Days (1-31) */
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #777;
-}
-
-/* Highlight the "current" day */
-.days li .active {
-  padding: 5px;
-  background: #1abc9c;
-  color: white !important;
-}
-
-/* about us section css */
 #contactContainer img {
   width: 30vw;
   height: 55vh;  
   filter: brightness(65%);
+  border: solid 5px #F2ADB7;
 }
 
 #contactContainer p {
   font-family: 'Plein', sans-serif;
   font-size: 1.5em;
-  color: #ADB7F2;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  text-align: center; /* Add this line to center the text */
+  text-align: center; 
 }
 
 #contactContainer {
@@ -123,7 +25,6 @@
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border: 10px solid #ADB7F2;
   padding: 13px; 
   max-width: 600px; 
   margin-left: auto; 
@@ -132,23 +33,23 @@
 
 #contact {
   font-family: 'Plein', sans-serif;
-  font-size: 2em;
-  color: #ADB7F2;
+  font-size: 5em;
+  color: #F2ADB7;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  text-align: center; /* Add this line to center the text */
+  text-align: center; 
   text-decoration: underline;
 }
 
 #phone-number-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ADB7F2; /* Pink color */
+  background-color: #F2ADB7; 
   color: white;
-  text-decoration: none; /* Remove underline from anchor tag */
+  text-decoration: none; 
   border-radius: 5px;
 }
 
 #phone-number-button:hover {
-  background-color: #F2ADB7; /* Darker pink color on hover */
+  background-color: #ADB7F2; 
 }

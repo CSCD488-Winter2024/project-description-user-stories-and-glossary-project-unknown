@@ -1,3 +1,5 @@
+@import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -6,14 +8,6 @@
 .Login, html {
     height: 100%;
     width: 100%;
-}
-
-.Login {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #f5f5f5;
 }
 
 #loginContainer {
@@ -26,14 +20,58 @@
 }
 
 
-#yo {
-    font-size: 40rem;
+#donut {
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    background-color: #F2ADB7;
 }
 
-#yo:hover {
-    background-color: green;
+#donut:hover {
+    background-color: #ADB7F2;
+}
+
+#h1 {
+    text-align: center;
+    font-family: 'Plein', sans-serif;
+    margin-top: 1.5rem;
+    font-size: 5em;
+    color: #F2ADB7;
+}
+
+#p {
+    text-align: center;
+    font-family: 'Plein', sans-serif;
+    margin-bottom: 4rem;
+    font-size: 1.5em;
+}
+
+#sign-in {
+    text-align: center;
+    font-family: 'Plein', sans-serif;
+    margin-top: 3rem;
+    font-size: 2em;
+}
+
+#centerContent {
+    text-align: center;
+}
+
+#centerContent form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#centerContent button {
+    margin: 15px 0; 
+}
+
+#centerContent input[type="email"],
+#centerContent input[type="password"] {
+    margin: 15px 0;
+    width: 300px;
+    height: 30px;
 }

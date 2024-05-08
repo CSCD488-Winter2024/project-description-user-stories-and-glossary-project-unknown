@@ -61,8 +61,8 @@ const Login = () => {
     <div className='loginContainer'>
       <Header />
       <div id='centerContent'>
-        <h1 id='h1'>Welcome!</h1>
-        <p id='sign-in'>Sign In</p>
+        {/* <h1 id='h1'>Welcome!</h1> */}
+        <h2 id='sign-in'>Sign In</h2>
         <form>
           <input
             type="email"

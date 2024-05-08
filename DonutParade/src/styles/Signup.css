@@ -59,6 +59,7 @@
     font-size: 1rem;
 }
 
-.Signup button:hover {
+.Signup #signed:hover, #showPassword:hover {
     cursor: pointer;
+    background-color: #F2ADB7;
 }

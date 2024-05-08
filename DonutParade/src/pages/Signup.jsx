@@ -39,7 +39,8 @@ const SignUp = () => {
         email: email,
         name: name,
         phone: phone,
-        carInfo: carInfo
+        carInfo: carInfo,
+        role: 'customer'
       });
 
       // Sign-up successful

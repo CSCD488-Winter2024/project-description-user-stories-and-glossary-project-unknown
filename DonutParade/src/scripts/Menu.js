@@ -18,7 +18,7 @@ const writeToPage = (data) => {
     let counter = 0;
     let menuRow;
     for (const key in data) {
-      if (counter % 3 === 0) {
+      if (counter % 1 === 0) {
         menuRow = document.createElement("div");
         menuRow.className = "menu-row";
         menuContainer.appendChild(menuRow);

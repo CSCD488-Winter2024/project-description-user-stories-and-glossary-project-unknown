@@ -12,9 +12,15 @@ let price = 0.00;
 // cartContent.innerHTML('beforeBegin', `<p>${yeah}</p>`);
 function Cart() {
 
+  const { state, dispatch } = useContext(CartContext);
+
+  const handleRemoveFromCart = (name) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: { name } });
+  };
+
   
   
-  
+
   
 
   return (
@@ -30,8 +36,19 @@ function Cart() {
         <h1>Cart</h1>
 
         <br />
+
+        <ul>
+          {state.items.map((item) => (
+            <li key={item.name}>
+               {item.name} x {item.quantity} {/*x {item.price} */}
+              <button onClick={() => handleRemoveFromCart(item.name)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+        <p>Total items: {state.itemCount}</p>
+        {/* <p>Total price: {state.total.toFixed(2)}</p> */}
         
-        <div id='option1'>
+        {/* <div id='option1'>
 
           <h3>Donut 1</h3>
           <p>Price: ${price}</p>
@@ -51,7 +68,7 @@ function Cart() {
           <button id='addDonut'>Add</button>
           <button id='removeDonut'>Remove</button>
 
-        </div>
+        </div> */}
 
       </section>
 

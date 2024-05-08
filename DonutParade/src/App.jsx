@@ -13,7 +13,7 @@ import ErrorPage from './pages/ErrorPage'
 import AdminOrders from './pages/AdminOrders'
 import AdminEdit from './pages/AdminEdit'
 import AdminHome from './pages/AdminHome'
-import { CartProvider } from './components/CartProvider'
+import { CartProvider } from './components/CartContext'
 
 
 

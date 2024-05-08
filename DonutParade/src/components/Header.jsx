@@ -17,7 +17,7 @@ function Header() {
 
         <div className="navbar mx-2 flex justify-between items-center w-auto">
             <a href='/'>
-                <img className='bg-red-100' src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' />
+                <img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' />
             </a>
             <div className="hidden sm:flex" id='miniNav'>
                 <a href="/menu">Menu</a>

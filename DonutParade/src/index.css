@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
 
@@ -9,7 +9,7 @@ a {
 }
 
 h1 {
-    font-family: Montserrat;    
+    font-family: Montserrat; 
 }
 
 h2 {
@@ -32,40 +32,17 @@ p {
     margin-top: auto;
 }
 
-#DonutParadeLogo {
-    width: 130px;
-    height: 110px;
-    /* margin-left: 1rem; */
-    
-}
-
-#Navbar {
-    /* overflow: auto; */
-    justify-content: flex-end;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    display: block;
-    /* color: #f2f2f2; */
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-
-#Navbar a {
-    /* list-style-type: none; */
-    margin-right: 1rem;
-    align-items: center;
+#miniNav a {
     font-size: 18pt;
-    text-align: center;
-}
+} 
 
-#Navbar a:hover {
+#miniNav a:hover {
     color: #BDD7BC;
     white-space: nowrap;
+}
+
+#miniNav {
+    gap: 2rem;
 }
 
 #helloUser {

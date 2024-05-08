@@ -7,7 +7,7 @@ import '../styles/Footer.css'
 
 function Footer() {
   return (
-    <div class="Footer">
+    <div className="Footer">
 
     <div id="left-footer">
         <h1>Location</h1>

@@ -6,6 +6,7 @@ import { ref, set } from 'firebase/database';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import Login from './Login.jsx';
+import '../styles/Signup.css';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -53,61 +54,70 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className='Signup'>
+
        {!isSignedUp ? ( // Render sign-up form if not signed up
        <>
+
       <Header />
+
       <h2>Sign Up</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+
+      <div id='signupContainer'>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
-        type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
-        placeholder="Confirm Password"
-        value={passwordConfirmation}
-        onChange={(e) => setPasswordConfirmation(e.target.value)}
+          type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+          type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
+          placeholder="Confirm Password"
+          value={passwordConfirmation}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
+          />
+        <input
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Phone Number"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Car Info"
-        value={carInfo}
-        onChange={(e) => setCarInfo(e.target.value)}
-      />
-      <button onClick={handleSignUp}>Sign Up</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
-          <button onClick={() => setShowPassword(!showPassword)}>
-            {showPassword ? "Hide Password" : "Show Password"}
-          </button>
+        <input
+          type="text"
+          placeholder="Phone Number"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Car Info"
+          value={carInfo}
+          onChange={(e) => setCarInfo(e.target.value)}
+        />
+        <button id='signed' onClick={handleSignUp}>Sign Up</button>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+        <button id='showPassword' onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? "Hide Password" : "Show Password"}
+        </button>
+
+      </div>
 
       <Footer />
+
       </>
       ) : (
         <>
-          <Login /> // Render AccountPage if signed up
+          <Login /> 
         </>
       )}
+
     </div>
   );
 };

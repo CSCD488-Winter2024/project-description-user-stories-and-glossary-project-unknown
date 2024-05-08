@@ -60,7 +60,7 @@ const SignUp = () => {
 
   return (
 
-    <div>
+    
       
     <div className='Signup'>
 

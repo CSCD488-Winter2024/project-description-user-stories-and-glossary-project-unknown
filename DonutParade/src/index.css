@@ -32,17 +32,12 @@ p {
     margin-top: auto;
 }
 
-#miniNav a {
-    font-size: 18pt;
-} 
-
-#miniNav a:hover {
-    color: #BDD7BC;
-    white-space: nowrap;
+#mobileNav a {
+    justify-content: center;
 }
 
-#miniNav {
-    gap: 2rem;
+#mobileNav a:hover {
+    color: #BDD7BC;
 }
 
 #helloUser {

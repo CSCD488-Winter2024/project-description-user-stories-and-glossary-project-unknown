@@ -32,12 +32,12 @@ function Header() {
               <summary id="nav-toggle" className="m-1 mx-3 btn block md:hidden">
                   <svg className="bg-white text-black h-auto w-10" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
               </summary>
-              <ul className="p-2 shadow menu dropdown-content z-[1] bg-green-100 rounded-box">
+              <ul id='mobileNav' className="p-2 shadow menu dropdown-content z-[1] bg-purple-200 rounded-box text-lg">
                   <li><a href="/menu">Menu</a></li>
                   <li><a href="/contact">Contact</a></li>
                   <li><a href="/about">About</a></li>
-                  <li><a href="/cart"><img src={Cart} alt="Cart" id='Cart' className="w-6 h-6 mx-2" /></a></li>
-                  <li><a href="/login"><img src={User} alt='User' id='User' className="w-6 h-6 mx-3" /></a></li>
+                  <li><a href="/cart"><img src={Cart} alt="Cart" id='Cart' className="w-6 h-6" /></a></li>
+                  <li><a href="/login"><img src={User} alt='User' id='User' className="w-6 h-6" /></a></li>
                 </ul>
             </details>
             

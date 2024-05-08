@@ -1,7 +1,5 @@
 // AdminRoute.jsx
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { useAuth } from './AuthContext'; // Custom hook to access authentication state
 
 const AdminRoute = ({ component: Component, ...rest }) => {
   const { currentUser } = useAuth(); // Get current user from context

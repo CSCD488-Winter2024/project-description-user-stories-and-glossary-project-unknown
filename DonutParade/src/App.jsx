@@ -13,11 +13,33 @@ import ErrorPage from './pages/ErrorPage'
 import AdminOrders from './pages/AdminOrders'
 import AdminEdit from './pages/AdminEdit'
 import AdminHome from './pages/AdminHome'
-import AdminRoute from './pages/AdminRoute'
+import RoleChecker from './pages/RoleChecker'
 
 
 
-const router = createBrowserRouter([
+const adminRoutes = [
+  // {
+  //   path: '/admin',
+  //   element: <RoleChecker><Outlet /></RoleChecker>, 
+  //   children: [
+  //     {
+  //       path: 'home',
+  //       element: <AdminHome />,
+  //     },
+  //     {
+  //       path: 'orders',
+  //       element: <AdminOrders />,
+  //     },
+  //     {
+  //       path: 'edit',
+  //       element: <AdminEdit />,
+  //     },
+  //   ],
+  // },
+];
+
+
+const routes = [
   {
     path: '/',
     element: <Home />,
@@ -56,28 +78,14 @@ const router = createBrowserRouter([
   },
   
   {
-    path: '/admin/home',
-    element: <AdminHome />,
-  },
-  {
-    path: '/admin/orders',
-    element: <AdminOrders />,
-  },
-  {
-    path: '/admin/edit',
-    element: <AdminEdit />,
-  },
-  {
-    path: '/admin',
-    element: <AdminRoute />,
-
-  },
-  {
     path: '*',
     element: <ErrorPage />,
   }
 
-])
+]
+
+const allRoutes = [...routes, ...adminRoutes];
+const router = createBrowserRouter(allRoutes);
 
 function App() {
 

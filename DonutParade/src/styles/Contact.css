@@ -56,56 +56,58 @@
 /* Media Queries */
 @media screen and (min-width: 360px) {
   #contactContainer img {
-    width: 80vw; 
+    width: 50vw; 
     height: auto;
   }
 
   #contactContainer p {
-    font-size: 1.5em; 
+    font-size: 1em; 
   }
 
   #contact {
-    font-size: 3.5em; 
+    font-size: 2.5em; 
   }
 
   #phone-number-button {
-    font-size: 1.2em; 
+    font-size: 1em; 
   }
 }
 
 @media screen and (min-width: 400px) {
   #contactContainer img {
-    width: 70vw; 
+    width: 50vw; 
+    height: auto;
   }
 
   #contactContainer p {
-    font-size: 1.6em; 
+    font-size: 1em; 
   }
 
   #contact {
-    font-size: 4em; 
+    font-size: 2.5em; 
   }
 
   #phone-number-button {
-    font-size: 1.3em; 
+    font-size: 1em; 
   }
 }
 
 @media screen and (min-width: 500px) {
   #contactContainer img {
-    width: 60vw; 
+    width: 50vw; 
+    height: auto;
   }
 
   #contactContainer p {
-    font-size: 1.7em; 
+    font-size: 1em; 
   }
 
   #contact {
-    font-size: 4.5em; 
+    font-size: 2.5em; 
   }
 
   #phone-number-button {
-    font-size: 1.4em; 
+    font-size: 1em; 
   }
 }
 

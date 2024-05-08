@@ -1,24 +1,44 @@
 #AdminEdit {
     display: flex;
+    flex-direction: column;
+
     height: 100vh; 
     width: 100vw; 
     align-items:center;
-    justify-content: center;
+    margin: 1rem;
 }
 table{
-    background-color: black;
+    background-color: grey;
     width:80%;
+    margin-top:1rem;
+    margin-bottom:1rem;
 }
-td{
+
+.content-td {
     font-family: Montserrat;
-    padding:1rem;
-    border: .25rem black solid;
-    border-radius: 5px;
+    padding: 1rem;
+    border: 0.25rem grey solid;
     background-color: white;
+  }
+  
+  .edit-button-container {
+    border: 0.25rem grey solid;
+    background-color: white;
+    font-family: Montserrat;
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-button {
+    flex: 1; 
+    border: none;
+    background-color: #F2ADB7; 
+    
+    color: white; 
+    padding: 1rem; 
+    transition: background-color 0.3s; 
 }
-.edit-button{
-    height: fit-content;
-    border-style: none;
-    padding-left:50%;
-    padding-right:50%;
+
+.edit-button:hover {
+  background-color: #ADB7F2; 
 }

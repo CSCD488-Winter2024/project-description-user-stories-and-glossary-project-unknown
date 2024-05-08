@@ -13,7 +13,7 @@ import ErrorPage from './pages/ErrorPage'
 import AdminOrders from './pages/AdminOrders'
 import AdminEdit from './pages/AdminEdit'
 import AdminHome from './pages/AdminHome'
-
+import AdminRoute from './pages/AdminRoute'
 
 
 
@@ -68,9 +68,15 @@ const router = createBrowserRouter([
     element: <AdminEdit />,
   },
   {
+    path: '/admin',
+    element: <AdminRoute />,
+
+  },
+  {
     path: '*',
     element: <ErrorPage />,
   }
+
 ])
 
 function App() {

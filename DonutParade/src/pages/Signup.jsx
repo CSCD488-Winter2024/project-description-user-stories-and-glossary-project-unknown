@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
+import Login from './Login.jsx';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -15,6 +16,8 @@ const SignUp = () => {
   const [phone, setPhone] = useState('');
   const [carInfo, setCarInfo] = useState('');
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [isSignedUp, setIsSignedUp] = useState(false); // Track sign-up status
 
   const handleSignUp = async () => {
     if (password !== passwordConfirmation) {
@@ -38,6 +41,8 @@ const SignUp = () => {
 
       // Sign-up successful
       console.log("Sign-up successful");
+      setSuccessMessage('Sign-up successful');
+      setIsSignedUp(true); // Update sign-up status
     } catch (error) {
       // Handle sign-up errors
       console.error(error.message);
@@ -47,6 +52,8 @@ const SignUp = () => {
 
   return (
     <div>
+       {!isSignedUp ? ( // Render sign-up form if not signed up
+       <>
       <Header />
       <h2>Sign Up</h2>
       <input
@@ -87,7 +94,15 @@ const SignUp = () => {
       />
       <button onClick={handleSignUp}>Sign Up</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+
       <Footer />
+      </>
+      ) : (
+        <>
+          <Login /> // Render AccountPage if signed up
+        </>
+      )}
     </div>
   );
 };

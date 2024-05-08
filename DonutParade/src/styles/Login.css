@@ -23,7 +23,7 @@
 }
 
 .loginContainer .Footer {
-    width: fill;
+    width: stretch;
     /* stick to bottom */
     overflow: hidden;
 }

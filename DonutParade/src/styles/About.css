@@ -3,6 +3,11 @@
 @import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
 
 
+.About {
+  width: 100%; 
+  overflow-x: hidden;
+}
+
 #About-content {
   position: relative;
   flex-grow: 1;

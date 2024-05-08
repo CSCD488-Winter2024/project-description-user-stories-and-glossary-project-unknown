@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.Signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+    overflow: auto;
+    /* box-sizing: border-box; */
+}
+
+.Signup .Header {
+    z-index: 0;
+    position:inherit;
+    /* width: 100%; */
+}
+
+.Signup .Footer {
+    width: 100%;
+}
+
+.Signup h2 {
+    padding: 1rem;
+}
+
+#signupContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.Signup input {
+    width: 50vw;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #BDD7BC;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+#signed, #showPassword {
+    width: 50vw;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #BDD7BC;
+    border-radius: 5px;
+    background-color: #BDD7BC;
+    color: black;
+    font-size: 1rem;
+}
+
+.Signup button:hover {
+    cursor: pointer;
+}

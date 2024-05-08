@@ -51,6 +51,8 @@ html, body {
     flex-direction: column;
     overflow: auto;
     background-color: #F8F8FF;
+    overflow-x: hidden;
+
 }
 
 /* Media Queries */

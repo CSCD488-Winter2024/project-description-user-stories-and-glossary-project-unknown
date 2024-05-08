@@ -18,6 +18,8 @@ const SignUp = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState('');
   const [isSignedUp, setIsSignedUp] = useState(false); // Track sign-up status
+  const [showPassword, setShowPassword] = useState(false); // Track password visibility
+
 
   const handleSignUp = async () => {
     if (password !== passwordConfirmation) {
@@ -63,17 +65,17 @@ const SignUp = () => {
         onChange={(e) => setEmail(e.target.value)}
       />
       <input
-        type="password"
+        type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        type="password"
+        />
+        <input
+        type={showPassword ? "text" : "password"} // Toggle input type based on showPassword state
         placeholder="Confirm Password"
         value={passwordConfirmation}
         onChange={(e) => setPasswordConfirmation(e.target.value)}
-      />
+        />
       <input
         type="text"
         placeholder="Name"
@@ -95,6 +97,9 @@ const SignUp = () => {
       <button onClick={handleSignUp}>Sign Up</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+          <button onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? "Hide Password" : "Show Password"}
+          </button>
 
       <Footer />
       </>

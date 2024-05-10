@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Cart.css'
+import { CartContext } from '../components/CartContext'
 
 let num = 0;
 let price = 0.00;
@@ -10,32 +11,44 @@ const option1 = document.querySelector('#cartContent');
 
 
 function Cart() {
+
+  const { state, dispatch } = useContext(CartContext);
+
+  const handleRemoveFromCart = (name) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: { name } });
+  };
+
+  
+  
+
+  
+
   return (
     <div className='Cart'>
 
 
       <Header />
+      
+      
 
-      <section id='cartContent'>
+      <section class='cartContent'>
 
         <h2>Cart</h2>
 
         <br />
+
+        <ul>
+          {state.items.map((item) => (
+            <li key={item.name}>
+               {item.name} x {item.quantity} {/*x {item.price} */}
+              <button onClick={() => handleRemoveFromCart(item.name)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+        <p>Total items: {state.itemCount}</p>
+        {/* <p>Total price: {state.total.toFixed(2)}</p> */}
         
-        <div id='donutTempelate'>
 
-          <h3 id=''>Donut 1</h3>
-          <p>Price: ${price}</p>
-          <p>Quantity: {num}</p>
-          <p>Total: ${price * num}</p>
-          <button id='addDonut'>Add</button>
-          <button id='removeDonut'>Remove</button>
-
-        </div>
-
-        <br />
-
-        <h4 id='totalPrice'>Total Price: {}</h4>
 
       </section>
 

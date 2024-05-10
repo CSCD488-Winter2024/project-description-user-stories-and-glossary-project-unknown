@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState }from 'react';
 import { signOut } from 'firebase/auth'; // Import the signOut function
-import { auth } from '../scripts/FBconfig.js'; // Import the auth object
+import { auth, firebaseApp } from '../scripts/FBconfig.js'; // Import the auth object
+import { getDatabase, ref, onValue } from "firebase/database";
+import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/User.css';
 
+const dbRef = ref(getDatabase(firebaseApp));
+
+
 function User({ uid }) {
+  
+  
+  const [userData, setUserData] = useState(null);
+
+  // Function to fetch user data from the database
+  const fetchUserData = () => {
+    const db = getDatabase(); // Get a reference to the database
+    const userRef = ref(db, `users/${uid}`); // Reference to the user's data in the database
+
+    // Listen for changes to the user's data
+    onValue(userRef, (snapshot) => {
+      const data = snapshot.val(); // Get the data from the snapshot
+      setUserData(data); // Set the user data state
+    });
+  };
+
+  useEffect(() => {
+    fetchUserData(); // Fetch user data when the component mounts
+  }, []);
+
+
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -18,17 +44,31 @@ function User({ uid }) {
     }
   };
 
+
   return (
     <div className='User'>
       <Header />
       <div id='profileContainer'>
         <img id='profilePic' src='' alt="Profile Picture" />
         <ul id="profile">
-          <p>User UID: {uid}</p>
-          <li>Username: <span id="username">donutLover</span></li>
-          <li>Email: <span id="email">something@yo.com</span></li>
-          <li>Phone Number: <span id='phoneNum'>(555) 555-5555</span></li>
-          <li>Car Info: <span id='vehicle'>Prius BMW Bright Green</span></li>
+          {userData && (
+            <>
+              <p>User UID: {uid}</p>
+              
+              {userData.email && <li>Email: <span id="email">{userData.email}</span></li>}
+              {userData.name && <li>Name: <span id="Name">{userData.name}</span></li>}
+              {userData.phoneNum && <li>Phone #: <span id="phone">{userData.phoneNum}</span></li>}
+              {userData.carInfo && <li>Car Info: <span id="Car Info">{userData.carInfo}</span></li>}
+              {userData.role === 'admin' && ( // Render link only if user has admin role
+                <li>
+                  <Link to="/admin/home">Admin Page</Link>
+                </li>
+              )}
+              
+
+              {/* Add other user data fields as needed */}
+            </>
+          )}
           <button onClick={handleSignOut}>Sign Out</button>
         </ul>
       </div>
@@ -49,6 +89,10 @@ function User({ uid }) {
       <Footer />
     </div>
   );
+
+
+  
 }
+
 
 export default User;

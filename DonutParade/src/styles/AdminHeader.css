@@ -31,4 +31,10 @@
     width: 130px;
     height: 110px;
     padding-left: 4rem;
+    padding-right:3rem;
+}
+.nav-option:hover {
+    color: #BDD7BC;
+    white-space: nowrap;
+    z-index: 3;
 }

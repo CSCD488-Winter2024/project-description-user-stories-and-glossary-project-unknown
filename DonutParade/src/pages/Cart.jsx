@@ -6,10 +6,10 @@ import { CartContext } from '../components/CartContext'
 
 let num = 0;
 let price = 0.00;
-// const {cart } = useContext(CartContext);
-// const cartContent = document.querySelector('.cartContent');
-// const yeah = "yeah";
-// cartContent.innerHTML('beforeBegin', `<p>${yeah}</p>`);
+
+const option1 = document.querySelector('#cartContent');
+
+
 function Cart() {
 
   const { state, dispatch } = useContext(CartContext);
@@ -33,7 +33,7 @@ function Cart() {
 
       <section class='cartContent'>
 
-        <h1>Cart</h1>
+        <h2>Cart</h2>
 
         <br />
 
@@ -48,27 +48,7 @@ function Cart() {
         <p>Total items: {state.itemCount}</p>
         {/* <p>Total price: {state.total.toFixed(2)}</p> */}
         
-        {/* <div id='option1'>
 
-          <h3>Donut 1</h3>
-          <p>Price: ${price}</p>
-          <p>Quantity: {num}</p>
-          <button id='addDonut'>Add</button>
-          <button id='removeDonut'>Remove</button>
-
-        </div>
-
-        <br />
-
-        <div id='option2'>
-
-          <h3>Donut 2</h3>
-          <p>Price: ${price}</p>
-          <p>Quantity: {num}</p>
-          <button id='addDonut'>Add</button>
-          <button id='removeDonut'>Remove</button>
-
-        </div> */}
 
       </section>
 

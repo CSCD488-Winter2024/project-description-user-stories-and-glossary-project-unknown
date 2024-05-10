@@ -1,167 +1,76 @@
+/* Import Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/* for big letters in the middle */
 @import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
+
+
+.About {
+  width: 100%; 
+  overflow-x: hidden;
+}
 
 #About-content {
   position: relative;
+  flex-grow: 1;
 }
-  
+
+#About-content h2,
+#About-content h3,
+#About-content h1,
+#About-content p {
+  margin: 20px 5%;
+}
+
 #About-content h2 {
   position: absolute;
-  top: 5%; 
-  left: 20%;    
-  transform: translateX(-50%);
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1;
   color: white;
-  font-size: 7em;
+  font-size: 8em;
   font-family: 'Plein', sans-serif;
 }
 
 #About-content h3 {
   position: absolute;
-  bottom: 45%; 
-  right: -10%;    
+  top: 28%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   color: white;
-  font-size: 2.5em;
+  font-size: 2em;
   font-family: 'Bevellier', sans-serif;
   font-style: italic;
-
 }
-  
+
 #About-content img {
   width: 100%;
-  height: 75vh; /* Adjust the value to shrink vertically */
+  height: auto;
   filter: brightness(55%);
- 
 }
-  
+
 #About-content h1,
 #About-content p {
-  margin-top: 30px; 
-  margin-bottom: 30px;
-  margin-left: 5%; /* Adjust left margin */
-  margin-right: 5%; /* Adjust right margin */
+  margin: 20px 5%;
+  font-family: 'Plein', sans-serif;
 }
 
-#About-content h1 {
-  font-size: 2em;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#About-content p {
-  font-size: 1.5em;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Media Screen CSS for Different Screen Sizes and Devices */
-@media screen and (max-width: 1700px) {
-  #About-content img {
-    height: 68vh;
-  }
-  #About-content h2 {
-    font-size: 6em;
-  }
-  #About-content h3 {
-    font-size: 2em;
-    top: 38%;
-    right: -10%;
-  }
-  #About-content h1 {
-    font-size: 2em;
-  }
-  #About-content p {
-    font-size: 1.8em;
-  }
-}
-@media screen and (max-width: 1440px) {
-  #About-content img {
-    height: 65vh;
-  }
-  #About-content h2 {
-    font-size: 5em;
-  }
-  #About-content h3 {
-    font-size: 1.8em;
-    top: 35%;
-    right: -10%;
-  }
-  #About-content h1 {
-    font-size: 1.8em;
-  }
-  #About-content p {
-    font-size: 1.6em;
-  }
-}
-@media screen and (max-width: 1280px) {
-  #About-content img {
-    height: 55vh;
-  }
-  #About-content h2 {
-    font-size: 4em;
-  }
-  #About-content h3 {
-    font-size: 1.6em;
-    top: 32%;
-    right: -15%;
-  }
-  #About-content h1 {
-    font-size: 1.6em;
-  }
-  #About-content p {
-    font-size: 1.4em;
-  }
-}
-@media screen and (max-width: 1024px) {
-  #About-content img {
-    height: 45vh;
-  }
-  #About-content h2 {
-    font-size: 3em;
-  }
-  #About-content h3 {
-    font-size: 1.6em;
-    top: 28%;
-    right: -20%;
-  }
-  #About-content h1 {
-    font-size: 1.4em;
-  }
-  #About-content p {
-    font-size: 1.2em;
-  }
-}
-@media screen and (max-width: 768px) {
-  #About-content img {
-    height: 35vh;
-  }
-  #About-content h2 {
-    font-size: 2em;
-  }
-  #About-content h3 {
-    font-size: 1.2em;
-    top: 22%;
-    right: -20%;
-  }
-  #About-content h1 {
-    font-size: 1.2em;
-  }
-  #About-content p {
-    font-size: 1em;
-  }
-}
-@media screen and (max-width: 500px) {
+/* Media Queries */
+@media screen and (min-width: 360px) {
   #About-content img {
     height: 25vh;
   }
   #About-content h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
+    top: 10%;
   }
   #About-content h3 {
-    font-size: 1em;
-    top: 22%; 
-    right: -20%;
+    font-size: 0.8em;
+    top: 13%; 
+    width: 100%; 
+    text-align: center; 
+    overflow: visible; 
+    white-space: normal; 
   }
   #About-content h1 {
     font-size: 1em;
@@ -171,8 +80,140 @@
   }
 }
 
+@media screen and (min-width: 400px) {
+  #About-content img {
+    height: 25vh;
+  }
+  #About-content h2 {
+    font-size: 1.6em;
+    top: 12%;
+  }
+  #About-content h3 {
+    font-size: 0.7em;
+    top: 16%;
+  }
+  #About-content h1 {
+    font-size: 0.9em;
+  }
+  #About-content p {
+    font-size: 0.7em;
+  }
+}
 
+@media screen and (min-width: 500px) {
+  #About-content img {
+    height: 25vh;
+  }
+  #About-content h2 {
+    font-size: 2em;
+    top: 12%;
+  }
+  #About-content h3 {
+    font-size: 1em;
+    top: 15%;
+  }
+  #About-content h1 {
+    font-size: 1.2em;
+  }
+  #About-content p {
+    font-size: 1em;
+  }
+}
 
+@media screen and (min-width: 600px) {
+  #About-content img {
+    height: 25vh;
+  }
+  #About-content h2 {
+    font-size: 2em;
+    top: 12%;
+  }
+  #About-content h3 {
+    font-size: 1em;
+    top: 15%;
+  }
+  #About-content h1 {
+    font-size: 1.2em;
+  }
+  #About-content p {
+    font-size: 1em;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  #About-content img {
+    height: 35vh;
+  }
+  #About-content h2 {
+    font-size: 2em;
+    top: 20%;
+  }
+  #About-content h3 {
+    font-size: 1em;
+    top: 24%;
+  }
+  #About-content h1 {
+    font-size: 1.2em;
+  }
+  #About-content p {
+    font-size: 1em;
+  }
+}
 
-  
+@media screen and (min-width: 1024px) {
+  #About-content img {
+    height: 45vh;
+  }
+  #About-content h2 {
+    font-size: 3em;
+  }
+  #About-content h3 {
+    font-size: 1em;
+    top: 25%;
+  }
+  #About-content h1 {
+    font-size: 1.4em;
+  }
+  #About-content p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #About-content img {
+    height: 55vh;
+  }
+  #About-content h2 {
+    font-size: 4em;
+  }
+  #About-content h3 {
+    font-size: 1.3em;
+    top: 25%;
+  }
+  #About-content h1 {
+    font-size: 1.8em;
+  }
+  #About-content p {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #About-content img {
+    height: 65vh;
+  }
+  #About-content h2 {
+    font-size: 5em;
+    top: 20%;
+  }
+  #About-content h3 {
+    font-size: 1.5em;
+    top: 27%;
+  }
+  #About-content h1 {
+    font-size: 2em;
+  }
+  #About-content p {
+    font-size: 1.5em;
+  }
+}

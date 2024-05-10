@@ -108,17 +108,16 @@ const template = `
 
 
   return (
-  <div class="menu">
+  <div className="Menu">
 
     <Header />
       
+      <section className="page-content">
 
-      <section class="page-content">
+        <h1 className="page-title-header">Our Menu</h1>
+        {/* <p>Paragraph goes here</p> */}
 
-        <h1 class="page-title-header">Our Menu</h1>
-        <p>Paragraph goes here</p>
-
-        <div class="menu-grid">
+        <div className="menu-grid">
 
           <div class="menu-row">
           

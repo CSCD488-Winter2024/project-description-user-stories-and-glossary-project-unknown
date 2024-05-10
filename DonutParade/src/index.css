@@ -1,3 +1,7 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
 a {
     text-decoration: none;
     font-family: Montserrat;
@@ -5,7 +9,7 @@ a {
 }
 
 h1 {
-    font-family: Montserrat;    
+    font-family: Montserrat; 
 }
 
 h2 {
@@ -28,39 +32,46 @@ p {
     margin-top: auto;
 }
 
-.Header {
-    height: 150px;
-}
-
-#DonutParadeLogo {
-    width: 130px;
-    height: 110px;
-    margin-left: 4rem;
-}
-
-.Navbar {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    overflow: auto;
-}
-
-.Navbar ul {
-    display: flex;
-    list-style-type: none;
-    margin-right: 1rem;
-    align-items: center;
-}
-
-.Navbar ul li {
-    padding: 1rem;
-    text-align: center;
-    font-size: 18pt;
-    text-decoration: none;
-    color: purple;
-}
-
-.Navbar a:hover {
+#miniNav a:hover {
     color: #BDD7BC;
-    white-space: nowrap;
+}
+
+#mobileNav a:hover{
+    color: #BDD7BC;
+    background-color: purple;
+}
+
+#mobileNav a {
+    justify-content: center;
+}
+
+#mobileNav a:hover {
+    color: #BDD7BC;
+}
+
+#helloUser {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: none;
+}
+
+#helloUser h1 {
+    animation: slideIn;
+    animation-duration: 5s;
+}
+
+#bitten {
+    width: 100px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-25%, 0);
+        opacity: 0;
+        color: pink;
+    }
+    to {
+        opacity: 1;
+    }
 }

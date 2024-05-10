@@ -5,7 +5,7 @@
     color: white;
     padding: 3em;
     display: flex;
-
+    
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -32,6 +32,7 @@
     margin-top: 5px;
 
 }
+
 
 #right-footer p {
     font-family: Montserrat, sans-serif;
@@ -112,16 +113,18 @@
     #right-footer h1 {
         font-size: 20px;
         text-align: center;
+        margin-top: 5px; 
     }
 
     #left-footer p,
     #right-footer p {
         font-size: 15px;
         text-align: center;
+        margin-bottom: 5px; 
     }
 
     #middle-footer img {
-        max-width: 150px;
+        max-width: 100px;
     }
 
     #social-media img {
@@ -132,14 +135,23 @@
     #left-footer,
     #middle-footer,
     #right-footer {
-        margin-bottom: 45px; 
+        margin: -15px; 
     }
-    
-    #left-footer,
-    #middle-footer,
-    #right-footer {
-        border-bottom: 1px solid white;
-        padding-bottom: 20px;
+
+    #middle-footer {
+        order: -1; 
+        margin-bottom: 20px; 
+    }
+
+    #location-info {
+        order: 2; 
+        margin-top: 20px; 
+    }
+
+    #right-footer h1,
+    #right-footer p,
+    #left-footer h1,
+    #location-info  {
+        display: none;
     }
 }
-

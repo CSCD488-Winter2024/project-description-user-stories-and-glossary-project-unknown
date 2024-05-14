@@ -31,7 +31,7 @@ function Cart() {
       
       
 
-      <section class='cartContent'>
+      <section id='cartContent'>
 
         <h2>Cart</h2>
 

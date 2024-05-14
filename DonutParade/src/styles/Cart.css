@@ -3,12 +3,12 @@
     padding: 0;
 }
 
-.Cart, html, body {
+html, body {
     height: 100%;
     width: 100%;
 }
 
-.Cart {
+.Cart, body {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -19,4 +19,6 @@
 
 #cartContent {
     padding: 2rem;
+    background-color: red;
+    height: 100vh;
 }

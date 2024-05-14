@@ -41,7 +41,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .Home {
@@ -49,9 +49,9 @@ html, body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    /* overflow: auto; */
     background-color: #F8F8FF;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 
 }
 

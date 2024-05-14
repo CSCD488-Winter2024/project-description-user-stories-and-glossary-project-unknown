@@ -16,14 +16,15 @@
 }
 
 .menu-row{
-    margin: 3em;
+    margin: 3rem;
     /* flex-direction: row; */
     flex-wrap: wrap;
     display: grid;
     /* Make it rows of 4 */
     grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-right: 0.5rem;
     margin-bottom: 4vh;
 }
 
@@ -92,6 +93,15 @@
 @media (max-width: 768px) { /* For 2 columns on smaller screens */
     .flex-item {
         flex-basis: calc(50% - 20px);
+    }
+
+    .Menu {
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .Menu .Footer {
+        width: stretch;
     }
 }
 

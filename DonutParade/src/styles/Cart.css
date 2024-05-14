@@ -6,19 +6,88 @@
 html, body {
     height: 100%;
     width: 100%;
+    
 }
-
 .Cart, body {
     width: 100vw;
     height: 100vh;
+    display:flex;
+}
+.quantity-row{
+    display: flex;
+    flex-direction: row;
+}
+.name-and-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.button-in-cart{
+    padding:10px;
+    background-color:#ADB7F2;
+    border-style: none;
+    border-radius:5px;
+    height:2rem;
+    width:2rem;
+    justify-content: center;
+    align-content: center;
+    display:flex;
+    color:white;
+    font-family: Montserrat;
+    font-weight: bolder;
+}
+.payment-box{
+    height:50vh;
+    width: 80%;
+    background-color:pink;
+    position: sticky; 
+    top: 0;
+    border-radius:50px;
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    align-items: center;
+    color:white;
+    padding:1rem;
 }
-
 
 #cartContent {
     padding: 2rem;
-    background-color: red;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding:2%;
+    width: 60%; 
+    height: 100%;
+}
+
+.order-detail{
+    margin:10px;
+}
+
+#donutImage{
+    margin: 10px;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5px;
+}
+
+#donutTempelate {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    border-bottom: solid lightgrey 2px;
+}
+
+.payment-side {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#totalPrice {
+    margin: 2rem;
 }

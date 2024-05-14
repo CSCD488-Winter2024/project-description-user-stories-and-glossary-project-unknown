@@ -27,7 +27,9 @@ function Cart() {
     <div className='Cart'>
 
       <Header />
+
       <div class="cart-content">
+
         <section id='cartContent'>
 
           <br />
@@ -50,7 +52,8 @@ function Cart() {
 
 
           </div>
-          <div id='donutTempelate'>
+
+          {/* <div id='donutTempelate'>
             <img id="donutImage" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.7-zZ1ANn7A0WUX7M0hMfUQHaHa%26pid%3DApi&f=1&ipt=d629d9c0984eeee12dd1780034285437bae02281cf7442ba6e810c0785dcd001&ipo=images" alt="Item Image" />
             <div>
               <div class="name-and-price">
@@ -63,17 +66,17 @@ function Cart() {
                 <p class="order-detail" id="donutQuantity">{num}</p>
                 <button class="order-detail button-in-cart" id='addDonut'>+</button>
               </div>
+            </div> */}
 
-            </div>
 
-
-          </div>
+          {/* </div> */}
 
           <br />
 
           <h4 id='totalPrice'>Total Price: { }</h4>
 
         </section>
+
         <section class="payment-side">
           <div class="payment-box">
             <h3>Payment goes here</h3>

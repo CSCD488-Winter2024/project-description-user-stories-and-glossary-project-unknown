@@ -6,23 +6,27 @@
 html, body {
     height: 100%;
     width: 100%;
-    
 }
-.Cart, body {
+
+.Cart {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display:flex;
+    flex-direction: column;
 }
-.quantity-row{
+
+.quantity-row {
     display: flex;
     flex-direction: row;
 }
-.name-and-price{
+
+.name-and-price {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.button-in-cart{
+
+.button-in-cart {
     padding:10px;
     background-color:#ADB7F2;
     border-style: none;
@@ -36,12 +40,13 @@ html, body {
     font-family: Montserrat;
     font-weight: bolder;
 }
+
 .payment-box{
-    height:50vh;
+    height: 50vh;
     width: 80%;
     background-color:pink;
-    position: sticky; 
-    top: 0;
+    /* position: sticky;  */
+    /* top: 0; */
     border-radius:50px;
     display: flex;
     flex-direction: column;
@@ -50,7 +55,7 @@ html, body {
     padding:1rem;
 }
 
-#cartContent {
+/* #cartContent {
     padding: 2rem;
     height: 100vh;
     display: flex;
@@ -58,7 +63,7 @@ html, body {
     padding:2%;
     width: 60%; 
     height: 100%;
-}
+} */
 
 .order-detail{
     margin:10px;
@@ -76,6 +81,7 @@ html, body {
     flex-direction: row;
     padding: 2rem;
     border-bottom: solid lightgrey 2px;
+    justify-content: center;
 }
 
 .payment-side {

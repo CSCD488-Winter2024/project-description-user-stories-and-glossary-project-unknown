@@ -26,12 +26,9 @@ function Cart() {
   return (
     <div className='Cart'>
 
-
       <Header />
       <div class="cart-content">
         <section id='cartContent'>
-
-          <h2>Cart</h2>
 
           <br />
     

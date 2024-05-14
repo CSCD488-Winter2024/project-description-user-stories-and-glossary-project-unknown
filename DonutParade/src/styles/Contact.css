@@ -5,6 +5,14 @@
   padding: 0;
 }
 
+.Contact {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
 #contactContainer img {
   width: 30vw;
   height: 55vh;  

@@ -15,15 +15,16 @@
 
 }
 
-.menu-grid{
-    margin: 3em;
+.menu-row{
+    margin: 3rem;
     /* flex-direction: row; */
     flex-wrap: wrap;
     display: grid;
+    /* Make it rows of 4 */
     grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(17em, 1fr));
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
+    margin-right: 0.5rem;
     margin-bottom: 4vh;
 }
 
@@ -41,7 +42,7 @@
     flex-direction: column;
     width: 17em;
     min-width: 17em;
-    min-height:17em;
+    min-height: 17em;
     height: 17em;
     background-color: #BDD7BC;
     border-radius: 10px;
@@ -50,7 +51,7 @@
     text-align: center;
     color: white;
     margin: 10px;
-    padding: 0px 0px 10px ;
+    padding: 10px 0px 5px;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -62,7 +63,12 @@
     border: none;
     color: white;
     font-weight: bold;
-} 
+}
+
+.add-to-cart-button:hover {
+    background-color: #7B8CF0;
+    cursor: pointer;
+}
 
 .img-container {
     margin-bottom:10px;
@@ -87,6 +93,15 @@
 @media (max-width: 768px) { /* For 2 columns on smaller screens */
     .flex-item {
         flex-basis: calc(50% - 20px);
+    }
+
+    .Menu {
+        align-items: center;
+        /* justify-content: center; */
+    }
+
+    .Menu .Footer {
+        width: stretch;
     }
 }
 

@@ -5,37 +5,49 @@
     padding: 0;
 }
 
-.Login, html {
+.loginContainer, html {
     height: 100%;
     width: 100%;
 }
 
-#loginContainer {
+.loginContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    margin-top: 1rem;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* padding: 1rem; */
+    /* margin-top: 1rem; */
+}
+
+.loginContainer .Footer {
+    width: stretch;
+    /* stick to bottom */
+    overflow: hidden;
 }
 
 
 #donut {
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    background-color: #F2ADB7;
+    width: 50vw;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #BDD7BC;
+    border-radius: 5px;
+    background-color: #BDD7BC;
+    color: black;
+    font-size: 1rem;
 }
 
 #donut:hover {
-    background-color: #ADB7F2;
+    cursor: pointer;
+    background-color: #F2ADB7;
 }
 
 #h1 {
     text-align: center;
-    font-family: 'Plein', sans-serif;
+    /* font-family: 'Plein', sans-serif; */
     margin-top: 1.5rem;
     font-size: 5em;
     /* color: #F2ADB7; */
@@ -45,14 +57,11 @@
     text-align: center;
     font-family: 'Plein', sans-serif;
     margin-bottom: 4rem;
-    font-size: 1.5em;
 }
 
 #sign-in {
     text-align: center;
-    font-family: 'Plein', sans-serif;
-    margin-top: 3rem;
-    font-size: 2em;
+    margin-top: 2rem;
 }
 
 #centerContent {
@@ -71,7 +80,10 @@
 
 #centerContent input[type="email"],
 #centerContent input[type="password"] {
-    margin: 15px 0;
-    width: 300px;
-    height: 30px;
+    width: 50vw;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #BDD7BC;
+    border-radius: 5px;
+    flex-grow: 1;
 }

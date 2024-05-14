@@ -32,6 +32,15 @@ p {
     margin-top: auto;
 }
 
+#miniNav a:hover {
+    color: #BDD7BC;
+}
+
+#mobileNav a:hover{
+    color: #BDD7BC;
+    background-color: purple;
+}
+
 #mobileNav a {
     justify-content: center;
 }

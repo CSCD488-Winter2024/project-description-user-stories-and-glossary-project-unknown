@@ -20,6 +20,7 @@ const SignUp = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isSignedUp, setIsSignedUp] = useState(false); // Track sign-up status
   const [showPassword, setShowPassword] = useState(false); // Track password visibility
+  
 
 
   const handleSignUp = async () => {
@@ -39,7 +40,8 @@ const SignUp = () => {
         email: email,
         name: name,
         phone: phone,
-        carInfo: carInfo
+        carInfo: carInfo,
+        role: 'customer'
       });
 
       // Sign-up successful
@@ -52,13 +54,17 @@ const SignUp = () => {
       setError(error.message);
     }
   };
+  if (isSignedUp) {
+    return <Login/>;
+  }
 
   return (
+
+    
+      
     <div className='Signup'>
 
-       {!isSignedUp ? ( // Render sign-up form if not signed up
-       <>
-
+       
       <Header />
 
       <h2>Sign Up</h2>
@@ -106,18 +112,8 @@ const SignUp = () => {
         <button id='showPassword' onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? "Hide Password" : "Show Password"}
         </button>
-
       </div>
-
-      <Footer />
-
-      </>
-      ) : (
-        <>
-          <Login /> 
-        </>
-      )}
-
+      <Footer />     
     </div>
   );
 };

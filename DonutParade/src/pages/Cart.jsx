@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Cart.css'
+import { CartContext } from '../components/CartContext'
 
 let num = 0;
 let price = 0.00;
@@ -10,6 +11,18 @@ const option1 = document.querySelector('#cartContent');
 
 
 function Cart() {
+
+  const { state, dispatch } = useContext(CartContext);
+
+  const handleRemoveFromCart = (name) => {
+    dispatch({ type: 'REMOVE_FROM_CART', payload: { name } });
+  };
+
+  
+  
+
+  
+
   return (
     <div className='Cart'>
 
@@ -21,7 +34,7 @@ function Cart() {
           <h2>Cart</h2>
 
           <br />
-
+    
           <div id='donutTempelate'>
             <img id="donutImage" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.7-zZ1ANn7A0WUX7M0hMfUQHaHa%26pid%3DApi&f=1&ipt=d629d9c0984eeee12dd1780034285437bae02281cf7442ba6e810c0785dcd001&ipo=images" alt="Item Image" />
             <div>

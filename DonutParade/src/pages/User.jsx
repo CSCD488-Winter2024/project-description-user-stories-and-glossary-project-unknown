@@ -2,6 +2,7 @@ import React, { useEffect, useState }from 'react';
 import { signOut } from 'firebase/auth'; // Import the signOut function
 import { auth, firebaseApp } from '../scripts/FBconfig.js'; // Import the auth object
 import { getDatabase, ref, onValue } from "firebase/database";
+import { Link } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -58,6 +59,11 @@ function User({ uid }) {
               {userData.name && <li>Name: <span id="Name">{userData.name}</span></li>}
               {userData.phoneNum && <li>Phone #: <span id="phone">{userData.phoneNum}</span></li>}
               {userData.carInfo && <li>Car Info: <span id="Car Info">{userData.carInfo}</span></li>}
+              {userData.role === 'admin' && ( // Render link only if user has admin role
+                <li>
+                  <Link to="/admin/home">Admin Page</Link>
+                </li>
+              )}
               
 
               {/* Add other user data fields as needed */}

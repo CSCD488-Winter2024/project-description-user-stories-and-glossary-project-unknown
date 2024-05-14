@@ -17,12 +17,23 @@
 
 .menu-grid{
     margin: 3em;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17em, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(17em, 1fr));
     align-items: center;
     justify-content: center;
     margin-bottom: 4vh;
+}
+
+.page-title-header {
+    /* font-family: 'Montserrat', sans-serif; */
+    font-size: 2em;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
 }
 
 .menu-box{

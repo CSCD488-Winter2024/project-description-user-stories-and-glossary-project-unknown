@@ -47,9 +47,11 @@ function User({ uid }) {
 
   return (
     <div className='User'>
+
       <Header />
+
       <div id='profileContainer'>
-        <img id='profilePic' src='' alt="Profile Picture" />
+        {/* <img id='profilePic' src='' alt="Profile Picture" /> */}
         <ul id="profile">
           {userData && (
             <>
@@ -87,6 +89,7 @@ function User({ uid }) {
       </div>
 
       <Footer />
+      
     </div>
   );
 

@@ -48,13 +48,15 @@ function User({ uid }) {
 
   return (
     <div className='User'>
+
       <Header />
+
       <div id='profileContainer'>
-        <img id='profilePic' src='' alt="Profile Picture" />
+        <img id='profilePic' src='https://media2.giphy.com/media/Z8TMfZMaee8t2minLW/giphy.webp?cid=790b7611389jztomi8aborp21f9ei0ra2ce214gfm0qyfnsm&ep=v1_gifs_search&rid=giphy.webp&ct=gf' alt="Profile Picture" />
         <ul id="profile">
           {userData && (
             <>
-              <p>User UID: {uid}</p>
+              <p id = 'hideme'>User UID: {uid}</p>
               
               {userData.email && <li>Email: <span id="email">{userData.email}</span></li>}
               {userData.name && <li>Name: <span id="Name">{userData.name}</span></li>}
@@ -89,6 +91,7 @@ function User({ uid }) {
       <RoleChecker userId={uid} /> 
 
       <Footer />
+      
     </div>
   );
   

@@ -13,7 +13,9 @@ import ErrorPage from './pages/ErrorPage'
 import AdminOrders from './pages/AdminOrders'
 import AdminEdit from './pages/AdminEdit'
 import AdminHome from './pages/AdminHome'
+import { CartProvider } from './components/CartContext'
 import RoleChecker from './pages/RoleChecker'
+
 
 
 
@@ -109,8 +111,9 @@ function App() {
 
   return (
       <div className='App'>
-
+        <CartProvider>
         <RouterProvider router={router} />
+        </CartProvider>
         
       </div>
   )

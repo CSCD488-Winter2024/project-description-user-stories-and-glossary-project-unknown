@@ -3,29 +3,30 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
-.loginContainer, html {
+html, body {
     height: 100%;
     width: 100%;
 }
 
-.loginContainer {
+.Login {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    height: 100vh;
+    width: 100vw;
     overflow: auto;
-    /* padding: 1rem; */
-    /* margin-top: 1rem; */
 }
 
-.loginContainer .Footer {
-    width: stretch;
-    /* stick to bottom */
-    overflow: hidden;
+.Login .Header {
+    position: relative;
+}
+
+.Login .Footer {
+    /* width: stretch; */
 }
 
 
@@ -61,17 +62,17 @@
 
 #sign-in {
     text-align: center;
-    margin-top: 2rem;
+    padding: 2rem;
+    /* margin-top: 2rem; */
 }
 
 #centerContent {
-    text-align: center;
-}
-
-#centerContent form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    height: 100%;
+    flex-wrap: wrap;
 }
 
 #centerContent button {

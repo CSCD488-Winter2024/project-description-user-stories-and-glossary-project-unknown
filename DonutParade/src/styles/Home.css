@@ -3,6 +3,17 @@
 /* for big letters in the middle */
 @import url("https://api.fontshare.com/v2/css?f[]=plein@300,301,400,401,500,501,700,701,900,901,1,2&display=swap");
 
+.Home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* overflow: auto; */
+    background-color: #F8F8FF;
+    /* overflow-x: hidden; */
+
+}
+
 #Home-content {
     position: relative;
     height: 100vh;
@@ -41,18 +52,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-.Home {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    background-color: #F8F8FF;
-    overflow-x: hidden;
-
+    /* box-sizing: border-box; */
 }
 
 /* Media Queries */

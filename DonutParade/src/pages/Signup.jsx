@@ -59,9 +59,6 @@ const SignUp = () => {
   }
 
   return (
-
-    
-      
     <div className='Signup'>
 
        

@@ -59,18 +59,22 @@ const Login = () => {
   }
 
   return (
-    <div className='loginContainer'>
+    <div className='Login'>
+
       <Header />
+
       <div id='centerContent'>
         {/* <h1 id='h1'>Welcome!</h1> */}
         <h2 id='sign-in'>Sign In</h2>
         <form>
+
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+
           <input
             type="password"
             placeholder="Password"
@@ -83,11 +87,17 @@ const Login = () => {
             value="L🍩G I N"
             onClick={handleLogin}
           />
+
+          <button id='donut' onClick={handleLogin}>L 🍩 G I N</button>
+
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <p id='p'>Don't have an account? <a href='/signup' style={{ textDecoration: 'underline' }}>Sign up here</a></p>
+
       </div>
+
       <Footer />
+
     </div>
   );
 };

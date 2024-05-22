@@ -20,7 +20,7 @@ function Header() {
                 <img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' />
             </a>
             <div className="hidden md:flex dropdown" id='miniNav'>
-              <ul className='md:flex gap-4 hidden:menu'>
+              <ul className='md:flex gap-4 hidden:menu mx-4'>
                 <a href="/menu">Menu</a>
                 <a href="/contact">Contact</a>
                 <a href="/about">About</a>

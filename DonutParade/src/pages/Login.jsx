@@ -88,7 +88,7 @@ const Login = () => {
             onClick={handleLogin}
           />
 
-          <button id='donut' onClick={handleLogin}>L 🍩 G I N</button>
+          {/* <button id='donut' onClick={handleLogin}>L 🍩 G I N</button> */}
 
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}

@@ -88,7 +88,7 @@ function User({ uid }) {
           </ul>
         </div>
       </div>
-      <RoleChecker userId={uid} /> 
+      {/* <RoleChecker userId={uid} />  */}
 
       <Footer />
       

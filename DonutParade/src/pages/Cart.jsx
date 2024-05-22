@@ -50,7 +50,7 @@ function Cart() {
 
       <Header />
 
-      <div class="cart-content">
+      <div class="cart-page-content">
 
         <section id='cartContent'>
 
@@ -79,7 +79,7 @@ function Cart() {
             {state.items.map((item) => (
               <div id='donutTempelate' key={item.name}>
               <img id="donutImage" src={item.image} alt={item.name} />
-              <div>
+              <div className="left-align-info">
                 <div class="name-and-price">
                   <h3 class="order-detail" id='donutName'>{item.name}</h3>
                   <p class="order-detail" id="donutPrice">Price: ${item.price}</p>
@@ -98,7 +98,7 @@ function Cart() {
               
             ))}
           </ul>
-          <p>Total items: {state.itemCount}</p>
+          <p id="totalQuantity">Total items: {state.itemCount}</p>
         {/* <p>Total price: {state.total.toFixed(2)}</p> */}
 
           {/* <div id='donutTempelate'>

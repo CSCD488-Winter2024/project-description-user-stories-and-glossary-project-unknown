@@ -3,8 +3,8 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import '../styles/Cart.css'
 import { CartContext } from '../components/CartContext'
-import { getDatabase, ref, push } from "firebase/database";
-import {firebaseApp} from "../scripts/FBconfig.js";
+import { getDatabase, ref, push, set } from "firebase/database";
+import {firebaseApp, db} from "../scripts/FBconfig.js";
 
 let num = 0;
 let price = 0.00;
@@ -31,16 +31,14 @@ function Cart() {
   
 
   const handlePlaceOrder = () => {
-    let ordersRef = ref(getDatabase(firebaseApp), 'Orders');
     // Assuming you have additional data like date, Donuts, total, and acc
-    const orderData = {
-      date: new Date().toISOString(), // Current date and time
+    push(ref(db, 'Order'), {
+      date: new Date().toString(), // Current date and time
       Donuts: state.items, // Assuming state.items contains the donuts in the cart
-      total: state.itemCount, // Total items of the order
-      acc: "Jakson hehe" 
-    };
-    console.log(orderData);
-    ordersRef.push(orderData);
+      itemCount: state.itemCount, // Total items of the order
+      total: state.total, // Total price of the order
+      acc: "Jakson hehe"
+    });
   };
   
   

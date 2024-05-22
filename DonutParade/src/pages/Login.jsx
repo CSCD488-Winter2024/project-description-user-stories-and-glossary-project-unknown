@@ -40,6 +40,7 @@ const Login = () => {
   }, []); 
 
   const handleLogin = async () => {
+    // e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Login successful
@@ -76,7 +77,12 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button id='donut' onClick={handleLogin}>L🍩G I N</button>
+          <input 
+            type="button"
+            id="donut"
+            value="L🍩G I N"
+            onClick={handleLogin}
+          />
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <p id='p'>Don't have an account? <a href='/signup' style={{ textDecoration: 'underline' }}>Sign up here</a></p>

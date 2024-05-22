@@ -18,7 +18,7 @@ import RoleChecker from './pages/RoleChecker'
 
 
 const adminRoutes = [
-  // {
+  {
   //   path: '/admin',
   //   element: <RoleChecker><Outlet /></RoleChecker>, 
   //   children: [
@@ -35,7 +35,7 @@ const adminRoutes = [
   //       element: <AdminEdit />,
   //     },
   //   ],
-  // },
+  },
 ];
 
 
@@ -76,6 +76,24 @@ const routes = [
     path: '/forgot',
     element: <ForgotPassword />,
   },
+  {
+    path: '/admin', 
+    children: [
+      {
+        path: 'home',
+        element: <AdminHome />,
+      },
+      {
+        path: 'orders',
+        element: <AdminOrders />,
+      },
+      {
+        path: 'edit',
+        element: <AdminEdit />,
+      },
+    ],
+  }
+  ,
   
   {
     path: '*',

@@ -3,6 +3,7 @@ import { signOut } from 'firebase/auth'; // Import the signOut function
 import { auth, firebaseApp } from '../scripts/FBconfig.js'; // Import the auth object
 import { getDatabase, ref, onValue } from "firebase/database";
 import { Link } from 'react-router-dom';
+import RoleChecker from './RoleChecker.jsx';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -30,7 +31,7 @@ function User({ uid }) {
 
   useEffect(() => {
     fetchUserData(); // Fetch user data when the component mounts
-  }, []);
+  }, [uid]);
 
 
   const handleSignOut = async () => {
@@ -85,12 +86,13 @@ function User({ uid }) {
           </ul>
         </div>
       </div>
+      <RoleChecker userId={uid} /> 
 
       <Footer />
     </div>
   );
-
-
+  
+  
   
 }
 

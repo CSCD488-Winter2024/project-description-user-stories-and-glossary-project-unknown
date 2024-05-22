@@ -16,7 +16,7 @@ function AdminHeader() {
 
 
         <div className="navbar mx-2 flex justify-between items-center w-auto text-2xl">
-            <a href='/admin/home'>
+            <a href='/admin/orders'>
                 <img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' />
                 <h2>Admin</h2>
             </a>

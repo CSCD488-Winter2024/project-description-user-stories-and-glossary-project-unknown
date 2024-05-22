@@ -25,10 +25,6 @@ const adminRoutes = [
     //element: <RoleChecker><Outlet /></RoleChecker>, 
     children: [
       {
-        path: 'home',
-        element: <AdminHome />,
-      },
-      {
         path: 'orders',
         element: <AdminOrders />,
       },

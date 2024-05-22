@@ -33,8 +33,8 @@ function AdminHeader() {
               </summary>
               <ul id='mobileNav' className="p-2 shadow menu dropdown-content z-[1] bg-purple-200 rounded-box text-lg gap-1">
                   <li><a href="/admin/orders">Orders</a></li>
-                  <li><a href="/admin/edit">Edit Products</a></li>
-                  <li><a href="/">Customer View</a></li>
+                  <li><a className='text-center' href="/admin/edit">Edit Products</a></li>
+                  <li><a className='text-center' href="/">Customer View</a></li>
                 </ul>
             </details>
             

@@ -69,3 +69,10 @@
 #orderDate {
     text-align: center;
 }
+
+
+
+/* hiding the UserID since its ugly and customers wont need it :) */
+#hideme {
+    display: none;
+}  

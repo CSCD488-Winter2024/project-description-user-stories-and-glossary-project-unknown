@@ -55,7 +55,7 @@ function User({ uid }) {
         <ul id="profile">
           {userData && (
             <>
-              <p>User UID: {uid}</p>
+              <p id = 'hideme'>User UID: {uid}</p>
               
               {userData.email && <li>Email: <span id="email">{userData.email}</span></li>}
               {userData.name && <li>Name: <span id="Name">{userData.name}</span></li>}

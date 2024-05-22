@@ -33,11 +33,12 @@ function Cart() {
   const handlePlaceOrder = () => {
     // Assuming you have additional data like date, Donuts, total, and acc
     push(ref(db, 'Order'), {
-      date: new Date().toString(), // Current date and time
+      date: new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'}).format(new Date()), // Current date and time
       Donuts: state.items, // Assuming state.items contains the donuts in the cart
       itemCount: state.itemCount, // Total items of the order
       total: state.total, // Total price of the order
-      acc: "Jakson hehe"
+      acc: "Jakson hehe", // Account name
+      status: 'Awaiting Approval', // Initial status
     });
   };
   
@@ -121,7 +122,7 @@ function Cart() {
 
           <br />
 
-          <h4 id='totalPrice'>Total Price: { }</h4>
+          <h4 id='totalPrice'>Total Price: ${state.total}</h4>
 
         </section>
 

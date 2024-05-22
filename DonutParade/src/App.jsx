@@ -20,24 +20,24 @@ import RoleChecker from './pages/RoleChecker'
 
 
 const adminRoutes = [
-  // {
-  //   path: '/admin',
-  //   element: <RoleChecker><Outlet /></RoleChecker>, 
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       element: <AdminHome />,
-  //     },
-  //     {
-  //       path: 'orders',
-  //       element: <AdminOrders />,
-  //     },
-  //     {
-  //       path: 'edit',
-  //       element: <AdminEdit />,
-  //     },
-  //   ],
-  // },
+  {
+    path: '/admin',
+    //element: <RoleChecker><Outlet /></RoleChecker>, 
+    children: [
+      {
+        path: 'home',
+        element: <AdminHome />,
+      },
+      {
+        path: 'orders',
+        element: <AdminOrders />,
+      },
+      {
+        path: 'edit',
+        element: <AdminEdit />,
+      },
+    ],
+  },
 ];
 
 

@@ -38,6 +38,50 @@
     padding: 5%;
     border-radius: 15px;
 }
+.approved{
+    
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    width:80%;
+    background-color: #F4FBA2;
+    color:black;
+    padding: 5%;
+    border-radius: 15px;
+}
+.awaiting-approval{
+    
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    width:80%;
+    background-color: #EAEAEA;
+    color:black;
+    padding: 5%;
+    border-radius: 15px;
+}
+.rejected{
+    
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    width:80%;
+    background-color: #FF9797;
+    color:black;
+    padding: 5%;
+    border-radius: 15px;
+}
+.completed{
+    
+    display: flex;
+    flex-direction: column;
+    margin:5px;
+    width:80%;
+    background-color: #CEFBA2;
+    color:black;
+    padding: 5%;
+    border-radius: 15px;
+}
 .order-box-row{
     display:flex;
     flex-direction: row;

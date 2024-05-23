@@ -22,6 +22,9 @@
   height: 55vh;  
   filter: brightness(65%);  
 }
+#map{
+  border-style:none;
+}
 
 #contactContainer p {
   font-family: 'Montserrat', sans-serif;

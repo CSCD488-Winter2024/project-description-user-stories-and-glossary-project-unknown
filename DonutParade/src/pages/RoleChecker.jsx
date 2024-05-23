@@ -1,42 +1,45 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { getDatabase, ref, onValue } from 'firebase/database';
-import { useEffect, useState } from 'react';
-import { db } from '../scripts/FBconfig.js'; 
 
-const RoleChecker = ({ userId }) => {
+function User({ uid }) {
+  const [userData, setUserData] = useState(null);
   const [role, setRole] = useState(null);
 
-  useEffect(() => {
-    const userRef = ref(db, `users/${userId}`);
+  // Function to fetch user data from the database
+  const fetchUserData = () => {
+    const db = getDatabase(); // Get a reference to the database
+    const userRef = ref(db, `users/${uid}`); // Reference to the user's data in the database
 
-
+    // Listen for changes to the user's data
     onValue(userRef, (snapshot) => {
-        const userData = snapshot.val();
-        console.log(userData.role);
-      if (userData && userData.role) {
-        setRole(userData.role); 
+      const data = snapshot.val(); // Get the data from the snapshot
+      setUserData(data); // Set the user data state
+      if (data && data.role) {
+        setRole(data.role); // Set the user role state
       }
     });
+  };
 
+  useEffect(() => {
+    fetchUserData(); // Fetch user data when the component mounts
+  }, [uid]);
 
-    return () => {
-     
-      onValue(userRef, () => {});
-        
+  return (
+    <div className='User'>
+      {/* Render the admin button based on user role */}
+      {role === 'admin' && (
+        <Link to="/admin/home">Admin Page</Link>
+      )}
 
-    };
-  }, [userId]); 
-
-
-
-return (
-    <div>
-        {role === 'admin' ? (
-            <p>User is an admin</p>
-        ) : (
-            <p>User is not an admin</p>
-        )}
+      {/* Render other user information */}
+      <p>User UID: {uid}
+      
+      </p>
+      
+      {/* Render other user data fields */}
     </div>
-);
-};
+  );
+}
 
-export default RoleChecker;
+export default User;

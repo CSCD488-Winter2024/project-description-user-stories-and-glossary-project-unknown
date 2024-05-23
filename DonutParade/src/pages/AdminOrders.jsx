@@ -4,7 +4,7 @@ import '../index.css';
 import AdminNav from '../components/AdminHeader';
 import ApproveArrow from '../assets/Approve.png'
 import RejectX from '../assets/Reject.png'
-import Arrow from '../assets/Arrow.png'
+import EditIcon from '../assets/EditIcon.png'
 import { ref, get, update, onValue } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
 // import { useState } from 'react';
@@ -122,7 +122,7 @@ function AdminOrders() {
 
                   <button class="order-buttons" onClick={() => handleApproveOrder(order.id)}><img src={ApproveArrow} alt="Approve" /></button>
                   <button class="order-buttons" onClick={() => handleRejectOrder(order.id)}><img src={RejectX} alt="Reject" /></button>
-                  <button class="order-buttons"><img src={Arrow} alt="Edit" /></button>
+                  <button class="order-buttons"><img src={EditIcon} alt="Edit" /></button>
                 </div>
 
               </div>

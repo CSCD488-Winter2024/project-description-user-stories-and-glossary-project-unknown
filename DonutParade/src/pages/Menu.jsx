@@ -14,11 +14,13 @@ import { CartContext } from "../components/CartContext.jsx";
 function Menu() {
 
   const {dispatch} = useContext(CartContext);
+  const [notification, setNotification] = useState({ show: false, message: '' });
   const handleAddToCart = (product, quantity = 1) => {
     dispatch({
       type: 'ADD_TO_CART',
       payload: { item: product, quantity },
     });
+    showNotification(`${quantity} ${product.name} added to cart`);
   };
 
   //const dbRef = ref(getDatabase(firebaseApp));
@@ -34,7 +36,12 @@ function Menu() {
 //     console.log("No data available");
 //   }
 // });
-
+const showNotification = (message) => {
+  setNotification({ show: true, message });
+  setTimeout(() => {
+    setNotification({ show: false, message: '' });
+  }, 5000); // Hide after 3 seconds
+};
 const [products, setProducts] = useState([]);
 
 useEffect(() => {
@@ -222,7 +229,9 @@ const template = `
       </section>
 
       <Footer />
-
+      {notification.show && (
+        <div className="notification show">{notification.message}</div>
+      )}
 
     </div>
   )

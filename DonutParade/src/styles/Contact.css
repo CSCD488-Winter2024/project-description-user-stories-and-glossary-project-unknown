@@ -20,9 +20,7 @@
 #contactContainer img {
   width: 30vw;
   height: 55vh;  
-  filter: brightness(65%);
-  border: solid 5px #F2ADB7;
-  
+  filter: brightness(65%);  
 }
 
 #contactContainer p {

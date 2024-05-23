@@ -1,40 +1,39 @@
-.nav-bar{
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.AdminHeader {
+    /* height: 100%; */
     width: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
     padding-top: 1rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* position: sticky; */
     top: 0;
-    z-index: 1000;
-}
-.nav-options-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin:10px;
-}
-.nav-option{
-    margin:10px;
-}
-.logo-title{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-#DonutParadeLogo {
-    width: 130px;
-    height: 110px;
-    padding-left: 4rem;
-    padding-right:3rem;
-}
-.nav-option:hover {
-    color: #BDD7BC;
-    white-space: nowrap;
     z-index: 3;
+    text-align: center;
+}
+
+.icon {
+    max-width: 50px;
+    max-height: auto;
+}
+
+#Cart {
+    width: 40px;
+    height: 30px;
+    background-color: none;
+}
+
+#User {
+    width: 30px;
+    height: 30px;
+}
+
+#DonutParadeLogo {
+    width: 140px;
+    height: 120px;
+    margin-left: 1rem;
 }

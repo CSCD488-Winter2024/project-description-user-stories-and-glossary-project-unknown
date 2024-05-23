@@ -36,6 +36,10 @@ p {
     color: #BDD7BC;
 }
 
+#mobileNav {
+    transform: translateX(-10%);
+}
+
 #mobileNav a:hover{
     color: #BDD7BC;
     background-color: purple;

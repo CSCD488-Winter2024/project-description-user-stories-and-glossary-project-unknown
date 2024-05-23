@@ -4,6 +4,10 @@
   margin: 0;
   padding: 0;
 }
+.Contact h1{
+  font-family: Montserrat;
+  font-weight:bold;
+}
 
 .Contact {
   display: flex;
@@ -18,19 +22,19 @@
   height: 55vh;  
   filter: brightness(65%);
   border: solid 5px #F2ADB7;
+  
 }
 
 #contactContainer p {
-  font-family: 'Plein', sans-serif;
-  font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  text-align: center; 
+  text-align: left; 
 }
 
 #contactContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
@@ -39,24 +43,20 @@
   max-width: 600px; 
   margin-left: auto; 
   margin-right: auto; 
+  
+}
+.side-text{
+  margin:20px;
+  display:flex;
+  flex-direction: column;
+  line-height:1.5;
 }
 
 #contact {
-  font-family: 'Plein', sans-serif;
-  font-size: 5em;
-  color: #F2ADB7;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  text-align: center; 
-  text-decoration: underline;
-}
-
-#phone-number-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #F2ADB7; 
-  color: white;
-  border-radius: 5px;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #phone-number-button:hover {
@@ -78,9 +78,6 @@
     font-size: 2.5em; 
   }
 
-  #phone-number-button {
-    font-size: 1em; 
-  }
 }
 
 @media screen and (min-width: 400px) {
@@ -97,9 +94,6 @@
     font-size: 2.5em; 
   }
 
-  #phone-number-button {
-    font-size: 1em; 
-  }
 }
 
 @media screen and (min-width: 500px) {
@@ -112,26 +106,13 @@
     font-size: 1em; 
   }
 
-  #contact {
-    font-size: 2.5em; 
-  }
 
-  #phone-number-button {
-    font-size: 1em; 
-  }
+
 }
 
 @media screen and (min-width: 768px) {
   #contactContainer {
     padding: 20px; 
-  }
-
-  #contact {
-    font-size: 4em;
-  }
-
-  #phone-number-button {
-    padding: 15px 25px; 
   }
 }
 
@@ -144,13 +125,6 @@
     font-size: 1.8em; 
   }
 
-  #contact {
-    font-size: 5em; 
-  }
-
-  #phone-number-button {
-    font-size: 1.5em; 
-  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -162,13 +136,6 @@
     font-size: 2em; 
   }
 
-  #contact {
-    font-size: 5.5em; 
-  }
-
-  #phone-number-button {
-    font-size: 1.6em; 
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -180,13 +147,6 @@
     font-size: 2em; 
   }
 
-  #contact {
-    font-size: 5em;
-  }
-
-  #phone-number-button {
-    font-size: 1em; 
-  }
 }
 
 

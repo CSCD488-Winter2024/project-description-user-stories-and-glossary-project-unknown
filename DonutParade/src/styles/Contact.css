@@ -59,7 +59,7 @@
   margin-bottom: 1em;
 }
 
-#phone-number-button:hover {
+#phone-number-button:hover, #email:hover{
   color: #7B8CF0; 
 }
 

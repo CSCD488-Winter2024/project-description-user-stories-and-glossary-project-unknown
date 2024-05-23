@@ -19,7 +19,7 @@ function Contact() {
         <p id='phone-number'>
           <a id="phone-number-button" href="tel:+15094739870">(509) 473-9870</a>
         </p>
-        <p>For all inquiries, please email us at <a href='mailto:donutparadespokane@gmail.com' style= {{textDecoration: 'underline'}}>donutparadespokane@gmail.com</a></p>
+        <p>For all inquiries, please email us at <a id="email" href='mailto:donutparadespokane@gmail.com'>donutparadespokane@gmail.com</a></p>
         </div>
         
       </section>

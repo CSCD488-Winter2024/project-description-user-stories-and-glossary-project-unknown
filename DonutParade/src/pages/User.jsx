@@ -64,7 +64,7 @@ function User({ uid }) {
               {userData.carInfo && <li>Car Info: <span id="Car Info">{userData.carInfo}</span></li>}
               {userData.role === 'admin' && ( // Render link only if user has admin role
                 <li>
-                  <Link to="/admin/home">Admin Page</Link>
+                  <Link to="/admin/orders">Admin Page</Link>
                 </li>
               )}
               

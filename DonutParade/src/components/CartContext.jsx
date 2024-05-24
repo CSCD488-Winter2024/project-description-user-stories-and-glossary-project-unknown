@@ -34,10 +34,10 @@ const cartReducer = (state, action) => {
         newItems = [...state.items, { ...item, quantity }];
       }
 
-    //   const newTotal = newItems.reduce(
-    //     (total, i) => total + i.price * i.quantity,
-    //     0
-    //   );
+      const newTotal = newItems.reduce(
+        (total, i) => total + i.price * i.quantity,
+        0
+      );
       const newItemCount = newItems.reduce(
         (count, i) => count + i.quantity,
         0
@@ -46,7 +46,7 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         items: newItems,
-        //total: newTotal,
+        total: newTotal,
         itemCount: newItemCount,
       };
 
@@ -55,10 +55,10 @@ const cartReducer = (state, action) => {
         (i) => i.name !== action.payload.name
       );
 
-    //   const updatedTotal = updatedItems.reduce(
-    //     (total, i) => total + i.price * i.quantity,
-    //     0
-    //   );
+      const updatedTotal = updatedItems.reduce(
+        (total, i) => total + i.price * i.quantity,
+        0
+      );
       const updatedItemCount = updatedItems.reduce(
         (count, i) => count + i.quantity,
         0
@@ -67,7 +67,7 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         items: updatedItems,
-        //total: updatedTotal,
+        total: updatedTotal,
         itemCount: updatedItemCount,
       };
 
@@ -91,13 +91,13 @@ const cartReducer = (state, action) => {
       return {
         ...state,
         items: changedItems,
-        //total: state.total - itemToRemove.price,
+        total: state.total - itemToRemove.price,
         itemCount: state.itemCount - 1,
       };
     case 'CLEAR_CART':
       return {
         items: [],
-        //total: 0,
+        total: 0,
         itemCount: 0,
       };
 

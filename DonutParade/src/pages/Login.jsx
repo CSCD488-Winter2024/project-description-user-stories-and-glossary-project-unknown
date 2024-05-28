@@ -40,6 +40,7 @@ const Login = () => {
   }, []); 
 
   const handleLogin = async () => {
+    // e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
       // Login successful
@@ -79,6 +80,12 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          />
+          <input 
+            type="button"
+            id="donut"
+            value="L🍩G I N"
+            onClick={handleLogin}
           />
 
           <button id='donut' onClick={handleLogin}>L 🍩 G I N</button>

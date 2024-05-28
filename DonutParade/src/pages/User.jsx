@@ -3,6 +3,7 @@ import { signOut } from 'firebase/auth'; // Import the signOut function
 import { auth, firebaseApp } from '../scripts/FBconfig.js'; // Import the auth object
 import { getDatabase, ref, onValue } from "firebase/database";
 import { Link } from 'react-router-dom';
+import RoleChecker from './RoleChecker.jsx';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -30,7 +31,7 @@ function User({ uid }) {
 
   useEffect(() => {
     fetchUserData(); // Fetch user data when the component mounts
-  }, []);
+  }, [uid]);
 
 
   const handleSignOut = async () => {
@@ -51,11 +52,11 @@ function User({ uid }) {
       <Header />
 
       <div id='profileContainer'>
-        {/* <img id='profilePic' src='' alt="Profile Picture" /> */}
+        <img id='profilePic' src='https://media2.giphy.com/media/Z8TMfZMaee8t2minLW/giphy.webp?cid=790b7611389jztomi8aborp21f9ei0ra2ce214gfm0qyfnsm&ep=v1_gifs_search&rid=giphy.webp&ct=gf' alt="Profile Picture" />
         <ul id="profile">
           {userData && (
             <>
-              <p>User UID: {uid}</p>
+              <p id = 'hideme'>User UID: {uid}</p>
               
               {userData.email && <li>Email: <span id="email">{userData.email}</span></li>}
               {userData.name && <li>Name: <span id="Name">{userData.name}</span></li>}
@@ -87,13 +88,14 @@ function User({ uid }) {
           </ul>
         </div>
       </div>
+      <RoleChecker userId={uid} /> 
 
       <Footer />
       
     </div>
   );
-
-
+  
+  
   
 }
 

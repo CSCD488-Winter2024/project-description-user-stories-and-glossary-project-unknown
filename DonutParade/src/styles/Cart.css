@@ -62,14 +62,14 @@ html, body {
     padding: 1rem;
 }
 
-#cartContent {
+/*  #cartContent {
     padding: 2rem;
-    /* height: 100vh; */
-    /* display: flex; */
-    /* flex-direction: column; */
+     height: 100vh; 
+     display: flex; 
+     flex-direction: column; 
     width: 50%;
-    /* box-sizing: border-box; */
-}
+    box-sizing: border-box;
+} */
 
 .order-detail {
     margin: 10px;

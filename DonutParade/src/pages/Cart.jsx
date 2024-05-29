@@ -51,7 +51,8 @@ function Cart() {
           carInfo: userData.carInfo,
           status: 'Awaiting Approval',
         });
-      } else {
+      } 
+      else {
         console.error("No user data available");
       }
     }).catch((error) => {

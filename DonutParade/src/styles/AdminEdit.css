@@ -25,6 +25,7 @@ table{
     border: 0.25rem grey solid;
     background-color: white;
     font-family: Montserrat;
+    padding: 1rem;
     display: flex;
     align-items: center;
   }

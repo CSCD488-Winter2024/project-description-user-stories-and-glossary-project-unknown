@@ -5,7 +5,8 @@ import AdminNav from '../components/AdminHeader';
 import ApproveArrow from '../assets/Approve.png'
 import RejectX from '../assets/Reject.png'
 import EditIcon from '../assets/EditIcon.png'
-import { ref, get, update, onValue } from "firebase/database";
+import Completed from '../assets/Completed.png'
+import { ref, get, update, onValue, set } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
 // import { useState } from 'react';
 
@@ -13,6 +14,9 @@ function AdminOrders() {
 
   const [orders, setOrders] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [editMode, setEditMode] = useState(false);
+  const [curOrder, setCurOrder] = useState(null);
+  const [editableDonuts, setEditableDonuts] = useState([]);
 
   useEffect(() => {
     // const fetchOrders = async () => {
@@ -44,7 +48,6 @@ function AdminOrders() {
         ...order,
       }));
       setOrders(orderList);
-      setFilter('Awaiting Approval');
     });
     //console.log(orders);
   }, []);
@@ -59,6 +62,14 @@ function AdminOrders() {
     // Update the order status to 'Rejected'
     const orderRef = ref(db, `Order/${id}`);
     update(orderRef, { status: 'Rejected' });
+  };
+
+  const handleEditOrder = (id) => {
+    // Set editMode
+    setEditMode(true);
+    setCurOrder(id);
+    setEditableDonuts(Object.entries(orders.find(order => order.id === id).Donuts).map(([key, donut]) => ({ id: key, ...donut })));
+    console.log(editableDonuts);
   };
 
   const handleCompleteOrder = (id) => {
@@ -110,7 +121,7 @@ let count =0;
           {filteredOrders.map((order) => (
             <div class={getOrderClass(order.status)} key={order.id}>
             <div class="order-box-row">
-              <h1 class="order-number">Order {++count}</h1>
+              <h1 class="order-number">Order {order.id}</h1>
               <h2 class="order-time">{order.date}</h2>
             </div>
 
@@ -132,13 +143,21 @@ let count =0;
                   <p key={key}>{donut.name} x {donut.quantity}</p>
                 ))}
               </div>
+              {
+                editMode && curOrder === order.id &&(
+                  <div class="edit-form">
+                    <h3>Edit Order</h3>
+                    
+                  </div>
+                )
+              }
               <div class="button-section">
                 <div class="button-col">
 
                   <button class="order-buttons" onClick={() => handleApproveOrder(order.id)}><img src={ApproveArrow} alt="Approve" /></button>
                   <button class="order-buttons" onClick={() => handleRejectOrder(order.id)}><img src={RejectX} alt="Reject" /></button>
-                  <button class="order-buttons"><img src={Arrow} alt="Edit" /></button>
-                  <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={ApproveArrow} alt="Complete" /></button>
+                  <button class="order-buttons" onClick={() => handleEditOrder(order.id)}><img src={EditIcon} alt="Edit" /></button>
+                  <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={Completed} alt="Complete" /></button>
                 </div>
 
               </div>

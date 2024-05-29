@@ -93,6 +93,7 @@ const Login = () => {
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <p id='p'>Don't have an account? <a href='/signup' style={{ textDecoration: 'underline' }}>Sign up here</a></p>
+        <p id='p'>Forgot Password? <a href='/forgot' style={{ textDecoration: 'underline' }}>Reset here</a></p>
 
       </div>
 

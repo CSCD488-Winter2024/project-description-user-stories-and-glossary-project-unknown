@@ -4,7 +4,7 @@ import '../index.css';
 import AdminNav from '../components/AdminHeader';
 import ApproveArrow from '../assets/Approve.png'
 import RejectX from '../assets/Reject.png'
-import Arrow from '../assets/Arrow.png'
+import EditIcon from '../assets/EditIcon.png'
 import { ref, get, update, onValue } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
 // import { useState } from 'react';

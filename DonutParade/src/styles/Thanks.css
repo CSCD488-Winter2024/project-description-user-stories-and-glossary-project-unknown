@@ -1,0 +1,10 @@
+#thanksContainer img {
+    margin: 3rem;
+    justify-content: center;
+}
+
+#thanksContainer h1 {
+    font-size: 18pt;
+    text-align: center;
+    margin-top: 4rem;
+}

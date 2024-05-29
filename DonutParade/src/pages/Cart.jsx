@@ -1,20 +1,17 @@
-import React, {useContext} from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import '../styles/Cart.css'
-import { CartContext } from '../components/CartContext'
-import { getDatabase, ref, push, set } from "firebase/database";
-import {firebaseApp, db} from "../scripts/FBconfig.js";
-
-let num = 0;
-let price = 0.00;
-
-const option1 = document.querySelector('#cartContent');
-
+import React, { useContext, useState } from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import '../styles/Cart.css';
+import { CartContext } from '../components/CartContext';
+import { getDatabase, ref, push, get, child } from "firebase/database";
+import { firebaseApp, db } from "../scripts/FBconfig.js";
+import { getAuth } from "firebase/auth";
 
 function Cart() {
-
   const { state, dispatch } = useContext(CartContext);
+  const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
+  const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
+  const [formData, setFormData] = useState({ name: '', email: '', carInfo: '' }); // State to store form data
 
   const handleRemoveFromCart = (name) => {
     dispatch({ type: 'REMOVE_ONE', payload: { name } });
@@ -27,121 +24,140 @@ function Cart() {
     });
   };
 
-  // Handling the orders
-  
+  const handleClearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+  };
 
-  const handlePlaceOrder = () => {
-    // Assuming you have additional data like date, Donuts, total, and acc
+  const processOrder = (userData) => {
     push(ref(db, 'Order'), {
-      date: new Intl.DateTimeFormat('en-US', {year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'}).format(new Date()), // Current date and time
-      Donuts: state.items, // Assuming state.items contains the donuts in the cart
-      itemCount: state.itemCount, // Total items of the order
-      total: state.total, // Total price of the order
-      acc: "Jakson hehe", // Account name
-      status: 'Awaiting Approval', // Initial status
+      date: new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format(new Date()),
+      Donuts: state.items,
+      itemCount: state.itemCount,
+      total: state.total,
+      acc: userData.name,
+      email: userData.email,
+      carInfo: pickupOption === 'curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
+      phone: userData.phone || '', // Default to empty if phone is not available
+      pickupOption: pickupOption, // Include the pickup option
+      status: 'Awaiting Approval',
+    }).then(() => {
+      console.log("Order placed successfully");
+      handleClearCart(); // Clear the cart after placing the order
+      window.location.href = '/thanks'; // Navigate to the Thanks page      
+
+    }).catch((error) => {
+      console.error("Error placing order:", error);
     });
   };
-  
-  
 
-  
+  const handlePlaceOrder = () => {
+    const auth = getAuth();
+    const userId = auth.currentUser ? auth.currentUser.uid : null;
+
+    if (!userId) {
+      setIsFormVisible(true); // Show the form if the user is not logged in
+      return;
+    }
+
+    const dbRef = ref(getDatabase(firebaseApp));
+    get(child(dbRef, `users/${userId}`)).then((snapshot) => {
+      if (snapshot.exists()) {
+        const userData = snapshot.val();
+        processOrder(userData);
+        handleClearCart(); // Clear the cart after placing the order
+      } else {
+        console.error("No user data available / Log in required");
+      }
+    }).catch((error) => {
+      console.error(error);
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name && formData.email) {
+      const userData = { name: formData.name, email: formData.email, carInfo: formData.carInfo || '', phone: '' };
+      processOrder(userData);
+      setIsFormVisible(false); // Hide the form after submitting
+    } else {
+      console.error("Name and email are required to place the order.");
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   return (
     <div className='Cart'>
-
       <Header />
-
-      <div class="cart-page-content">
-
+      <div className="cart-page-content">
         <section id='cartContent'>
-
           <br />
-    
-          {/* <div id='donutTempelate'>
-            <img id="donutImage" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.7-zZ1ANn7A0WUX7M0hMfUQHaHa%26pid%3DApi&f=1&ipt=d629d9c0984eeee12dd1780034285437bae02281cf7442ba6e810c0785dcd001&ipo=images" alt="Item Image" />
-            <div>
-              <div class="name-and-price">
-                <h3 class="order-detail" id='donutName'>Donut 1</h3>
-                <p class="order-detail" id="donutPrice">Price: ${price}</p>
-              </div>
-              <p class="order-detail" id="totalPrice">Total: ${price * num}</p>
-              <div class="quantity-row">
-                <button class="order-detail button-in-cart" id='removeDonut'>-</button>
-                <p class="order-detail" id="donutQuantity">{num}</p>
-                <button class="order-detail button-in-cart" id='addDonut'>+</button>
-              </div>
-
-          </div>
-
-
-          </div> */}
-
           <ul>
             {state.items.map((item) => (
               <div id='donutTempelate' key={item.name}>
-              <img id="donutImage" src={item.image} alt={item.name} />
-              <div className="left-align-info">
-                <div class="name-and-price">
-                  <h3 class="order-detail" id='donutName'>{item.name}</h3>
-                  <p class="order-detail" id="donutPrice">Price: ${item.price}</p>
+                <img id="donutImage" src={item.image} alt={item.name} />
+                <div className="left-align-info">
+                  <div className="name-and-price">
+                    <h3 className="order-detail" id='donutName'>{item.name}</h3>
+                    <p className="order-detail" id="donutPrice">Price: ${item.price}</p>
+                  </div>
+                  <p className="order-detail" id="totalPrice">Total: ${item.price * item.quantity}</p>
+                  <div className="quantity-row">
+                    <button className="order-detail button-in-cart" id='removeDonut' onClick={() => handleRemoveFromCart(item.name)}>-</button>
+                    <p className="order-detail" id="donutQuantity">{item.quantity}</p>
+                    <button className="order-detail button-in-cart" id='addDonut' onClick={() => handleAddToCart(item)}>+</button>
+                  </div>
                 </div>
-                <p class="order-detail" id="totalPrice">Total: ${item.price * item.quantity}</p>
-                <div class="quantity-row">
-                  <button class="order-detail button-in-cart" id='removeDonut' onClick={() => handleRemoveFromCart(item.name)}>-</button>
-                  <p class="order-detail" id="donutQuantity">{item.quantity}</p>
-                  <button class="order-detail button-in-cart" id='addDonut' onClick={() => handleAddToCart(item)}>+</button>
-                </div>
-  
-            </div>
-  
-  
-            </div>
-              
+              </div>
             ))}
           </ul>
           <p id="totalQuantity">Total items: {state.itemCount}</p>
-        {/* <p>Total price: {state.total.toFixed(2)}</p> */}
-
-          {/* <div id='donutTempelate'>
-            <img id="donutImage" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.7-zZ1ANn7A0WUX7M0hMfUQHaHa%26pid%3DApi&f=1&ipt=d629d9c0984eeee12dd1780034285437bae02281cf7442ba6e810c0785dcd001&ipo=images" alt="Item Image" />
-            <div>
-              <div class="name-and-price">
-                <h3 class="order-detail" id='donutName'>Donut 1</h3>
-                <p class="order-detail" id="donutPrice">Price: ${price}</p>
-              </div>
-              <p class="order-detail" id="totalPrice">Total: ${price * num}</p>
-              <div class="quantity-row">
-                <button class="order-detail button-in-cart" id='removeDonut'>-</button>
-                <p class="order-detail" id="donutQuantity">{num}</p>
-                <button class="order-detail button-in-cart" id='addDonut'>+</button>
-              </div>
-            </div> */}
-
-
-          {/* </div> */}
-
           <br />
-
           <h4 id='totalPrice'>Total Price: ${state.total}</h4>
-
         </section>
-
-        <section class="payment-side">
-          <div class="payment-box">
-            <h3>Payment goes here</h3>
-            <button class="order-button" onClick={handlePlaceOrder}>Place Order</button>
+        <section className="payment-side">
+          <div className="payment-box">
+            <h3>Pickup Option</h3>
+            <select value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+              <option value="in-store pickup">In-Store Pickup</option>
+              <option value="curbside">Curbside</option>
+            </select>
+            {isFormVisible ? (
+              <form onSubmit={handleFormSubmit}>
+                <label>
+                  Name:
+                  <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                </label>
+                <label>
+                  Email:
+                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                </label>
+                {pickupOption === 'curbside' && (
+                  <label>
+                    Car Info:
+                    <input type="text" name="carInfo" value={formData.carInfo} onChange={handleInputChange} required />
+                  </label>
+                )}
+                <button type="submit">Submit</button>
+              </form>
+            ) : (
+              <button className="order-button" onClick={handlePlaceOrder}>Place Order</button>
+            )}
           </div>
         </section>
-
       </div>
-
-
       <Footer />
-
-
-
     </div>
-  )
+  );
 }
 
-export default Cart
+export default Cart;

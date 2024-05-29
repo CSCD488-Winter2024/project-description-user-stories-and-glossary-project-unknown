@@ -8,6 +8,7 @@ import EditIcon from '../assets/EditIcon.png'
 import Completed from '../assets/Completed.png'
 import { ref, get, update, onValue, set } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
+
 // import { useState } from 'react';
 
 function AdminOrders() {
@@ -166,11 +167,15 @@ let count =0;
               <div class="order-section">
 
                 <h2 class="order-name">{order.acc}</h2>
-                <h2 class="order-contact">hehe@haha.com</h2>
-                <br/>
+                <h2 class="order-contact">{order.email}</h2>
+                <h2 class="order-contact">{order.carInfo}</h2>
+                <h2 class="order-contact">{order.phone}</h2>             
                 <h2 class="order-total-items">Item Count : {order.itemCount}</h2>
                 <br />
                 <h2 class="order-total-cost">Total Price : ${order.total}</h2>
+                <br />
+                <h2 class="order-contact">Pickup Option: {order.pickupOption}</h2>
+
 
               </div>
               <div class="donut-list">
@@ -203,6 +208,7 @@ let count =0;
 
                   <button class="order-buttons" onClick={() => handleApproveOrder(order.id)}><img src={ApproveArrow} alt="Approve" /></button>
                   <button class="order-buttons" onClick={() => handleRejectOrder(order.id)}><img src={RejectX} alt="Reject" /></button>
+
                   <button class="order-buttons" onClick={() => handleEditOrder(order)}><img src={EditIcon} alt="Edit" /></button>
                   <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={Completed} alt="Complete" /></button>
                 </div>

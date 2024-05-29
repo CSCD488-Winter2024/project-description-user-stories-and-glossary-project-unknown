@@ -1,17 +1,42 @@
-#AdminEdit {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+
+}
+
+.AdminEdit {
     display: flex;
     flex-direction: column;
-
     height: 100vh; 
-    width: 100vw; 
-    align-items:center;
+    width: 100vw;
+
+}
+
+.AdminEdit #title {
+    text-align: center;
     margin: 1rem;
 }
-table{
-    background-color: grey;
-    width:80%;
-    margin-top:1rem;
-    margin-bottom:1rem;
+
+#AdminEdit {
+  width: 100%;
+  /* height: 100%; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.donut-table {
+  border-collapse: collapse;
+  width: 70%;
+  height: 100%;
+  margin: 1rem;
+  background-color: white;
 }
 
 .content-td {
@@ -29,17 +54,70 @@ table{
     display: flex;
     align-items: center;
   }
+
+
   
-  .edit-button {
-    flex: 1; 
-    border: none;
-    background-color: #F2ADB7; 
-    
-    color: white; 
-    padding: 1rem; 
-    transition: background-color 0.3s; 
+.edit-button {
+  flex: 1; 
+  border: black 5px solid;
+  background-color: #F2ADB7; 
+  color: white; 
+  transition: background-color 0.3s; 
 }
 
 .edit-button:hover {
-  background-color: #ADB7F2; 
+  background-color: #ADB7F2;
+  cursor: pointer;
+}
+
+.accounts-table {
+  border-collapse: collapse;
+  height: auto;
+  width: 70%;
+  height: 100%;
+  margin: 1rem;
+  background-color: purple;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #BDD7BC;
+}
+
+.edit-form label {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.edit-form input {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.edit-form button {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #F2ADB7;
+  color: white;
+  border: black 5px solid;
+}
+
+.edit-form button:hover {
+  background-color: #ADB7F2;
+  cursor: pointer;
+}
+
+.edit-form h3 {
+  margin: 1rem;
 }

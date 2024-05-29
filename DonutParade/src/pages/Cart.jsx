@@ -24,6 +24,10 @@ function Cart() {
     });
   };
 
+  const handleClearCart = () => {
+    dispatch({ type: 'CLEAR_CART' });
+  };
+
   const processOrder = (userData) => {
     push(ref(db, 'Order'), {
       date: new Intl.DateTimeFormat('en-US', {
@@ -44,6 +48,9 @@ function Cart() {
       status: 'Awaiting Approval',
     }).then(() => {
       console.log("Order placed successfully");
+      handleClearCart(); // Clear the cart after placing the order
+      window.location.href = '/thanks'; // Navigate to the Thanks page      
+
     }).catch((error) => {
       console.error("Error placing order:", error);
     });
@@ -63,6 +70,7 @@ function Cart() {
       if (snapshot.exists()) {
         const userData = snapshot.val();
         processOrder(userData);
+        handleClearCart(); // Clear the cart after placing the order
       } else {
         console.error("No user data available / Log in required");
       }

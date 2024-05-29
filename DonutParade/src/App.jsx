@@ -3,6 +3,7 @@ import {createBrowserRouter, RouterProvider, Route, Link, Outlet} from 'react-ro
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Cart from './pages/Cart'
+import Thanks from './pages/Thanks'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import User from './pages/User'
@@ -53,6 +54,10 @@ const routes = [
   {
     path: '/cart',
     element: <Cart />,
+  },
+  {
+    path: '/thanks',
+    element: <Thanks />,
   },
   {
     path: '/contact',

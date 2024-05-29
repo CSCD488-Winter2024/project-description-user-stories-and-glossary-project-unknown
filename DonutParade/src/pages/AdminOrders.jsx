@@ -7,6 +7,7 @@ import RejectX from '../assets/Reject.png'
 import EditIcon from '../assets/EditIcon.png'
 import { ref, get, update, onValue } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
+
 // import { useState } from 'react';
 
 function AdminOrders() {
@@ -137,7 +138,7 @@ let count =0;
 
                   <button class="order-buttons" onClick={() => handleApproveOrder(order.id)}><img src={ApproveArrow} alt="Approve" /></button>
                   <button class="order-buttons" onClick={() => handleRejectOrder(order.id)}><img src={RejectX} alt="Reject" /></button>
-                  <button class="order-buttons"><img src={Arrow} alt="Edit" /></button>
+                  <button class="order-buttons"><img src={ApproveArrow} alt="Edit" /></button>
                   <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={ApproveArrow} alt="Complete" /></button>
                 </div>
 

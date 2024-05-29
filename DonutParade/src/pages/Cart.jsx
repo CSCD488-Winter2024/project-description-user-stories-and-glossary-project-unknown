@@ -3,12 +3,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../styles/Cart.css';
 import { CartContext } from '../components/CartContext';
-import { getDatabase, ref, push, get, child } from 'firebase/database';
-import { firebaseApp, db } from '../scripts/FBconfig.js';
-import { getAuth } from 'firebase/auth';
+import { getDatabase, ref, push, get, child } from "firebase/database";
+import { firebaseApp, db } from "../scripts/FBconfig.js";
+import { getAuth } from "firebase/auth";
 
 function Cart() {
   const { state, dispatch } = useContext(CartContext);
+  const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
+  const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
+  const [formData, setFormData] = useState({ name: '', email: '', carInfo: '' }); // State to store form data
 
   const handleRemoveFromCart = (name) => {
     dispatch({ type: 'REMOVE_ONE', payload: { name } });
@@ -21,12 +24,37 @@ function Cart() {
     });
   };
 
+  const processOrder = (userData) => {
+    push(ref(db, 'Order'), {
+      date: new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format(new Date()),
+      Donuts: state.items,
+      itemCount: state.itemCount,
+      total: state.total,
+      acc: userData.name,
+      email: userData.email,
+      carInfo: pickupOption === 'curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
+      phone: userData.phone || '', // Default to empty if phone is not available
+      pickupOption: pickupOption, // Include the pickup option
+      status: 'Awaiting Approval',
+    }).then(() => {
+      console.log("Order placed successfully");
+    }).catch((error) => {
+      console.error("Error placing order:", error);
+    });
+  };
+
   const handlePlaceOrder = () => {
     const auth = getAuth();
     const userId = auth.currentUser ? auth.currentUser.uid : null;
 
     if (!userId) {
-      console.error("User is not authenticated");
+      setIsFormVisible(true); // Show the form if the user is not logged in
       return;
     }
 
@@ -34,26 +62,8 @@ function Cart() {
     get(child(dbRef, `users/${userId}`)).then((snapshot) => {
       if (snapshot.exists()) {
         const userData = snapshot.val();
-
-        push(ref(db, 'Order'), {
-          date: new Intl.DateTimeFormat('en-US', {
-            year: 'numeric',
-            month: 'numeric',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-          }).format(new Date()),
-          Donuts: state.items,
-          itemCount: state.itemCount,
-          total: state.total,
-          acc: userData.name,
-          email: userData.email,
-          carInfo: userData.carInfo,
-          phone: userData.phone,
-          status: 'Awaiting Approval',
-        });
-      } 
-      else {
+        processOrder(userData);
+      } else {
         console.error("No user data available / Log in required");
       }
     }).catch((error) => {
@@ -61,48 +71,84 @@ function Cart() {
     });
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (formData.name && formData.email) {
+      const userData = { name: formData.name, email: formData.email, carInfo: formData.carInfo || '', phone: '' };
+      processOrder(userData);
+      setIsFormVisible(false); // Hide the form after submitting
+    } else {
+      console.error("Name and email are required to place the order.");
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <div className='Cart'>
       <Header />
-      <div className='cart-page-content'>
+      <div className="cart-page-content">
         <section id='cartContent'>
           <br />
           <ul>
             {state.items.map((item) => (
-              <div id='donutTemplate' key={item.name}>
-                <img id='donutImage' src={item.image} alt={item.name} />
-                <div className='left-align-info'>
-                  <div className='name-and-price'>
-                    <h3 className='order-detail' id='donutName'>{item.name}</h3>
-                    <p className='order-detail' id='donutPrice'>Price: ${item.price}</p>
+              <div id='donutTempelate' key={item.name}>
+                <img id="donutImage" src={item.image} alt={item.name} />
+                <div className="left-align-info">
+                  <div className="name-and-price">
+                    <h3 className="order-detail" id='donutName'>{item.name}</h3>
+                    <p className="order-detail" id="donutPrice">Price: ${item.price}</p>
                   </div>
-                  <p className='order-detail' id='totalPrice'>Total: ${item.price * item.quantity}</p>
-                  <div className='quantity-row'>
-                    <button className='order-detail button-in-cart' id='removeDonut' onClick={() => handleRemoveFromCart(item.name)}>-</button>
-                    <p className='order-detail' id='donutQuantity'>{item.quantity}</p>
-                    <button className='order-detail button-in-cart' id='addDonut' onClick={() => handleAddToCart(item)}>+</button>
+                  <p className="order-detail" id="totalPrice">Total: ${item.price * item.quantity}</p>
+                  <div className="quantity-row">
+                    <button className="order-detail button-in-cart" id='removeDonut' onClick={() => handleRemoveFromCart(item.name)}>-</button>
+                    <p className="order-detail" id="donutQuantity">{item.quantity}</p>
+                    <button className="order-detail button-in-cart" id='addDonut' onClick={() => handleAddToCart(item)}>+</button>
                   </div>
                 </div>
               </div>
             ))}
           </ul>
-          <p id='totalQuantity'>Total items: {state.itemCount}</p>
+          <p id="totalQuantity">Total items: {state.itemCount}</p>
           <br />
           <h4 id='totalPrice'>Total Price: ${state.total}</h4>
         </section>
-        <section className='payment-side'>
-          <div className='payment-box'>
-            <h3>Payment goes here</h3>
-            <button className='order-button' onClick={handlePlaceOrder}>Place Order</button>
+        <section className="payment-side">
+          <div className="payment-box">
+            <h3>Pickup Option</h3>
+            <select value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+              <option value="in-store pickup">In-Store Pickup</option>
+              <option value="curbside">Curbside</option>
+            </select>
+            {isFormVisible ? (
+              <form onSubmit={handleFormSubmit}>
+                <label>
+                  Name:
+                  <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                </label>
+                <label>
+                  Email:
+                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                </label>
+                {pickupOption === 'curbside' && (
+                  <label>
+                    Car Info:
+                    <input type="text" name="carInfo" value={formData.carInfo} onChange={handleInputChange} required />
+                  </label>
+                )}
+                <button type="submit">Submit</button>
+              </form>
+            ) : (
+              <button className="order-button" onClick={handlePlaceOrder}>Place Order</button>
+            )}
           </div>
         </section>
-
       </div>
-
       <Footer />
-
     </div>
-
   );
 }
 

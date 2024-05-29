@@ -102,16 +102,44 @@ let count =0;
       // Set editMode
       setEditMode(true);
       setCurOrder(order.id);
-      console.log(order.Donuts);
+      //console.log(order.Donuts);
       setEditableDonuts(order.Donuts);
-      console.log(editableDonuts);
+      //console.log(editableDonuts);
     };
 
-    const handleSaveOrder = () => {
+     const handleSaveOrder = () => {
       // Logic to save the edited order
+      const orderRef = ref(db, `Order/${curOrder}`);
+      // Calc new total items and price
+      let newTotal = 0;
+      let newItems = 0;
+      editableDonuts.forEach((donut) => {
+        newTotal += donut.price * donut.quantity;
+        newItems += donut.quantity * 1;
+      });
+      update(orderRef, { Donuts: editableDonuts, total: newTotal, itemCount: newItems});
       setEditMode(false);
       setCurOrder(null);
+      setEditableDonuts([]);
+     };
+
+    const handleDonutChange = (id, key, value) => {
+      const updatedDonuts = editableDonuts.map((donut) => {
+        if (donut.id === id) {
+          return { ...donut, [key]: value };
+        }
+        return donut;
+      });
+      setEditableDonuts(updatedDonuts);
     };
+
+    const handleRemoveDonut = (id) => {
+      setEditableDonuts(editableDonuts.filter((donut) => donut.id !== id));
+    };
+
+    // const handleAddDonut = () => {
+    //   //setEditableDonuts([...editableDonuts, { id: `new-${Date.now()}`, name: '', quantity: 1 }]);
+    // };
 
   return (
     <div className="AdminOrders">
@@ -155,18 +183,18 @@ let count =0;
               {
                 editMode && curOrder === order.id &&(
                   <div class="edit-form">
-                    <h3>Edit Order</h3>
-                    <form>
+                    <h2>Edit Order</h2>
+                    <br />
                     {editableDonuts.map((donut) => (
-                      <p key={donut.id}>{donut.name} x {donut.quantity} : <input 
+                      <p key={donut.id}>{donut.name} x <input 
                       type="number" 
                       value={donut.quantity} 
-                      onChange={(e) => handleDonutChange(index, 'quantity', e.target.value)} 
+                      onChange={(e) => handleDonutChange(donut.id, 'quantity', e.target.value)} 
                       min="0"
-                    /></p>
+                    /><button onClick={() => handleRemoveDonut(donut.id)}>Remove</button></p>
                       
                     ))}
-                    </form>
+                    <button onClick={handleSaveOrder}>Save</button>
                   </div>
                 )
               }

@@ -30,9 +30,10 @@ const ForgotPassword = () => {
     <div className="ForgotPassword">
       <Header></Header>
       
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWx6dzZ4bHMycTQ4emphdXUxOWlhb2t0MnNuM3h1a2hkYjlpYzk1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IqePJLQEo30ZiF89LB/giphy.gif" alt="meme" />
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
+
+      <h2>Forgot Password?</h2>
+      <form id='forgotContainer' onSubmit={handleSubmit}>
+      <img id='forgor'src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWx6dzZ4bHMycTQ4emphdXUxOWlhb2t0MnNuM3h1a2hkYjlpYzk1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IqePJLQEo30ZiF89LB/giphy.gif" alt="meme" />
         <label>
           Email:
           <input
@@ -46,7 +47,7 @@ const ForgotPassword = () => {
       </form>
       {message && <p className="success-message">{message}</p>}
       {error && <p className="error-message">{error}</p>}
-      <Link to="/login">Back to Login</Link>
+      <Link id='back' to="/login">Back to Login</Link>
       <Footer></Footer>
     </div>
   );

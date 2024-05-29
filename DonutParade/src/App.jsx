@@ -16,7 +16,6 @@ import AdminHome from './pages/AdminHome';
 import { CartProvider } from './components/CartContext';
 import { AuthProvider } from './pages/AuthContext'; // Import AuthProvider
 import AdminRoute from './pages/AdminRoute'; // Import the AdminRoute component
-
 const routes = [
   {
     path: '/',
@@ -59,10 +58,7 @@ const routes = [
     element: <Outlet />, // Use Outlet for nested routes
     children: [
       {
-        path: 'home',
-        element: <AdminRoute component={AdminHome} />, // Wrap with AdminRoute
-      },
-      {
+
         path: 'orders',
         element: <AdminRoute component={AdminOrders} />, // Wrap with AdminRoute
       },

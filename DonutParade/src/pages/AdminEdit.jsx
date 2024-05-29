@@ -78,9 +78,12 @@ function AdminEdit() {
 
   return (
     <div className="AdminEdit">
+
       <AdminNav />
+      
       <div id="AdminEdit">
-        <h3>Donut Table</h3>
+
+        <h3 id='title'>Donut Table</h3>
         
         <table className="donut-table">
           <thead>
@@ -90,7 +93,7 @@ function AdminEdit() {
               <th className="content-td">Donut Price</th>
               <th className="content-td">Image</th>
               <th className="content-td">Stock</th>
-              <th className="edit-button-container">Edit</th>
+              <th className="edit-button-container content-td">Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -104,8 +107,8 @@ function AdminEdit() {
                     <img src={donut.image} alt={donut.name} style={{ width: '50px', height: '50px' }} />
                   </td>
                   <td className="content-td">{donut.stock}</td>
-                  <td className="edit-button-container">
-                    <button className="edit-button" onClick={() => handleEditClick(donut)}>Edit</button>
+                  <td className="edit-button-container content-td">
+                    <button className="edit-button content-td" onClick={() => handleEditClick(donut)}>Edit</button>
                   </td>
                 </tr>
                 {editMode && currentDonutId === donut.id && (
@@ -147,7 +150,7 @@ function AdminEdit() {
             <tr>
               <th className="content-td">User Name</th>
               <th className="content-td">Role</th>
-              <th className="edit-button-container">Edit</th>
+              <th className="edit-button-container content-td">Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -155,8 +158,8 @@ function AdminEdit() {
               <tr key={user.id}>
                 <td className="content-td">{user.name}</td>
                 <td className="content-td">{user.role}</td>
-                <td className="edit-button-container">
-                  <button className="edit-button">Edit</button>
+                <td className="edit-button-container content-td">
+                  <button className="edit-button content-td">Edit</button>
                 </td>
               </tr>
             ))}

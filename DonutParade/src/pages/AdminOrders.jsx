@@ -119,11 +119,15 @@ let count =0;
               <div class="order-section">
 
                 <h2 class="order-name">{order.acc}</h2>
-                <h2 class="order-contact">hehe@haha.com</h2>
-                <br/>
+                <h2 class="order-contact">{order.email}</h2>
+                <h2 class="order-contact">{order.carInfo}</h2>
+                <h2 class="order-contact">{order.phone}</h2>             
                 <h2 class="order-total-items">Item Count : {order.itemCount}</h2>
                 <br />
                 <h2 class="order-total-cost">Total Price : ${order.total}</h2>
+                <br />
+                <h2 class="order-contact">Pickup Option: {order.pickupOption}</h2>
+
 
               </div>
               <div class="donut-list">

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Route, Link, Outlet } from 'react-router-dom';
 import Home from './pages/Home';
@@ -7,6 +8,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import User from './pages/User';
 import Login from './pages/Login';
+import Thanks from './pages/Thanks'
 import Signup from './pages/Signup';
 import ForgotPassword from './pages/ForgotPassword';
 import ErrorPage from './pages/ErrorPage';
@@ -16,6 +18,7 @@ import AdminHome from './pages/AdminHome';
 import { CartProvider } from './components/CartContext';
 import { AuthProvider } from './pages/AuthContext'; // Import AuthProvider
 import AdminRoute from './pages/AdminRoute'; // Import the AdminRoute component
+
 const routes = [
   {
     path: '/',
@@ -28,6 +31,10 @@ const routes = [
   {
     path: '/cart',
     element: <Cart />,
+  },
+  {
+    path: '/thanks',
+    element: <Thanks />,
   },
   {
     path: '/contact',

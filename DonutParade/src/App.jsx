@@ -1,46 +1,23 @@
-import React from 'react'
-import {createBrowserRouter, RouterProvider, Route, Link, Outlet} from 'react-router-dom'
-import Home from './pages/Home'
-import Menu from './pages/Menu'
-import Cart from './pages/Cart'
+
+import React from 'react';
+import { createBrowserRouter, RouterProvider, Route, Link, Outlet } from 'react-router-dom';
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+import Cart from './pages/Cart';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import User from './pages/User';
+import Login from './pages/Login';
 import Thanks from './pages/Thanks'
-import Contact from './pages/Contact'
-import About from './pages/About'
-import User from './pages/User'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import ForgotPassword from './pages/ForgotPassword'
-import ErrorPage from './pages/ErrorPage'
-import AdminOrders from './pages/AdminOrders'
-import AdminEdit from './pages/AdminEdit'
-import AdminHome from './pages/AdminHome'
-import { CartProvider } from './components/CartContext'
-import RoleChecker from './pages/RoleChecker'
-
-
-
-
-const adminRoutes = [
-  {
-  //   path: '/admin',
-  //   element: <RoleChecker><Outlet /></RoleChecker>, 
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       element: <AdminHome />,
-  //     },
-  //     {
-  //       path: 'orders',
-  //       element: <AdminOrders />,
-  //     },
-  //     {
-  //       path: 'edit',
-  //       element: <AdminEdit />,
-  //     },
-  //   ],
-  },
-];
-
+import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
+import ErrorPage from './pages/ErrorPage';
+import AdminOrders from './pages/AdminOrders';
+import AdminEdit from './pages/AdminEdit';
+import AdminHome from './pages/AdminHome';
+import { CartProvider } from './components/CartContext';
+import { AuthProvider } from './pages/AuthContext'; // Import AuthProvider
+import AdminRoute from './pages/AdminRoute'; // Import the AdminRoute component
 
 const routes = [
   {
@@ -84,44 +61,38 @@ const routes = [
     element: <ForgotPassword />,
   },
   {
-    path: '/admin', 
+    path: '/admin',
+    element: <Outlet />, // Use Outlet for nested routes
     children: [
       {
-        path: 'home',
-        element: <AdminHome />,
-      },
-      {
+
         path: 'orders',
-        element: <AdminOrders />,
+        element: <AdminRoute component={AdminOrders} />, // Wrap with AdminRoute
       },
       {
         path: 'edit',
-        element: <AdminEdit />,
+        element: <AdminRoute component={AdminEdit} />, // Wrap with AdminRoute
       },
     ],
-  }
-  ,
-  
+  },
   {
     path: '*',
     element: <ErrorPage />,
-  }
+  },
+];
 
-]
-
-const allRoutes = [...routes, ...adminRoutes];
-const router = createBrowserRouter(allRoutes);
+const router = createBrowserRouter(routes);
 
 function App() {
-
   return (
-      <div className='App'>
+    <div className='App'>
+      <AuthProvider>
         <CartProvider>
-        <RouterProvider router={router} />
+          <RouterProvider router={router} />
         </CartProvider>
-        
-      </div>
-  )
+      </AuthProvider>
+    </div>
+  );
 }
 
-export default App
+export default App;

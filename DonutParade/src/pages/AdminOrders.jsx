@@ -118,7 +118,8 @@ let count =0;
               <div class="order-section">
 
                 <h2 class="order-name">{order.acc}</h2>
-                <h2 class="order-contact">hehe@haha.com</h2>
+                <h2 class="order-contact">{order.email}</h2>
+                <h2 class="order-contact">{order.carInfo}</h2>
                 <br/>
                 <h2 class="order-total-items">Item Count : {order.itemCount}</h2>
                 <br />

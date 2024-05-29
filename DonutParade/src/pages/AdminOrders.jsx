@@ -5,7 +5,8 @@ import AdminNav from '../components/AdminHeader';
 import ApproveArrow from '../assets/Approve.png'
 import RejectX from '../assets/Reject.png'
 import EditIcon from '../assets/EditIcon.png'
-import { ref, get, update, onValue } from "firebase/database";
+import Completed from '../assets/Completed.png'
+import { ref, get, update, onValue, set } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
 
 // import { useState } from 'react';
@@ -14,6 +15,9 @@ function AdminOrders() {
 
   const [orders, setOrders] = useState([]);
   const [filter, setFilter] = useState('All');
+  const [editMode, setEditMode] = useState(false);
+  const [curOrder, setCurOrder] = useState(null);
+  const [editableDonuts, setEditableDonuts] = useState([]);
 
   useEffect(() => {
     // const fetchOrders = async () => {
@@ -45,7 +49,6 @@ function AdminOrders() {
         ...order,
       }));
       setOrders(orderList);
-      setFilter('Awaiting Approval');
     });
     //console.log(orders);
   }, []);
@@ -61,6 +64,8 @@ function AdminOrders() {
     const orderRef = ref(db, `Order/${id}`);
     update(orderRef, { status: 'Rejected' });
   };
+
+
 
   const handleCompleteOrder = (id) => {
     // Update the order status to 'Completed'
@@ -93,6 +98,49 @@ let count =0;
     ? orders 
     : orders.filter(order => order.status === filter);
   
+//Editing
+    const handleEditOrder = (order) => {
+      // Set editMode
+      setEditMode(true);
+      setCurOrder(order.id);
+      //console.log(order.Donuts);
+      setEditableDonuts(order.Donuts);
+      //console.log(editableDonuts);
+    };
+
+     const handleSaveOrder = () => {
+      // Logic to save the edited order
+      const orderRef = ref(db, `Order/${curOrder}`);
+      // Calc new total items and price
+      let newTotal = 0;
+      let newItems = 0;
+      editableDonuts.forEach((donut) => {
+        newTotal += donut.price * donut.quantity;
+        newItems += donut.quantity * 1;
+      });
+      update(orderRef, { Donuts: editableDonuts, total: newTotal, itemCount: newItems});
+      setEditMode(false);
+      setCurOrder(null);
+      setEditableDonuts([]);
+     };
+
+    const handleDonutChange = (id, key, value) => {
+      const updatedDonuts = editableDonuts.map((donut) => {
+        if (donut.id === id) {
+          return { ...donut, [key]: value };
+        }
+        return donut;
+      });
+      setEditableDonuts(updatedDonuts);
+    };
+
+    const handleRemoveDonut = (id) => {
+      setEditableDonuts(editableDonuts.filter((donut) => donut.id !== id));
+    };
+
+    // const handleAddDonut = () => {
+    //   //setEditableDonuts([...editableDonuts, { id: `new-${Date.now()}`, name: '', quantity: 1 }]);
+    // };
 
   return (
     <div className="AdminOrders">
@@ -111,7 +159,7 @@ let count =0;
           {filteredOrders.map((order) => (
             <div class={getOrderClass(order.status)} key={order.id}>
             <div class="order-box-row">
-              <h1 class="order-number">Order {++count}</h1>
+              <h1 class="order-number">Order {order.id}</h1>
               <h2 class="order-time">{order.date}</h2>
             </div>
 
@@ -137,13 +185,32 @@ let count =0;
                   <p key={key}>{donut.name} x {donut.quantity}</p>
                 ))}
               </div>
+              {
+                editMode && curOrder === order.id &&(
+                  <div class="edit-form">
+                    <h2>Edit Order</h2>
+                    <br />
+                    {editableDonuts.map((donut) => (
+                      <p key={donut.id}>{donut.name} x <input 
+                      type="number" 
+                      value={donut.quantity} 
+                      onChange={(e) => handleDonutChange(donut.id, 'quantity', e.target.value)} 
+                      min="0"
+                    /><button onClick={() => handleRemoveDonut(donut.id)}>Remove</button></p>
+                      
+                    ))}
+                    <button onClick={handleSaveOrder}>Save</button>
+                  </div>
+                )
+              }
               <div class="button-section">
                 <div class="button-col">
 
                   <button class="order-buttons" onClick={() => handleApproveOrder(order.id)}><img src={ApproveArrow} alt="Approve" /></button>
                   <button class="order-buttons" onClick={() => handleRejectOrder(order.id)}><img src={RejectX} alt="Reject" /></button>
-                  <button class="order-buttons"><img src={ApproveArrow} alt="Edit" /></button>
-                  <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={ApproveArrow} alt="Complete" /></button>
+
+                  <button class="order-buttons" onClick={() => handleEditOrder(order)}><img src={EditIcon} alt="Edit" /></button>
+                  <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={Completed} alt="Complete" /></button>
                 </div>
 
               </div>

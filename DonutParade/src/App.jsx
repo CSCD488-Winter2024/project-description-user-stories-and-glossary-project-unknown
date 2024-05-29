@@ -14,7 +14,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import ErrorPage from './pages/ErrorPage';
 import AdminOrders from './pages/AdminOrders';
 import AdminEdit from './pages/AdminEdit';
-import AdminHome from './pages/AdminHome';
+
 import { CartProvider } from './components/CartContext';
 import { AuthProvider } from './pages/AuthContext'; // Import AuthProvider
 import AdminRoute from './pages/AdminRoute'; // Import the AdminRoute component

@@ -127,24 +127,21 @@ function Cart() {
         <section className="payment-side">
           <div className="payment-box">
             <h3>Pickup Option</h3>
-            <select value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+            <select placeholder="Pickup Option" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
               <option value="in-store pickup">In-Store Pickup</option>
               <option value="curbside">Curbside</option>
             </select>
             {isFormVisible ? (
-              <form onSubmit={handleFormSubmit}>
+              <form class="checkout-form" onSubmit={handleFormSubmit}>
                 <label>
-                  Name:
-                  <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                  <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
                 </label>
                 <label>
-                  Email:
-                  <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+                  <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </label>
                 {pickupOption === 'curbside' && (
                   <label>
-                    Car Info:
-                    <input type="text" name="carInfo" value={formData.carInfo} onChange={handleInputChange} required />
+                    <input type="text" name="carInfo" placeholder="Car info (Make, Model, Color)"value={formData.carInfo} onChange={handleInputChange} required />
                   </label>
                 )}
                 <button type="submit">Submit</button>

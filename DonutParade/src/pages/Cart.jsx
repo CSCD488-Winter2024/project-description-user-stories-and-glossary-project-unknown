@@ -49,11 +49,12 @@ function Cart() {
           acc: userData.name,
           email: userData.email,
           carInfo: userData.carInfo,
+          phone: userData.phone,
           status: 'Awaiting Approval',
         });
       } 
       else {
-        console.error("No user data available");
+        console.error("No user data available / Log in required");
       }
     }).catch((error) => {
       console.error(error);

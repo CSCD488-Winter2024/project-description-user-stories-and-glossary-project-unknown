@@ -76,9 +76,9 @@ function User({ uid }) {
         </ul>
       </div>
 
-      <h1 id='prevOrder'>Previous Orders</h1>
+      {/* <h1 id='prevOrder'>Previous Orders</h1> */}
 
-      <div id='orderContainer'>
+      {/* <div id='orderContainer'>
         <div class='orderDetails'>
           <h2 id="orderDate">Order #1</h2>
           <ul id='donutDetails'>
@@ -87,7 +87,7 @@ function User({ uid }) {
             <li>Price: <span id='price'>$1.00</span></li>
           </ul>
         </div>
-      </div>
+      </div> */}
       {/* <RoleChecker userId={uid} />  */}
 
       <Footer />

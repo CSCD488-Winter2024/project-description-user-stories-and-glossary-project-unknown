@@ -25,6 +25,7 @@ html, body {
     flex-direction: row;
     align-items: center; 
     gap: 0.5rem; 
+    margin-left: 2rem;
 }
 
 .name-and-price {
@@ -32,6 +33,7 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
     width: 100%; /* Make sure it takes full width */
+    margin-left: 2rem;
 }
 
 .button-in-cart {
@@ -77,9 +79,11 @@ html, body {
 
 #donutImage {
     margin: 10px;
+    margin-left: 2rem;
     width: 10rem;
     height: 10rem;
     border-radius: 5px;
+
 }
 
 .left-align-info {
@@ -110,8 +114,10 @@ html, body {
 #totalPrice{
     margin-top:1rem;
     margin-bottom:2rem;
+    margin-left: 3rem;
 }
 #totalQuantity{
     margin-top:1rem;
     margin-bottom:2rem;
+    margin-left:3rem;
 }

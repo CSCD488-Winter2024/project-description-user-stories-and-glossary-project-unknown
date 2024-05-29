@@ -1,36 +1,28 @@
-// import React, { createContext, useContext, useEffect, useState } from 'react';
-// import { auth } from '../scripts/FBconfig.js'; // Assuming you have Firebase authentication configured
+import React, { useContext, useEffect, useState } from 'react';
+import { auth } from '../scripts/FBconfig.js'; // Import your Firebase auth
 
-// // Create the AuthContext
-// const AuthContext = createContext();
+const AuthContext = React.createContext();
 
-// // Custom hook to use the AuthContext
-// export const useAuth = () => useContext(AuthContext);
+export function useAuth() {
+  return useContext(AuthContext);
+}
 
-// // AuthProvider component to manage authentication state
-// export const AuthProvider = ({ children }) => {
-//   const [currentUser, setCurrentUser] = useState(null);
-//   const [loading, setLoading] = useState(true);
+export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-//   // Function to handle user authentication state changes
-//   useEffect(() => {
-//     const unsubscribe = auth.onAuthStateChanged((user) => {
-//       setCurrentUser(user);
-//       setLoading(false);
-//     });
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
 
-//     // Clean up subscription
-//     return () => unsubscribe();
-//   }, []);
+    return unsubscribe;
+  }, []);
 
-//   const value = {
-//     currentUser,
-//     // Add other authentication-related functions here if needed
-//   };
-
-//   return (
-//     <AuthContext.Provider value={value}>
-//       {!loading && children} {/* Render children only when authentication state is loaded */}
-//     </AuthContext.Provider>
-//   );
-// };
+  return (
+    <AuthContext.Provider value={{ currentUser }}>
+      {!loading && children}
+    </AuthContext.Provider>
+  );
+}

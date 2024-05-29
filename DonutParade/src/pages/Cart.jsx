@@ -11,7 +11,7 @@ function Cart() {
   const { state, dispatch } = useContext(CartContext);
   const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
   const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
-  const [formData, setFormData] = useState({ name: '', email: '', carInfo: '' }); // State to store form data
+  const [formData, setFormData] = useState({ name: '', email: '', carMake: '', carModel: '', carColor: '' }); // State to store form data
 
   const handleRemoveFromCart = (name) => {
     dispatch({ type: 'REMOVE_ONE', payload: { name } });
@@ -82,7 +82,8 @@ function Cart() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email) {
-      const userData = { name: formData.name, email: formData.email, carInfo: formData.carInfo || '', phone: '' };
+      const carInfo = `${formData.carMake} ${formData.carModel} ${formData.carColor}`;
+      const userData = { name: formData.name, email: formData.email, carInfo: carInfo, phone: '' };
       processOrder(userData);
       setIsFormVisible(false); // Hide the form after submitting
     } else {
@@ -132,7 +133,7 @@ function Cart() {
               <option value="curbside">Curbside</option>
             </select>
             {isFormVisible ? (
-              <form class="checkout-form" onSubmit={handleFormSubmit}>
+              <form className="checkout-form" onSubmit={handleFormSubmit}>
                 <label>
                   <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
                 </label>
@@ -140,9 +141,17 @@ function Cart() {
                   <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </label>
                 {pickupOption === 'curbside' && (
-                  <label>
-                    <input type="text" name="carInfo" placeholder="Car info (Make, Model, Color)"value={formData.carInfo} onChange={handleInputChange} required />
-                  </label>
+                  <div className="car-info">
+                    <label>
+                      <input type="text" name="carMake" placeholder="Car Make" value={formData.carMake} onChange={handleInputChange} required />
+                    </label>
+                    <label>
+                      <input type="text" name="carModel" placeholder="Car Model" value={formData.carModel} onChange={handleInputChange} required />
+                    </label>
+                    <label>
+                      <input type="text" name="carColor" placeholder="Car Color" value={formData.carColor} onChange={handleInputChange} required />
+                    </label>
+                  </div>
                 )}
                 <button type="submit">Submit</button>
               </form>

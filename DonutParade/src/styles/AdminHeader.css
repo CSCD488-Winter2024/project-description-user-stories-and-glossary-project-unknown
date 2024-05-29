@@ -2,18 +2,18 @@
     margin: 0;
     padding: 0;
 }
-
-#adNav {
+    
+.AdminHeader {
     /* height: 100%; */
-    width: 100vw;
+    width: 100%;
     padding-top: 1rem;
     padding-bottom: 2rem;
-    margin-left: 0;
     background-color: white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* position: sticky; */
     top: 0;
     z-index: 3;
-
+    text-align: center;
 }
 
 .icon {
@@ -21,21 +21,19 @@
     max-height: auto;
 }
 
-#DonutParadeLogo {
-    width: 130px;
-    height: 130px;
+#Cart {
+    width: 40px;
+    height: 30px;
     background-color: none;
-    margin-left: 1rem
 }
 
-.AdminNav #mobileNav a {
-    text-align: center;
+#User {
+    width: 30px;
+    height: 30px;
 }
 
-.AdminNav #nav-toggle {
-    translate: -30%
-}
-
-.AdminNav #mobileNav {
-    translate: -30%;
+#DonutParadeLogo {
+    width: 140px;
+    height: 120px;
+    margin-left: 1rem;
 }

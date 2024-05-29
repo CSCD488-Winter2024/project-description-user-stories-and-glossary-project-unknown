@@ -1,21 +1,30 @@
 import React from 'react'
-//import Navbar from './Navbar'
 import DonutParadeLogo from '../assets/DonutParadeLogoblack.png'
+import Cart from '../assets/Cart.png'
+import User from '../assets/User.png'
+import Bitten from '../assets/bitten.png'
 import '../styles/AdminHeader.css'
 
-function AdminNav() {
+function AdminHeader() {
   return (
-    <div className='AdminNav'>
 
-       <div id='adNav' className="navbar mx-2 flex justify-between items-center w-auto text-2xl">
+    <div className='AdminHeader'>
+
+      {/* <div id='helloUser' state='false'>
+        <img src={Bitten} alt="Donut" id='bitten' />
+        <h1>Welcome User</h1>
+      </div> */}
+
+
+        <div className="navbar mx-2 flex justify-between items-center w-auto text-2xl">
             <a href='/admin/orders'>
                 <img src={DonutParadeLogo} alt="Donut Parade Logo" id='DonutParadeLogo' />
-                <h3 id='admin'>Admin</h3>
+                <h2>Admin</h2>
             </a>
             <div className="hidden md:flex dropdown" id='miniNav'>
               <ul className='md:flex gap-4 hidden:menu mx-4'>
                 <a href="/admin/orders">Orders</a>
-                <a href="/admin/edit">Edit</a>
+                <a href="/admin/edit">Edit Products</a>
                 <a href="/">Customer View</a>
               </ul>
             </div>
@@ -25,15 +34,16 @@ function AdminNav() {
               </summary>
               <ul id='mobileNav' className="p-2 shadow menu dropdown-content z-[1] bg-purple-200 rounded-box text-lg gap-1">
                   <li><a href="/admin/orders">Orders</a></li>
-                  <li><a href="/admin/edit">Edit</a></li>
-                  <li><a href="/">Customer View</a></li>
+                  <li><a className='text-center' href="/admin/edit">Edit Products</a></li>
+                  <li><a className='text-center' href="/">Customer View</a></li>
                 </ul>
             </details>
             
         </div>
-      
+
     </div>
+    
   )
 }
 
-export default AdminNav
+export default AdminHeader

@@ -29,7 +29,8 @@ const ForgotPassword = () => {
   return (
     <div className="ForgotPassword">
       <Header></Header>
-      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2lld3ZsY21sa2V5dXNyMndtOTk2c2llZWVrYml4ZjIzYXkyeWpoMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26BROFLJSFhP0cMGk/giphy.gif" alt="meme" />
+      
+      <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWx6dzZ4bHMycTQ4emphdXUxOWlhb2t0MnNuM3h1a2hkYjlpYzk1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IqePJLQEo30ZiF89LB/giphy.gif" alt="meme" />
       <h2>Forgot Password</h2>
       <form onSubmit={handleSubmit}>
         <label>

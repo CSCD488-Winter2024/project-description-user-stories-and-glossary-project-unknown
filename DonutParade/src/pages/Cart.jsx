@@ -128,32 +128,33 @@ function Cart() {
         <section className="payment-side">
           <div className="payment-box">
             <h3>Pickup Option</h3>
-            <select placeholder="Pickup Option" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
-              <option value="in-store pickup">In-Store Pickup</option>
-              <option value="curbside">Curbside</option>
+            <select id="pickup-dropdown" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+              <option class="option" value="in-store pickup">In-Store Pickup</option>
+              <option class="option" value="curbside">Curbside</option>
             </select>
             {isFormVisible ? (
               <form className="checkout-form" onSubmit={handleFormSubmit}>
-                <label>
-                  <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
-                </label>
-                <label>
-                  <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
-                </label>
+                <div class="form-row">
+                <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
+
+                </div>
+                <div class="form-row">
+                <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
+
+                </div>
+                
                 {pickupOption === 'curbside' && (
-                  <div className="car-info">
-                    <label>
+                  <div className="form-row">
+                    
                       <input type="text" name="carMake" placeholder="Car Make" value={formData.carMake} onChange={handleInputChange} required />
-                    </label>
-                    <label>
+                    
                       <input type="text" name="carModel" placeholder="Car Model" value={formData.carModel} onChange={handleInputChange} required />
-                    </label>
-                    <label>
+                    
                       <input type="text" name="carColor" placeholder="Car Color" value={formData.carColor} onChange={handleInputChange} required />
-                    </label>
+                    
                   </div>
                 )}
-                <button type="submit">Submit</button>
+                <button id="submit-button" type="submit">Submit</button>
               </form>
             ) : (
               <button className="order-button" onClick={handlePlaceOrder}>Place Order</button>

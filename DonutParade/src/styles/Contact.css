@@ -23,7 +23,8 @@
   filter: brightness(65%);  
 }
 #map{
-  border-style:none;
+  border: 5px solid #BDD7BC;
+  border-radius:5px;
 }
 
 #contactContainer p {

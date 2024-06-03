@@ -159,6 +159,7 @@ function Cart() {
             ) : (
               <button className="order-button" onClick={handlePlaceOrder}>Place Order</button>
             )}
+            <p>Note: Payments are processed in store only.</p>
           </div>
         </section>
       </div>

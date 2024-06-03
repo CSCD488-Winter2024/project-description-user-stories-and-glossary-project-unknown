@@ -34,16 +34,16 @@ const ForgotPassword = () => {
       <h2>Forgot Password?</h2>
       <form id='forgotContainer' onSubmit={handleSubmit}>
       <img id='forgor'src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWx6dzZ4bHMycTQ4emphdXUxOWlhb2t0MnNuM3h1a2hkYjlpYzk1eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IqePJLQEo30ZiF89LB/giphy.gif" alt="meme" />
-        <label>
-          Email:
-          <input
+
+          <input class="email-input"
+            Placeholder="Email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        <button type="submit">Send Password Reset Email</button>
+
+        <button class="send-button" type="submit">Send Password Reset Email</button>
       </form>
       {message && <p className="success-message">{message}</p>}
       {error && <p className="error-message">{error}</p>}

@@ -76,17 +76,8 @@ function User({ uid }) {
         </ul>
       </div>
 
-      <h1 id='prevOrder'>Previous Orders</h1>
-
-      <div id='orderContainer'>
-        <div class='orderDetails'>
-          <h2 id="orderDate">Order #1</h2>
-          <ul id='donutDetails'>
-            <li>Donut: <span id='donut'>Glazed</span></li>
-            <li>Quantity: <span id='quantity'>1</span></li>
-            <li>Price: <span id='price'>$1.00</span></li>
-          </ul>
-        </div>
+      <div>
+        <br />
       </div>
       {/* <RoleChecker userId={uid} />  */}
 

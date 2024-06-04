@@ -47,7 +47,7 @@ html, body {
   }
   
   .edit-button-container {
-    border: 0.25rem grey solid;
+    border: 0.4rem grey solid;
     background-color: white;
     font-family: Montserrat;
     padding: 1rem;
@@ -58,11 +58,13 @@ html, body {
 
   
 .edit-button {
+  border: none;
   flex: 1; 
-  border: black 5px solid;
   background-color: #F2ADB7; 
   color: white; 
   transition: background-color 0.3s; 
+  border-radius:50px;
+  border-style: none;
 }
 
 .edit-button:hover {
@@ -110,7 +112,8 @@ html, body {
   width: 100%;
   background-color: #F2ADB7;
   color: white;
-  border: black 5px solid;
+  border-radius:50px;
+  border-style: none;
 }
 
 .edit-form button:hover {

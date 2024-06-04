@@ -12,6 +12,7 @@ function Cart() {
   const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
   const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
   const [formData, setFormData] = useState({ name: '', email: '', carInfo: '' }); // State to store form data
+  const [pickupTime, setPickupTime] = useState(''); // State to store pickup time
 
   const handleRemoveFromCart = (name) => {
     dispatch({ type: 'REMOVE_ONE', payload: { name } });
@@ -131,6 +132,13 @@ function Cart() {
               <option value="in-store pickup">In-Store Pickup</option>
               <option value="curbside">Curbside</option>
             </select>
+            <h3>Pickup Time</h3>
+            <p>
+              Date : <input type="date" />
+            </p>
+            <p>
+              Time : <input type="time" />
+            </p>
             {isFormVisible ? (
               <form class="checkout-form" onSubmit={handleFormSubmit}>
                 <label>

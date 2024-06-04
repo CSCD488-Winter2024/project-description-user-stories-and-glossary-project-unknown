@@ -78,13 +78,9 @@ function AdminEdit() {
 
   return (
     <div className="AdminEdit">
-
       <AdminNav />
-      
       <div id="AdminEdit">
-
-        <h3 id='title'>Donut Table</h3>
-        
+        <h3 id="title">Donut Table</h3>
         <table className="donut-table">
           <thead>
             <tr>
@@ -111,34 +107,6 @@ function AdminEdit() {
                     <button className="edit-button content-td" onClick={() => handleEditClick(donut)}>Edit</button>
                   </td>
                 </tr>
-                {editMode && currentDonutId === donut.id && (
-                  <tr>
-                    <td colSpan="6">
-                      <div className="edit-form">
-                        <h3>Edit Donut</h3>
-                        <form onSubmit={handleFormSubmit}>
-                          <label>
-                            Donut Name:
-                            <input type="text" name="name" value={currentDonut.name} onChange={handleInputChange} required />
-                          </label>
-                          <label>
-                            Description:
-                            <input type="text" name="desc" value={currentDonut.desc} onChange={handleInputChange} required />
-                          </label>
-                          <label>
-                            Price:
-                            <input type="number" name="price" value={currentDonut.price} onChange={handleInputChange} required />
-                          </label>
-                          <label>
-                            Stock:
-                            <input type="number" name="stock" value={currentDonut.stock} onChange={handleInputChange} required />
-                          </label>
-                          <button type="submit">Save</button>
-                        </form>
-                      </div>
-                    </td>
-                  </tr>
-                )}
               </React.Fragment>
             ))}
           </tbody>
@@ -165,6 +133,32 @@ function AdminEdit() {
             ))}
           </tbody>
         </table>
+        {editMode && (
+          <div className="edit-form-overlay">
+            <div className="edit-form">
+              <h3>Edit Donut</h3>
+              <form onSubmit={handleFormSubmit}>
+                <label>
+                  Donut Name:
+                  <input type="text" name="name" value={currentDonut.name} onChange={handleInputChange} required />
+                </label>
+                <label>
+                  Description:
+                  <input type="text" name="desc" value={currentDonut.desc} onChange={handleInputChange} required />
+                </label>
+                <label>
+                  Price:
+                  <input type="number" name="price" value={currentDonut.price} onChange={handleInputChange} required />
+                </label>
+                <label>
+                  Stock:
+                  <input type="number" name="stock" value={currentDonut.stock} onChange={handleInputChange} required />
+                </label>
+                <button type="submit">Save</button>
+              </form>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

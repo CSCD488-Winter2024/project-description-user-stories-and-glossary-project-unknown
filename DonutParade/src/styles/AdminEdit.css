@@ -6,63 +6,60 @@
 html, body {
   height: 100%;
   width: 100%;
-
 }
 
 .AdminEdit {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; 
-    width: 100vw;
-
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
 
 .AdminEdit #title {
-    text-align: center;
-    margin: 1rem;
+  text-align: center;
+  margin: 1rem;
 }
 
 #AdminEdit {
   width: 100%;
-  /* height: 100%; */
-  align-items: center;
-  justify-content: center;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .donut-table {
   border-collapse: collapse;
   width: 70%;
-  height: 100%;
   margin: 1rem;
   background-color: white;
 }
 
 .content-td {
-    font-family: Montserrat;
-    padding: 1rem;
-    border: 0.25rem grey solid;
-    background-color: white;
-  }
-  
-  .edit-button-container {
-    border: 0.25rem grey solid;
-    background-color: white;
-    font-family: Montserrat;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-  }
+  font-family: Montserrat;
+  padding: 1rem;
+  border: 0.25rem grey solid;
+  background-color: white;
+}
 
+.edit-button-container {
+  border: 0.4rem grey solid;
+  background-color: white;
+  font-family: Montserrat;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
 
-  
 .edit-button {
-  flex: 1; 
-  border: black 5px solid;
-  background-color: #F2ADB7; 
-  color: white; 
-  transition: background-color 0.3s; 
+  border: none;
+  flex: 1;
+  background-color: #F2ADB7;
+  color: white;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  border-style: none;
 }
 
 .edit-button:hover {
@@ -72,9 +69,7 @@ html, body {
 
 .accounts-table {
   border-collapse: collapse;
-  height: auto;
   width: 70%;
-  height: 100%;
   margin: 1rem;
   background-color: purple;
   justify-content: center;
@@ -82,14 +77,28 @@ html, body {
   text-align: center;
 }
 
+.edit-form-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
 .edit-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  width: 50%;
   background-color: #BDD7BC;
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .edit-form label {
@@ -99,18 +108,21 @@ html, body {
 }
 
 .edit-form input {
-  margin: 1rem;
   padding: 0.5rem;
+  border-style:none;
+  border-radius:5px;
   width: 100%;
 }
 
 .edit-form button {
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom:1rem;
   padding: 0.5rem;
   width: 100%;
   background-color: #F2ADB7;
   color: white;
-  border: black 5px solid;
+  border-radius: 50px;
+  border-style: none;
 }
 
 .edit-form button:hover {

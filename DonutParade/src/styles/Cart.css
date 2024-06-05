@@ -201,6 +201,13 @@ html, body {
         flex-direction: column;
     }
 
+    #donutTempelate {
+        /* background-color: red; */
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+
     .checkout-form {
         width: 100%;
     }

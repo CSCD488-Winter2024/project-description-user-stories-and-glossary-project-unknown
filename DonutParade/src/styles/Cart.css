@@ -76,7 +76,11 @@ html, body {
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width:100%;
+    width: 100%;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    
 }
 
 .checkout-form input {
@@ -86,6 +90,7 @@ html, body {
     width: 100%; 
     border-radius: 5px;
     font-family: Montserrat;
+    
 }
 
 .quantity-row {
@@ -94,6 +99,7 @@ html, body {
     align-items: center; 
     gap: 0.5rem; 
     margin-left: 2rem;
+    
 }
 
 .name-and-price {

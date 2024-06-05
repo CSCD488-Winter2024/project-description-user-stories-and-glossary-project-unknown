@@ -17,6 +17,17 @@
     top: 0;
 }
 
+.edit-quantity-input {
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+
 .admin-list {
     display: flex;
     flex-direction: column;

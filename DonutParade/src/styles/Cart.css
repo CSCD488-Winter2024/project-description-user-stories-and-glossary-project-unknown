@@ -16,6 +16,17 @@ html, body {
     
 }
 
+.date-in {
+    margin:5px;
+    border-style: none;
+    border-radius: 50px;
+    padding:5px;
+    font-family: Montserrat;
+    background-color: #F2ADB7;
+    font-weight:bold;
+    color:white;
+}
+
 #submit-button{
     border-style: none;
     border-radius: 50px;
@@ -46,6 +57,7 @@ html, body {
     background-color: #F2ADB7;
     font-weight:bold;
     color:white;
+    cursor: pointer;
 }
 
 .cart-page-content {

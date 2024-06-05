@@ -164,7 +164,7 @@ function Cart() {
             </select>
             <h3>Pickup Time</h3>
             <p>
-              Date and Time : <input type="datetime-local" onChange={(e) => setPickupTime(e.target.value)} />
+              Date and Time : <input className="date-in" type="datetime-local" onChange={(e) => setPickupTime(e.target.value)} />
             </p>
             {isFormVisible ? (
               <form className="checkout-form" onSubmit={handleFormSubmit}>

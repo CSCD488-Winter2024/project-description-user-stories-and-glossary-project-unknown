@@ -54,14 +54,16 @@ html, body {
     width: 50vw;
     padding: 10px;
     margin: 10px;
-    border: 1px solid #BDD7BC;
-    border-radius: 5px;
-    background-color: #BDD7BC;
-    color: black;
-    font-size: 1rem;
+    border-radius: 50px;
+    border-style:none;
+
+    font-family: Montserrat;
+    background-color: #F2ADB7;
+    font-weight:bold;
+    color:white;
 }
 
 .Signup #signed:hover, #showPassword:hover {
     cursor: pointer;
-    background-color: #F2ADB7;
+    background-color: #EE95A3;
 }

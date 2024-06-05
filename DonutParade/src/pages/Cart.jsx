@@ -46,6 +46,13 @@ function Cart() {
       carInfo: pickupOption === 'curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
       phone: userData.phone || '', // Default to empty if phone is not available
       pickupOption: pickupOption, // Include the pickup option
+      pickupTime: new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format(new Date(pickupTime)), // Include the pickup time
       status: 'Awaiting Approval',
     }).then(() => {
       console.log("Order placed successfully");
@@ -63,6 +70,26 @@ function Cart() {
 
     if (!userId) {
       setIsFormVisible(true); // Show the form if the user is not logged in
+      return;
+    }
+
+    try {
+      let date = new Date(pickupTime);
+      if (isNaN(date.getTime())) {
+        //send an alert if the date is invalid
+        alert("Invalid pickup time");
+        console.error("Invalid pickup time");
+        return;
+      }
+      if (date < new Date()) {
+        //send an alert if the pickup time is in the past
+        alert("Pickup time must be in the future");
+        console.error("Pickup time must be in the future");
+        return;
+      }
+    }catch (error) {
+      alert("An error occured" + error);
+      console.error("Invalid pickup time");
       return;
     }
 
@@ -134,10 +161,7 @@ function Cart() {
             </select>
             <h3>Pickup Time</h3>
             <p>
-              Date : <input type="date" />
-            </p>
-            <p>
-              Time : <input type="time" />
+              Date and Time : <input type="datetime-local" onChange={(e) =>setPickupTime(e.target.value)} />
             </p>
             {isFormVisible ? (
               <form class="checkout-form" onSubmit={handleFormSubmit}>

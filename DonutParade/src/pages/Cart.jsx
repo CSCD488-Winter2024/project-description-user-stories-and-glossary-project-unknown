@@ -126,7 +126,9 @@ function Cart() {
 
   return (
     <div className='Cart'>
+
       <Header />
+
       <div className="cart-page-content">
         <section id='cartContent'>
           <br />
@@ -195,7 +197,9 @@ function Cart() {
           </div>
         </section>
       </div>
+
       <Footer />
+      
     </div>
   );
 }

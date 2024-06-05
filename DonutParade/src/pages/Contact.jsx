@@ -10,6 +10,7 @@ function Contact() {
 
       <Header />
       <h1 id='contact'>Contact Us</h1>
+      
       <section id='contactContainer'>
         
         

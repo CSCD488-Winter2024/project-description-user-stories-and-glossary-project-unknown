@@ -116,8 +116,8 @@ function AdminEdit() {
           </tbody>
         </table>
 
-        <h3>Admin Users</h3>
-        <table className="accounts-table">
+        {/* <h3>Admin Users</h3> */}
+        {/* <table className="accounts-table">
           <thead>
             <tr>
               <th className="content-td">User Name</th>
@@ -136,7 +136,7 @@ function AdminEdit() {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
         {editMode && (
           <div className="edit-form-overlay">
             <div className="edit-form">

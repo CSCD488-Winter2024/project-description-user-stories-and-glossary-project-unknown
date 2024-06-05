@@ -109,12 +109,11 @@
   }
 
 
-
 }
 
 @media screen and (min-width: 768px) {
   #contactContainer {
-    padding: 20px; 
+    padding: 20px;
   }
 }
 
@@ -147,6 +146,20 @@
 
   #contactContainer p {
     font-size: 2em; 
+  }
+
+}
+
+@media screen and (max-width: 724px) {
+
+
+  #contactContainer {
+    flex-direction: column;
+  }
+
+  #map {
+    width: 90vw;
+    height: 50vh;
   }
 
 }

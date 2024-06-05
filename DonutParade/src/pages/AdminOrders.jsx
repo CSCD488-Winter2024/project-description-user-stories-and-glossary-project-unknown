@@ -204,7 +204,7 @@ let count =0;
               <div class="order-section">
 
                 <h2 class="order-name">{order.acc}</h2>
-                <h2 class="order-contact">{order.email}</h2>
+                <h2 class="order-contact"><a href={`mailto:${order.email}`}>{order.email}</a></h2>
                 <h2 class="order-contact">{order.carInfo}</h2>
                 <h2 class="order-contact">{order.phone}</h2>             
                 <h2 class="order-total-items">Item Count : {order.itemCount}</h2>
@@ -229,24 +229,25 @@ let count =0;
                     <h2>Edit Order</h2>
                     <br />
                     {editableDonuts.map((donut) => (
-                      <p key={donut.id}>{donut.name} x <input 
+                      <p key={donut.id}>{donut.name} x <input
+                      className="edit-quantity-input" 
                       type="number" 
                       value={donut.quantity} 
                       onChange={(e) => handleDonutChange(donut.id, 'quantity', e.target.value)} 
                       min="0"
-                    /><button onClick={() => handleRemoveDonut(donut.id)}>Remove</button></p>
+                    /><button className="order-button" onClick={() => handleRemoveDonut(donut.id)}>Remove</button></p>
                       
                     ))}
                     <p>
-                      Pickup Option: <select placeholder="Pickup Option" value={order.pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+                      Pickup Option: <select id="pickup-dropdown" placeholder="Pickup Option" value={order.pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
                         <option value="In-store Pickup">In-Store Pickup</option>
                         <option value="Curbside">Curbside</option>
                       </select>
                     </p>
                     <p>
-                      Pickup Time: <input type="datetime-local" value={order.pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
+                      Pickup Time: <input className="date-in" type="datetime-local" value={order.pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
                     </p>
-                    <button onClick={handleSaveOrder}>Save</button>
+                    <button className="order-button" onClick={handleSaveOrder}>Save</button>
                   </div>
                 )
               }

@@ -8,6 +8,7 @@ import EditIcon from '../assets/EditIcon.png'
 import Completed from '../assets/Completed.png'
 import { ref, get, update, onValue, set } from "firebase/database";
 import {firebaseApp, db} from "../scripts/FBconfig.js";
+import * as XLSX from 'xlsx';
 
 // import { useState } from 'react';
 
@@ -149,6 +150,29 @@ let count =0;
       setEditableDonuts(editableDonuts.filter((donut) => donut.id !== id));
     };
 
+    const exportCompletedOrdersToExcel = () => {
+      const completedOrders = orders.filter(order => order.status === 'Completed');
+      const orderData = completedOrders.map(order => ({
+        'Order ID': order.id,
+        'Account': order.acc,
+        'Email': order.email,
+        'Phone': order.phone,
+        'Car Info': order.carInfo,
+        'Item Count': order.itemCount,
+        'Total Price': order.total,
+        'Pickup Option': order.pickupOption,
+        'Pickup Time': order.pickupTime,
+        'Donuts': order.Donuts.map(donut => `${donut.name} x ${donut.quantity}`).join(', '),
+      }));
+  
+      const worksheet = XLSX.utils.json_to_sheet(orderData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Completed Orders');
+      const date = new Date();
+      const dateString = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
+      XLSX.writeFile(workbook, `CompletedOrders_${dateString}.xlsx`);
+    };
+
     // const handleAddDonut = () => {
     //   //setEditableDonuts([...editableDonuts, { id: `new-${Date.now()}`, name: '', quantity: 1 }]);
     // };
@@ -164,9 +188,11 @@ let count =0;
             <button class="filter-button" onClick={() => setFilter('Awaiting Approval')}>Awaiting Approval</button>
             <button class="filter-button" onClick={() => setFilter('Rejected')}>Rejected</button>
             <button class="filter-button" onClick={() => setFilter('Completed')}>Completed</button>
+            <button className="filter-button" onClick={exportCompletedOrdersToExcel}>Export Completed Orders</button>
           </div>
         </div>
         <div class="admin-list">
+          
           {filteredOrders.map((order) => (
             <div class={getOrderClass(order.status)} key={order.id}>
             <div class="order-box-row">
@@ -232,6 +258,7 @@ let count =0;
 
                   <button class="order-buttons" onClick={() => handleEditOrder(order)}><img src={EditIcon} alt="Edit" /></button>
                   <button class="order-buttons" onClick={() => handleCompleteOrder(order.id)}><img src={Completed} alt="Complete" /></button>
+                  
                 </div>
 
               </div>

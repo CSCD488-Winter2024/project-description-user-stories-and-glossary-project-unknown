@@ -18,6 +18,8 @@ function AdminOrders() {
   const [editMode, setEditMode] = useState(false);
   const [curOrder, setCurOrder] = useState(null);
   const [editableDonuts, setEditableDonuts] = useState([]);
+  const [pickupOption, setPickupOption] = useState('');
+  const [pickupTime, setPickupTime] = useState('');
 
   useEffect(() => {
     // const fetchOrders = async () => {
@@ -105,6 +107,8 @@ let count =0;
       setCurOrder(order.id);
       //console.log(order.Donuts);
       setEditableDonuts(order.Donuts);
+      setPickupOption(order.pickupOption);
+      setPickupTime(order.pickupTime);
       //console.log(editableDonuts);
     };
 
@@ -118,7 +122,14 @@ let count =0;
         newTotal += donut.price * donut.quantity;
         newItems += donut.quantity * 1;
       });
-      update(orderRef, { Donuts: editableDonuts, total: newTotal, itemCount: newItems});
+      let dateFormat = new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format(new Date(pickupTime));
+      update(orderRef, { Donuts: editableDonuts, total: newTotal, itemCount: newItems, pickupOption: pickupOption, pickupTime: dateFormat});
       setEditMode(false);
       setCurOrder(null);
       setEditableDonuts([]);
@@ -175,6 +186,7 @@ let count =0;
                 <h2 class="order-total-cost">Total Price : ${order.total}</h2>
                 <br />
                 <h2 class="order-contact">Pickup Option: {order.pickupOption}</h2>
+                <h2 class="order-contact">Pickup Time: {order.pickupTime}</h2>
 
 
               </div>
@@ -187,7 +199,7 @@ let count =0;
               </div>
               {
                 editMode && curOrder === order.id &&(
-                  <div class="edit-form">
+                  <div class="edit-order-form">
                     <h2>Edit Order</h2>
                     <br />
                     {editableDonuts.map((donut) => (
@@ -199,6 +211,15 @@ let count =0;
                     /><button onClick={() => handleRemoveDonut(donut.id)}>Remove</button></p>
                       
                     ))}
+                    <p>
+                      Pickup Option: <select placeholder="Pickup Option" value={order.pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
+                        <option value="In-store Pickup">In-Store Pickup</option>
+                        <option value="Curbside">Curbside</option>
+                      </select>
+                    </p>
+                    <p>
+                      Pickup Time: <input type="datetime-local" value={order.pickupTime} onChange={(e) => setPickupTime(e.target.value)} />
+                    </p>
                     <button onClick={handleSaveOrder}>Save</button>
                   </div>
                 )

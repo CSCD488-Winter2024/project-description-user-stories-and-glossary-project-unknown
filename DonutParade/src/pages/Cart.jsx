@@ -11,6 +11,7 @@ function Cart() {
   const { state, dispatch } = useContext(CartContext);
   const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
   const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
+  const [pickupTime, setPickupTime] = useState(''); // State to store pickup time
   const [formData, setFormData] = useState({ name: '', email: '', carMake: '', carModel: '', carColor: '' }); // State to store form data
 
   const handleRemoveFromCart = (name) => {
@@ -42,9 +43,16 @@ function Cart() {
       total: state.total,
       acc: userData.name,
       email: userData.email,
-      carInfo: pickupOption === 'curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
+      carInfo: pickupOption === 'Curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
       phone: userData.phone || '', // Default to empty if phone is not available
       pickupOption: pickupOption, // Include the pickup option
+      pickupTime: new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      }).format(new Date(pickupTime)), // Include the pickup time
       status: 'Awaiting Approval',
     }).then(() => {
       console.log("Order placed successfully");
@@ -62,6 +70,26 @@ function Cart() {
 
     if (!userId) {
       setIsFormVisible(true); // Show the form if the user is not logged in
+      return;
+    }
+
+    try {
+      let date = new Date(pickupTime);
+      if (isNaN(date.getTime())) {
+        //send an alert if the date is invalid
+        alert("Invalid pickup time");
+        console.error("Invalid pickup time");
+        return;
+      }
+      if (date < new Date()) {
+        //send an alert if the pickup time is in the past
+        alert("Pickup time must be in the future");
+        console.error("Pickup time must be in the future");
+        return;
+      }
+    }catch (error) {
+      alert("An error occured" + error);
+      console.error("Invalid pickup time");
       return;
     }
 
@@ -129,9 +157,13 @@ function Cart() {
           <div className="payment-box">
             <h3>Pickup Option</h3>
             <select id="pickup-dropdown" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
-              <option class="option" value="in-store pickup">In-Store Pickup</option>
-              <option class="option" value="curbside">Curbside</option>
+              <option class="option" value="In-store Pickup">In-Store Pickup</option>
+              <option class="option" value="Curbside">Curbside</option>
             </select>
+            <h3>Pickup Time</h3>
+            <p>
+              Date and Time : <input type="datetime-local" onChange={(e) =>setPickupTime(e.target.value)} />
+            </p>
             {isFormVisible ? (
               <form className="checkout-form" onSubmit={handleFormSubmit}>
                 <div class="form-row">

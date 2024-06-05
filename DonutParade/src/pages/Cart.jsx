@@ -43,7 +43,7 @@ function Cart() {
       total: state.total,
       acc: userData.name,
       email: userData.email,
-      carInfo: pickupOption === 'curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
+      carInfo: pickupOption === 'Curbside' ? userData.carInfo || formData.carInfo : '', // Include carInfo only if curbside
       phone: userData.phone || '', // Default to empty if phone is not available
       pickupOption: pickupOption, // Include the pickup option
       pickupTime: new Intl.DateTimeFormat('en-US', {
@@ -156,8 +156,8 @@ function Cart() {
           <div className="payment-box">
             <h3>Pickup Option</h3>
             <select placeholder="Pickup Option" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
-              <option value="in-store pickup">In-Store Pickup</option>
-              <option value="curbside">Curbside</option>
+              <option value="In-store Pickup">In-Store Pickup</option>
+              <option value="Curbside">Curbside</option>
             </select>
             <h3>Pickup Time</h3>
             <p>

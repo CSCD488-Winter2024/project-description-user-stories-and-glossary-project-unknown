@@ -9,7 +9,7 @@ import { getAuth } from "firebase/auth";
 
 function Cart() {
   const { state, dispatch } = useContext(CartContext);
-  const [pickupOption, setPickupOption] = useState('in-store pickup'); // Default to in-store pickup
+  const [pickupOption, setPickupOption] = useState('In-store Pickup'); // Default to in-store pickup
   const [isFormVisible, setIsFormVisible] = useState(false); // State to manage form visibility
   const [pickupTime, setPickupTime] = useState(''); // State to store pickup time
   const [formData, setFormData] = useState({ name: '', email: '', carMake: '', carModel: '', carColor: '' }); // State to store form data
@@ -87,8 +87,8 @@ function Cart() {
         console.error("Pickup time must be in the future");
         return;
       }
-    }catch (error) {
-      alert("An error occured" + error);
+    } catch (error) {
+      alert("An error occurred" + error);
       console.error("Invalid pickup time");
       return;
     }
@@ -157,33 +157,26 @@ function Cart() {
           <div className="payment-box">
             <h3>Pickup Option</h3>
             <select id="pickup-dropdown" value={pickupOption} onChange={(e) => setPickupOption(e.target.value)}>
-              <option class="option" value="In-store Pickup">In-Store Pickup</option>
-              <option class="option" value="Curbside">Curbside</option>
+              <option className="option" value="In-store Pickup">In-Store Pickup</option>
+              <option className="option" value="Curbside">Curbside</option>
             </select>
             <h3>Pickup Time</h3>
             <p>
-              Date and Time : <input type="datetime-local" onChange={(e) =>setPickupTime(e.target.value)} />
+              Date and Time : <input type="datetime-local" onChange={(e) => setPickupTime(e.target.value)} />
             </p>
             {isFormVisible ? (
               <form className="checkout-form" onSubmit={handleFormSubmit}>
-                <div class="form-row">
-                <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
-
+                <div className="form-row">
+                  <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleInputChange} required />
                 </div>
-                <div class="form-row">
-                <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
-
+                <div className="form-row">
+                  <input type="email" placeholder="Email" name="email" value={formData.email} onChange={handleInputChange} required />
                 </div>
-                
-                {pickupOption === 'curbside' && (
+                {pickupOption === 'Curbside' && (
                   <div className="form-row">
-                    
-                      <input type="text" name="carMake" placeholder="Car Make" value={formData.carMake} onChange={handleInputChange} required />
-                    
-                      <input type="text" name="carModel" placeholder="Car Model" value={formData.carModel} onChange={handleInputChange} required />
-                    
-                      <input type="text" name="carColor" placeholder="Car Color" value={formData.carColor} onChange={handleInputChange} required />
-                    
+                    <input type="text" name="carMake" placeholder="Car Make" value={formData.carMake} onChange={handleInputChange} required />
+                    <input type="text" name="carModel" placeholder="Car Model" value={formData.carModel} onChange={handleInputChange} required />
+                    <input type="text" name="carColor" placeholder="Car Color" value={formData.carColor} onChange={handleInputChange} required />
                   </div>
                 )}
                 <button id="submit-button" type="submit">Submit</button>

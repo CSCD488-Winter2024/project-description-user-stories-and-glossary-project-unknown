@@ -126,7 +126,7 @@ const template = `
 
         <div className="menu-grid">
 
-          <div class="menu-row">
+          
           
             {products.map((item) => (
               <div class="menu-box" key={item.name}>
@@ -134,12 +134,12 @@ const template = `
                 <img class="menu-box-img" src={item.image} alt={item.name} />
               </div>
               <h3>{item.name}</h3>
-              <p>{item.desc}</p>
+              <p>${item.price}</p>
               <button class="add-to-cart-button" onClick={() => handleAddToCart(item)}>Add to Cart</button>
             </div>
             ))}
             
-          </div>
+          
 
           {/* <div class="menu-row">
 

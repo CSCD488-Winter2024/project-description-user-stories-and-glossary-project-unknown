@@ -36,20 +36,33 @@ html, body {
   background-color: white;
 }
 
+.donut-table th {
+  font-family: Montserrat;
+  padding: 1rem;
+  /* border: 0.25rem grey solid; */
+  /* background-color: #F2ADB7; */
+  justify-content: center;
+  height: 70px;
+}
+
+
+
 .content-td {
   font-family: Montserrat;
+  justify-content: space-around;
   padding: 1rem;
   border: 0.25rem grey solid;
   background-color: white;
 }
 
 .edit-button-container {
-  border: 0.4rem grey solid;
   background-color: white;
   font-family: Montserrat;
-  padding: 1rem;
+  /* padding: 1rem; */
   display: flex;
   align-items: center;
+  border: none;
+  /* height: 50px; */
 }
 
 .edit-button {

@@ -179,7 +179,9 @@ let count =0;
 
   return (
     <div className="AdminOrders">
+
       <AdminNav />
+      
       <div id="Admin-content">
         <div class="order-nav">
           <div class="filter-list">

@@ -78,9 +78,13 @@ function AdminEdit() {
 
   return (
     <div className="AdminEdit">
+
       <AdminNav />
+
       <div id="AdminEdit">
+
         <h3 id="title">Donut Table</h3>
+
         <table className="donut-table">
           <thead>
             <tr>
@@ -89,7 +93,7 @@ function AdminEdit() {
               <th className="content-td">Donut Price</th>
               <th className="content-td">Image</th>
               <th className="content-td">Stock</th>
-              <th className="edit-button-container content-td">Edit</th>
+              <th className="edit-button-container">Edit</th>
             </tr>
           </thead>
           <tbody>
@@ -112,8 +116,8 @@ function AdminEdit() {
           </tbody>
         </table>
 
-        <h3>Admin Users</h3>
-        <table className="accounts-table">
+        {/* <h3>Admin Users</h3> */}
+        {/* <table className="accounts-table">
           <thead>
             <tr>
               <th className="content-td">User Name</th>
@@ -132,7 +136,7 @@ function AdminEdit() {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
         {editMode && (
           <div className="edit-form-overlay">
             <div className="edit-form">

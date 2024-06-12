@@ -66,16 +66,27 @@ F. Once the dependencies are installed, you are ready to begin coding.
 ## 2. Directory Structure:
 
 ‘public/ ’: Contains static assets like vite.svg.
+
 ‘src/’: Contains all the React components, pages, scripts, and styles.
+
 ‘assets/’: Contains images, styles, and other asset files.
+
 ‘components/’: Contains reusable React components like the header and footer of the website
+
 ‘pages/’: Contains React components for each page.
+
 ‘scripts/’: Contains script files like Firebase configurations.
+
 ‘styles/’: Contains CSS and styling files.
+
 ‘App.jsx’: Main application component, linking of pages
+
 ‘index.css’: Global styles for the website.
+
 ‘.gitignore’: Specifies files to be ignored by Git.
+
 ‘package.json’: Contains project metadata and dependencies.
+
 ‘README.md’: Project description and basic instructions.
 
 ## 3. Building Software:

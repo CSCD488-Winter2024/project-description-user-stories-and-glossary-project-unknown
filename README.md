@@ -33,7 +33,7 @@ Additional Documentation:
 
 	Developers Documentation:
  
-1. Obtaining Source Code
+## 1. Obtaining Source Code
 
 A. Access the Repository:
 - Visit the Donutparade repository on GitHub: https://github.com/CSCD488-Winter2024/project-description-user-stories-and-glossary-project-unknown.
@@ -63,7 +63,7 @@ E. Install Dependencies:
 F. Once the dependencies are installed, you are ready to begin coding. 
 
 
-2. Directory Structure:
+## 2. Directory Structure:
 
 ‘public/ ’: Contains static assets like vite.svg.
 ‘src/’: Contains all the React components, pages, scripts, and styles.
@@ -78,7 +78,7 @@ F. Once the dependencies are installed, you are ready to begin coding.
 ‘package.json’: Contains project metadata and dependencies.
 ‘README.md’: Project description and basic instructions.
 
-3. Building Software:
+## 3. Building Software:
 
 A. To build the software, follow these steps:
 - Ensure you have React.js and npm installed. If not, download and install them from the command line.
@@ -89,7 +89,7 @@ B. Start the development server:
 	[ npm run dev ] 
 	This will start the application in development mode. Open http://localhost:3000 to view it in the browser.
 
-4. Building Final Project:
+## 4. Building Final Project:
 
 A. Ensure Code Stability:
 Before creating a production build, make sure all code is in a stable state:
